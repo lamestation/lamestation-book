@@ -1,9 +1,4 @@
-### Basics
-
-While you were [ putting the LameStation together ](Assembly-
-Instructions_12156966.adoc) , you were asked to download various programs to
-make sure it was working properly. In this lesson, you will find out how the
-simplest of those programs worked.
+= Basics
 
 The examples in this section can be found in the ` "demos/basics/" ` folder of
 the LameStation SDK.
@@ -14,7 +9,7 @@ the LameStation SDK.
   * I'm Alive! 
   * Take Control! 
 
-####  Hello Nothing
+==  Hello Nothing
 
 Attempting to download an empty file to the LameStation will generate an error
 from PropellerIDE.
