@@ -1,0 +1,22 @@
+### LameMap
+
+![](attachments/15958149/23396355.png)
+
+[ LameMap ](LameMap_15958149.adoc) is an extension to [ LameGFX
+](LameGFX_21725389.adoc) for tile-based game maps. It is built on the
+underlying [ gfx.Map ](gfx.Map_23429363.adoc) command, but provides additional
+informational functionality for managing map data and testing for map-based
+collision.
+
+####  Commands
+
+  * [ map.Load ](map.Load_14811189.adoc) —  Load a map into LameMap for drawing to the screen. 
+  * [ map.Draw ](map.Draw_14811151.adoc) —  Draw the current map to the screen. 
+  * [ map.DrawRectangle ](map.DrawRectangle_15958140.adoc) —  Draw the current map to a portion of the screen. 
+  * [ map.Width ](map.Width_14811193.adoc) —  Return the width of the currently loaded map in tiles. 
+  * [ map.Height ](map.Height_14811195.adoc) —  Return the height of the currently loaded map in tiles. 
+  * [ map.TestCollision ](map.TestCollision_14286906.adoc) —  Test if the region has collided with a map tile. 
+  * [ map.TestMoveX ](map.TestMoveX_16548056.adoc) —  Apply horizontal movement to an object's position and test if it will collide. 
+  * [ map.TestMoveY ](map.TestMoveY_16548058.adoc) —  Apply vertical movement to an object's position and test if it will collide. 
+  * [ map.TestPoint ](map.TestPoint_23429245.adoc) —  Test whether tile on a map is collidable. 
+

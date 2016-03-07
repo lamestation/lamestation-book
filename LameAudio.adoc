@@ -1,0 +1,20 @@
+### LameAudio
+
+####  Commands
+
+  * [ audio.Start ](audio.Start_23429369.adoc) —  Initialize the LameAudio synthesizer. 
+  * [ audio.PlaySound ](audio.PlaySound_34570314.adoc) —  Play the specified note on the specified audio channel. 
+  * [ audio.StopSound ](audio.StopSound_34570316.adoc) —  Stop sound on the specified channel 
+  * [ audio.StopAllSound ](audio.StopAllSound_34570318.adoc) —  Stop sound on all channels. 
+  * [ audio.SetNote ](audio.SetNote_34570280.adoc) —  Set the note of the given audio channel. 
+  * [ audio.SetFrequency ](audio.SetFrequency_34570289.adoc) —  Set the frequency increment of the specified audio channel. 
+  * [ audio.SetParam ](audio.SetParam_34570293.adoc) —  Manually set a parameter of the audio channel. 
+  * [ audio.SetADSR ](audio.SetADSR_34570298.adoc) —  Set all parameters of the ADSR envelope shape. 
+  * [ audio.SetWaveform ](audio.SetWaveform_34570300.adoc) —  Set the waveform of the given audio channel. 
+  * [ audio.SetVolume ](audio.SetVolume_34570278.adoc) —  Set the volume of the target note. 
+  * [ audio.LoadPatch ](audio.LoadPatch_34570312.adoc) —  Load a complete patch configuration from memory to any desired channels. 
+  * [ audio.SetSample ](audio.SetSample_34570310.adoc) —  Set the address of an audio sample for the sampler. 
+  * [ audio.SetEnvelope ](audio.SetEnvelope_34570302.adoc) —  Enable or disable the ADSR envelope generator on the given audio channel. 
+  * [ audio.StartEnvelope ](audio.StartEnvelope_34570306.adoc) —  Trigger the channel envelope to start. 
+  * [ audio.StopEnvelope ](audio.StopEnvelope_34570308.adoc) —  Trigger the channel envelope to stop. 
+

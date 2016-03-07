@@ -1,0 +1,42 @@
+#### map.TestCollision
+
+Test if the region has collided with a map tile.
+
+#####  Syntax
+
+    
+    
+    TestCollision(x, y, w, h)
+
+  * ** x ** \- x position of object 
+  * ** y ** \- y position of object 
+  * ** w ** \- width of object 
+  * ** h ** \- height of object 
+
+Returns non-zero  1  if a collision has occurred between an object and the
+map; 0 otherwise.
+
+#####  Description
+
+All LameStation tilemaps are embedded with collision information, so that
+levels created through the map editor already have walkable regions defined
+when loaded. This command tests an object against those walkable areas.
+
+Off-Map Regions
+
+Only valid map regions are tested for collisions; positions that are off the
+map area will always return 0.
+
+|  ![](attachments/14286906/14417984.png)  
+---  
+  
+#####  Example
+
+See the ` 02_TestCollision.spin ` demo in the SDK.
+
+See also: [ map.TestMoveX ](map.TestMoveX_16548056.adoc) , [ map.TestMoveY
+](map.TestMoveY_16548058.adoc) .
+
+1  The exact value is the coordinate pair of the first map tile causing a
+collision, offset by (1, 1).
+

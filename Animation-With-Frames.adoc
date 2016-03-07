@@ -1,0 +1,193 @@
+#### Animation With Frames
+
+Animation is made much easier with the use of frames. Frames allow us to store
+multiple images within the same sprite so that they can be accessed with an
+index (0, 1, 2, 3, ...) instead of having to pass the address by name (data1,
+data2, data3, ...).
+
+We want to apply this to our previous example. To do so, first, we have to
+calculate the ` frameboost ` constant. This value equals the distance in bytes
+between two images in a sprite in memory. Here's the formula.
+
+|  ![](https://latexmath.herokuapp.com/render/1.0/img/87d689b7f3f7bcdda8a63fe2
+4accf168)  
+---|---  
+  
+Our image is 8 pixels wide and 8 pixel tall, each LameStation color has 2
+bits, and there's 8 bits in 1 byte. Therefore, the frameboost for our image is
+** 16 ** . Let's add it to the sprite header.
+
+    
+    
+    word    16
+    word    8, 8
+    word    %%00000000
+    word    %%00000000
+    word    %%00011000
+    word    %%00111100
+    word    %%00111100
+    word    %%00011000
+    word    %%00000000
+    word    %%00000000
+
+Next, remember that we're combine all of the images from the previous example
+into one sprite, so we will only need one sprite header. So get rid of the
+rest of them! Here's what the sprite should look like completed.
+
+    
+    
+    data
+    word    16
+    word    8, 8
+    word    %%00000000
+    word    %%00000000
+    word    %%00011000
+    word    %%00111100
+    word    %%00111100
+    word    %%00011000
+    word    %%00000000
+    word    %%00000000
+    
+    word    %%00000000
+    word    %%00011000
+    word    %%00111100
+    word    %%01100110
+    word    %%01100110
+    word    %%00111100
+    word    %%00011000
+    word    %%00000000
+    
+    word    %%00011000
+    word    %%01111110
+    word    %%01100110
+    word    %%11000011
+    word    %%11000011
+    word    %%01100110
+    word    %%01111110
+    word    %%00011000
+    
+    word    %%00011000
+    word    %%01100110
+    word    %%01000010
+    word    %%10000001
+    word    %%10000001
+    word    %%01000010
+    word    %%01100110
+    word    %%00011000
+    
+    word    %%01100110
+    word    %%10000001
+    word    %%10000001
+    word    %%00000000
+    word    %%00000000
+    word    %%10000001
+    word    %%10000001
+    word    %%01100110
+    
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+
+Now we need a way to play the animation. Using the [ REPEAT
+](https://lamestation.atlassian.net/wiki/display/SPIN/REPEAT) command, we can
+create a variable x and use that to index through the animation from 0 to 5.
+Then pass x to gfx.Sprite as the ` frame ` parameter.
+
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main | x 
+        lcd.Start(gfx.Start)
+        
+        repeat
+            repeat x from 0 to 5
+                gfx.Sprite(@data, 0, 0, x)
+                lcd.DrawScreen
+            
+                repeat 1000
+
+Now look at how much shorter it is, and so much easier to understand!
+
+** StarWithFrames.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main | x 
+        lcd.Start(gfx.Start)
+        
+        repeat
+            repeat x from 0 to 5
+                gfx.Sprite(@data, 0, 0, x)
+                lcd.DrawScreen
+            
+                repeat 1000
+    DAT
+    
+    data
+    word    16
+    word    8, 8
+    word    %%00000000
+    word    %%00000000
+    word    %%00011000
+    word    %%00111100
+    word    %%00111100
+    word    %%00011000
+    word    %%00000000
+    word    %%00000000
+    
+    word    %%00000000
+    word    %%00011000
+    word    %%00111100
+    word    %%01100110
+    word    %%01100110
+    word    %%00111100
+    word    %%00011000
+    word    %%00000000
+    
+    word    %%00011000
+    word    %%01111110
+    word    %%01100110
+    word    %%11000011
+    word    %%11000011
+    word    %%01100110
+    word    %%01111110
+    word    %%00011000
+    
+    word    %%00011000
+    word    %%01100110
+    word    %%01000010
+    word    %%10000001
+    word    %%10000001
+    word    %%01000010
+    word    %%01100110
+    word    %%00011000
+    
+    word    %%01100110
+    word    %%10000001
+    word    %%10000001
+    word    %%00000000
+    word    %%00000000
+    word    %%10000001
+    word    %%10000001
+    word    %%01100110
+    
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+    word    %%00000000
+

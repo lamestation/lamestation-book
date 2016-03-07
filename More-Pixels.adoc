@@ -1,0 +1,40 @@
+#### More Pixels
+
+The  ** x ** and  ** y ** parameters of [ gfx.Sprite
+](gfx.Sprite_15958162.adoc) determine where the sprite is drawn on the screen,
+so we can use them to place the image somewhere else.
+
+> ` gfx.Sprite(addr, _ ** x ** _ , _ ** y ** _ , frame) `
+
+Let's try setting x and y to some other values, and call the command multiple
+times. Let's draw the Big Dipper!
+
+** BigDipper.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        gfx.Sprite(@data, 15, 20, 0)
+        gfx.Sprite(@data, 35, 20, 0)
+        gfx.Sprite(@data, 20, 30, 0)
+        gfx.Sprite(@data, 30, 30, 0)
+        gfx.Sprite(@data, 45, 10, 0)
+    
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    1, 1
+    word    1
+
+![](attachments/35750115/35750114.png)
+
+Woohoo!
+

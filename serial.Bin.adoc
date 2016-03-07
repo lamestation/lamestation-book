@@ -1,0 +1,36 @@
+#### serial.Bin
+
+Send a value as a binary number string.
+
+#####  Syntax
+
+    
+    
+    serial.Bin(value, digits)
+
+  * ** value ** \- byte, word, or long value to send as a string of binary digits. 
+  * ** digits ** \- the number of binary digits to send; will be zero-padded if needed. 
+
+Returns no values.
+
+#####  Description
+
+Use this command to send formatted binary numbers to an external serial
+device.
+
+#####  Example
+
+    
+    
+    PUB Main
+        serial.Start
+     
+        serial.Bin(25, 32)
+        serial.Bin(3543, 32)
+        serial.Bin(189242, 32)
+     
+        serial.Stop
+
+See also: [ serial.Dec ](serial.Dec_34177047.adoc) , [ serial.Hex
+](serial.Hex_34177051.adoc) .
+

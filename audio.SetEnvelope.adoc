@@ -1,0 +1,42 @@
+#### audio.SetEnvelope
+
+Enable or disable the ADSR envelope generator on the given audio channel.
+
+#####  Syntax
+
+    
+    
+    SetEnvelope(channel, enable)
+
+  * ** channel ** \- audio channel on which to enable the envelope (0-3) 
+  * ** enable ** \- true (enable) or false (disable) 
+
+This command returns no values.
+
+#####  Description
+
+LameAudio supports two main modes of operation: the envelope generator can be
+enabled or disabled.
+
+When enabled, the channel behaves more like a piano keyboard allowing the
+programmer to use the PlaySound and StopSound commands to generate sound.
+
+When disabled, the channel frequency must be controlled via programming, which
+allows much more flexibility in what sounds can be created.
+
+#####  Example
+
+######  Envelope  On
+
+    
+    
+    some code...
+
+######  Envelope Off
+
+    
+    
+    some code...
+
+See also: link.
+

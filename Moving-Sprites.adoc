@@ -1,0 +1,246 @@
+#### Moving Sprites
+
+Up until this point, everything has been staying in one place. Perhaps I can _
+move some things around _ and see if we can't do something about that.
+
+#####  Introducing Variables
+
+If you want to do anything that involves a changing value, you need to keep
+track of the changing value somewhere. This is what variables are for. A **
+variable ** is just a place to store a value that may change. In Spin,
+variables are defined within the ** [ VAR
+](https://lamestation.atlassian.net/wiki/display/SPIN/VAR) ** block, which
+looks like this:
+
+    
+    
+    VAR
+        long    x
+
+The data types can be byte, word, or long, just like with ** DAT ** blocks. We
+will use long because it makes the math easier. Building on the final example
+from [ Sprite Objects ](Sprite-Objects_35750148.adoc) , we are going to add a
+single variable called ` "x" ` to our program, and then use it to control the
+** x ** position in the Sprite command.
+
+** MovingSprite.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+    
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        repeat
+            gfx.Sprite(sprite.Gfx, x, 24, 0)
+            lcd.DrawScreen
+            x++
+
+Pro Tip
+
+Variables defined in a ** VAR ** block are always initialized to ` "0" ` .
+
+Think It Over
+
+_ Question 1: What happens if you don't increment ** x ** ? _
+
+![](images/icons/grey_arrow_down.png) Click here to show the answer...
+
+It stays at the left side of the screen!
+
+** MovingSpriteNot.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(sprite.Gfx, x, 24, 0)
+        lcd.DrawScreen
+
+_ Question 2: Where does smiley face goes once it reaches the edge of the
+screen? _
+
+#####  Some Fun Examples
+
+Sometimes, you'll discover that some interesting side effects appear where you
+didn't expect them. We've been drawing to the screen without cleaning up after
+ourselves, and it's left a gnarly trail on the screen.
+
+Here are a couple examples of programs that take advantage of this effect with
+minimal effort.
+
+######  Face Rockets!
+
+** FaceRockets.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+    
+        repeat 140
+            gfx.Sprite(sprite.Gfx, x, 24, 0)
+            lcd.DrawScreen
+            x++
+    
+        x := 0
+        repeat 140
+            gfx.Sprite(sprite.Gfx, x, 4, 0)
+            lcd.DrawScreen
+            x++
+    
+        x := 0
+        repeat
+            gfx.Sprite(sprite.Gfx, x, 44, 0)
+            lcd.DrawScreen
+            x++                
+
+######  Face Paint!
+
+Another funny example, we're going to temporarily add another variable for **
+y ** , then increase or decrease the value of x and y based on the joystick
+input. Stick this in a loop and we have a wacky paint program!
+
+** FacePaint.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+        ctrl    : "LameControl"
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+        long    y
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        repeat
+            ctrl.Update
+            
+            if ctrl.Left
+                x--
+            if ctrl.Right
+                x++
+            if ctrl.Up
+                y--
+            if ctrl.Down
+                y++
+            
+            gfx.Sprite(sprite.Gfx, x, y, 0)
+            lcd.DrawScreen
+
+#####  Clearing the Screen
+
+Okay, fun is over. So just how do we clean up all of this mess?
+
+The [ gfx.ClearScreen ](gfx.ClearScreen_15401080.adoc) command is here to save
+the day! Word-sized value, etc.
+
+#######  MovingSpriteClear.spin
+
+** MovingSpriteClear.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        repeat
+            gfx.ClearScreen (0)
+            gfx.Sprite(sprite.Gfx, x, 24, 0)
+            lcd.DrawScreen
+            x++
+
+** MovingSpriteClearFast.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        repeat
+            gfx.ClearScreen (0)
+            gfx.Sprite(sprite.Gfx, x, 24, 0)
+            lcd.DrawScreen
+            x += 3
+
+** MovingSpriteClearSlow.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    OBJ
+        lcd     : "LameLCD"
+        gfx     : "LameGFX"
+        sprite  : "HappyFaceGFX"
+        
+    VAR
+        long    x
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        repeat
+            gfx.ClearScreen (0)
+            gfx.Sprite(sprite.Gfx, x / 4, 24, 0)
+            lcd.DrawScreen
+            x += 1
+

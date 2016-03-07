@@ -1,0 +1,47 @@
+#### txt.Str
+
+Draw a single-line string to the screen.
+
+#####  Syntax
+
+    
+    
+    Str(src_string, x, y)
+
+  * ** src_string ** \- Null-terminated string of characters. Usually based on but not limited to inline strings or a DAT block label references. 
+  * ** x ** \- Horizontal position on the screen. 
+  * ** y ** \- Vertical position on the screen. 
+
+#####  Description
+
+Draws a null-terminated string of characters to the screen at the position
+(x,y).
+
+[ txt.Load ](txt.Load_14811171.adoc) must be called before this function will
+work.
+
+For multi-line strings, see [ txt.Box ](txt.Box_14811165.adoc) .
+
+#####  Example
+
+######  Inline String
+
+    
+    
+    txt.Str(string("THIS IS A TEST"), 4, 28)
+
+######  DAT String
+
+    
+    
+    PUB Main
+        ' init ...
+     
+        txt.Str(@mystring, 0, 0)
+     
+    DAT
+    mystring    byte "This is also a test!", 0
+
+See also: [ txt.Load ](txt.Load_14811171.adoc) , [ txt.Char
+](txt.Char_14811161.adoc) , [ txt.Box ](txt.Box_14811165.adoc) .
+

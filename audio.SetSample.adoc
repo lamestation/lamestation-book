@@ -1,0 +1,27 @@
+#### audio.SetSample
+
+Set the address of an audio sample for the sampler.
+
+#####  Syntax
+
+    
+    
+    SetSample(address)
+
+  * ** address ** \- The address of the audio sample in memory. 
+
+This command returns no values.
+
+#####  Description
+
+Set the address for a 512-byte audio sample to use for the built-in sampler.
+This address is common to all channels.
+
+#####  Example
+
+    
+    
+    some code...
+
+See also: link.
+

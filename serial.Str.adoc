@@ -1,0 +1,55 @@
+#### serial.Str
+
+Send a zero-terminated string.
+
+#####  Syntax
+
+    
+    
+    serial.Str(stringptr)
+
+  * ** stringptr ** \- A pointer to a zero-terminated string. 
+
+This command returns no values.
+
+#####  Description
+
+This command sends a zero-terminated string. There are two ways to do so: with
+the [ STRING ](https://lamestation.atlassian.net/wiki/display/SPIN/STRING)
+command, and by passing an address to a [ DAT
+](https://lamestation.atlassian.net/wiki/display/SPIN/DAT) block.
+
+With the string command:
+
+    
+    
+    serial.Str(String("Some funny text!"))
+
+Passing an address:
+
+    
+    
+    serial.Str(@stringdata)
+     
+    DAT
+    stringdata  byte "This is the chicken stuff!",0
+
+#####  Example
+
+    
+    
+    PUB Main
+        serial.Start
+     
+        serial.Str(String("More funny text"))
+        serial.Str(@sofunny)
+     
+        serial.Stop
+     
+    DAT
+     
+    sofunny  byte "This is a way funny joke",0
+
+See also: [ serial.Char ](serial.Char_34177041.adoc) , [ serial.CharIn
+](serial.CharIn_34177043.adoc) .
+

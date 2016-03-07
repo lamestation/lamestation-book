@@ -1,0 +1,7 @@
+### Pinout
+
+This diagram illustrates the pin-out of the current LameStation design.
+
+|  ![](attachments/9011430/9175150.png)  
+---
+

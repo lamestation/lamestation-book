@@ -1,0 +1,38 @@
+#### map.Height
+
+Return the height of the currently loaded map in tiles.
+
+#####  Syntax
+
+    
+    
+    Height
+
+This command takes no parameters.
+
+Returns a 16-bit unsigned value.
+
+#####  Description
+
+#####  Example
+
+    
+    
+    PUB Main
+        ' ...
+        map.Load(..., ...)
+        ' ...
+     
+        repeat ' game loop
+            ' ...
+            CalculateLevelOffset(map.Width, map.Height)
+            ' ...
+            if playerx > (map.Width << 3)
+                PlayerWins
+     
+            if playery > (map.Height << 3)
+                PlayerDies
+
+See also: [ map.Width ](map.Width_14811193.adoc) , [ map.Load
+](map.Load_14811189.adoc) .
+

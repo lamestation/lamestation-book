@@ -1,0 +1,17 @@
+### LameMusic
+
+![](attachments/15401100/34177063.png)
+
+[ LameMusic ](LameMusic_15401100.adoc) is a tiny sequencing engine designed to
+run on top of [ LameAudio ](LameAudio_23429367.adoc) that provides a
+compressed music format for scoring your LameStation games.
+
+####  Commands
+
+  * [ music.Start ](music.Start_23429172.adoc) —  Start the LameMusic song player core. 
+  * [ music.Load ](music.Load_23429170.adoc) —  Loads song data from the given address. 
+  * [ music.Play ](music.Play_23429177.adoc) —  Play the currently loaded song only once. 
+  * [ music.Loop ](music.Loop_23429182.adoc) —  Play the currently loaded song forever. 
+  * [ music.IsPlaying ](music.IsPlaying_23429187.adoc) —  Return whether a song is currently playing. 
+  * [ music.Stop ](music.Stop_23429189.adoc) —  Stop the currently playing song. 
+

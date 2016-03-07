@@ -1,0 +1,7 @@
+#### The Loop
+
+You probably noticed in [ Moving Sprites ](Moving-Sprites_35750156.adoc) that
+none of the code did anything at all without being in some kind of loop.
+
+The program loop is fundamental to making a system that is interactive.
+

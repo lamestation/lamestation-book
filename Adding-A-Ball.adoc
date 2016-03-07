@@ -1,0 +1,14 @@
+#### Adding A Ball
+
+What's the goal here? We need a ball that will go back and forth on the
+screen. There's a few approaches to this, but I find the easiest to do is
+using separate speed and position variables.
+
+    
+    
+        long    x
+        long    y
+        
+        long    speed_x
+        long    speed_y
+

@@ -1,0 +1,28 @@
+#### serial.Clear
+
+Clear screen and place cursor at the top-left of the console.
+
+#####  Syntax
+
+    
+    
+    serial.Clear
+
+This command takes no arguments and returns no values.
+
+#####  Description
+
+Clear screen and place cursor at the top-left of the console.
+
+#####  Example
+
+    
+    
+    PUB Main
+        serial.Start
+     
+        serial.Clear
+        serial.Str(String("Hi from the top left"))
+     
+        serial.Stop
+

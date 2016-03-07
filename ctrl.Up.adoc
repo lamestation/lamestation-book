@@ -1,0 +1,31 @@
+#### ctrl.Up
+
+Return whether the joystick is tilted upwards.
+
+#####  Syntax
+
+    
+    
+    Up
+
+This command takes no parameters, returns non-zero if tilted, zero otherwise.
+
+#####  Description
+
+[ ctrl.Update ](ctrl.Update_15401025.adoc) must be called before this command
+will return a valid result.
+
+|  ![](attachments/15401033/15302739.png)  
+---  
+  
+#####  Example
+
+    
+    
+        if ctrl.Up
+    		y--
+
+See also: [ ctrl.Right ](ctrl.Right_15401038.adoc) , [ ctrl.Down
+](ctrl.Down_15401035.adoc) , [ ctrl.Left ](ctrl.Left_15401041.adoc) , [
+ctrl.Update ](ctrl.Update_15401025.adoc) .
+

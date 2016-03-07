@@ -1,0 +1,33 @@
+#### serial.RxCount
+
+Get count of characters in receive buffer.
+
+#####  Syntax
+
+    
+    
+    serial.RxCount
+
+This command takes no arguments.
+
+Returns the number of characters in the receive buffer.
+
+#####  Description
+
+Get count of characters in receive buffer. Useful for checking if your
+LameStation has received new data.
+
+#####  Example
+
+    
+    
+    PUB Main
+        serial.Start
+     
+        repeat
+            if serial.RxCount > 0
+                serial.CharIn
+
+See also: [ serial.CharIn ](serial.CharIn_34177043.adoc) , [ serial.RxFlush
+](serial.RxFlush_34177061.adoc) .
+

@@ -1,0 +1,33 @@
+#### serial.Char
+
+Send a single-byte character.
+
+#####  Syntax
+
+    
+    
+    serial.Char(bytechar)
+
+  * ** bytechar ** \- ASCII character value to send. 
+
+Returns no values.
+
+#####  Description
+
+Use this command to send data to an external serial device.
+
+#####  Example
+
+    
+    
+    PUB Main
+        serial.Start
+     
+        serial.Char(34)
+        serial.Char("H")
+     
+        serial.Stop
+
+See also: [ serial.CharIn ](serial.CharIn_34177043.adoc) , [ serial.Str
+](serial.Str_34177045.adoc) .
+

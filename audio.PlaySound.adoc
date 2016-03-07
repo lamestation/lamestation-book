@@ -1,0 +1,31 @@
+#### audio.PlaySound
+
+Play the specified note on the specified audio channel.
+
+#####  Syntax
+
+    
+    
+    PlaySound(channel, note)
+
+  * ** channel ** \- the audio channel on which to play (0-3). 
+  * ** note ** \- the note to play (0-127). 
+
+This command returns no values.
+
+#####  Description
+
+` PlaySound ` is a high-level command that immediately plays a note regardless
+of what the previous channel configuration was.
+
+#####  Example
+
+    
+    
+        audio.Start
+        audio.PlaySound (3, 60)
+
+See also: [ audio.Start ](audio.Start_23429369.adoc) , [ audio.StopSound
+](audio.StopSound_34570316.adoc) , [ audio.StopAllSound
+](audio.StopAllSound_34570318.adoc) .
+

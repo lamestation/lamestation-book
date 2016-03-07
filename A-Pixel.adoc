@@ -1,0 +1,95 @@
+#### A Pixel
+
+Here is the most image we can draw to the screen: a single pixel. We will
+store the image in a  ** [ DAT
+](https://lamestation.atlassian.net/wiki/display/SPIN/DAT) ** block, which
+allows you to store any kind of data you want. We'll do this by creating the
+block, adding the image data, and assigning the label "data" to it, so that we
+can refer to it by name in our program.
+
+Here is what our completed pixel looks like in LameStation sprite format.
+
+    
+    
+    DAT
+     
+    data
+     
+    word    0
+    word    1, 1
+    word    1
+
+Now we will need the the [ gfx.Sprite ](gfx.Sprite_15958162.adoc) command.
+This command has _ parameters _ , which are values passed into a function that
+change the output.
+
+    
+    
+    gfx.Sprite(source, x, y, frame)
+
+We can draw the pixel by passing in the name of the label prefixed with '@' as
+the ** source ** parameter. We don't need the rest of the parameters for now,
+so set them to 0.
+
+** Pixel.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        gfx.Sprite(@data, 0, 0, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    1, 1
+    word    1
+
+![](attachments/35750070/35750067.png)
+
+Well, that's boring. You can hardly see where it ended up! In the next
+example, we'll put pixels somewhere else on the screen and make them unboring!
+
+Think It Over
+
+_ Question 1: What will happen if you pass nothing into the [ gfx.Sprite
+](gfx.Sprite_15958162.adoc) command? What will it do? _
+
+    
+    
+    gfx.Sprite(0, 0, 0, 0)
+
+![](images/icons/grey_arrow_down.png) Click here to show the answer...
+
+See for yourself! Try the following example.
+
+** Nothing.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(0, 0, 0, 0)
+        lcd.DrawScreen
+
+Here's what you'll get.
+
+![](attachments/35750070/35750069.png)
+
+The LameStation libraries do not check to make sure that your inputs are
+accurate or make sense. If you make a mistake, you will literally _ see _ it
+on the screen.
+
+Here, the address you've given to [ gfx.Sprite ](gfx.Sprite_15958162.adoc) is
+not the start of an image, but the start of your entire program. That means
+what you see on the screen is the actual program itself. Crazy, right?
+

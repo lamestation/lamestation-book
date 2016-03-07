@@ -1,0 +1,7 @@
+### LameFunctions
+
+####  Commands
+
+  * [ fn.Sleep ](fn.Sleep_23429355.adoc) —  Wait the specified number of milliseconds before continuing. 
+  * [ fn.TestBoxCollision ](fn.TestBoxCollision_23429357.adoc) —  Test if two rectangular regions of the screen overlap. 
+

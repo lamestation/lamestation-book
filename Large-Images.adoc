@@ -1,0 +1,96 @@
+#### Large Images
+
+Unless you're really into tiny 8x8 pixel images, you're probably already sick
+of them and want to move on to something bigger. Well, I hear you, so let's
+make a larger image.
+
+Creating larger sprites is fairly easy in theory, but in practice, you'll
+discover pretty quickly where the difficulty is. Let's make a friendly happy
+face as an example.
+
+** HappyFace.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(@data, 56, 24, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    16, 16
+    word    %%00000111, %%11100000
+    word    %%00011111, %%11111000
+    word    %%00111111, %%11111100
+    word    %%01110011, %%11001110
+    word    %%01101101, %%10110110
+    word    %%11111111, %%11111111
+    word    %%11111111, %%11111111
+    word    %%11111111, %%11111111
+    
+    word    %%11111111, %%11111111
+    word    %%11111111, %%11111111
+    word    %%11101111, %%11110111
+    word    %%01110111, %%11101110
+    word    %%01111000, %%00011110
+    word    %%00111111, %%11111100
+    word    %%00011111, %%11111000
+    word    %%00000111, %%11100000
+
+Figured out the first problem yet? ** That took forever for me to draw. Like,
+a really, really long time. ** Not only that, but let's look at it.
+
+![](attachments/35750108/35750106.png)
+
+** I DREW IT BACKWARDS! ** How long will that take to fix? I have to go back and painstakingly change all of the pixels one by one. 
+
+** HappyFaceFixed.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(@data, 56, 24, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    16, 16
+    word    %%11100000, %%00000111
+    word    %%11111000, %%00011111
+    word    %%11111100, %%00111111
+    word    %%11001110, %%01110011
+    word    %%10110110, %%01101101
+    word    %%11111111, %%11111111
+    word    %%11111111, %%11111111
+    word    %%11111111, %%11111111
+    
+    word    %%11111111, %%11111111
+    word    %%11111111, %%11111111
+    word    %%11110111, %%11101111
+    word    %%11101110, %%01110111
+    word    %%00011110, %%01111000
+    word    %%11111100, %%00111111
+    word    %%11111000, %%00011111
+    word    %%11100000, %%00000111
+
+Running it again...
+
+![](attachments/35750108/35750107.png)
+
+Ah, that's much better. Certainly, though, there must be a better way to do
+this. This image is only 16x16. What if I want to draw an image that takes up
+the whole screen? This is a terribly slow way to do it. There are better ways
+which we will learn about in a later section.
+

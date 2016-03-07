@@ -1,0 +1,175 @@
+#### Lines
+
+If we want to make anything larger than a pixel, we need to know a little more
+about the [ Sprite Format ](Sprite-Format_35749999.adoc) . The sprite format
+is divided into two parts: the header and the image.
+
+    
+    
+    word    0                  ' | header
+    word    1, 1               ' |
+    word    1                  ' | image
+
+The header is three words long, and contains three values: the ** frameboost
+** , the ** width ** , and the ** height ** of the image. For now, **
+frameboost ** is always set to zero because we're not using it yet.
+
+    
+    
+    word    [frameboost]
+    word    [width], [height]
+
+#####  A Horizontal Line
+
+If we want to create a horizontal line, we need to put multiple pixels into a
+word. You can do this with the '%%' operator.
+
+** Line.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        gfx.Sprite(@data, 0, 0, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    8, 1
+    word    %%11111111
+    
+
+![](attachments/35750076/35750073.png)
+
+#####  A Long Line
+
+The maximum number of pixels that can be held in a word is 8, so if you want
+your line to be any longer, you have to use another word.
+
+** LongLine.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        
+        gfx.Sprite(@data, 0, 30, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    16, 1
+    word    %%11111111, %%11111111
+
+![](attachments/35750076/35750074.png)
+
+#####  A Vertical Line
+
+We can make vertical lines too. To do that, we'll need to increase the number
+of pixels in the drawing. This is done by increasing the number of rows, one
+pixel per row.
+
+** VerticalLine.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+    
+        gfx.Sprite(@data, 0, 0, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    data
+    word    0
+    word    1, 12
+    
+    word    %%1
+    word    %%1
+    word    %%1
+    word    %%1
+    
+    word    %%1
+    word    %%1
+    word    %%1
+    word    %%1
+    
+    word    %%1
+    word    %%1
+    word    %%1
+    word    %%1
+
+![](attachments/35750076/35750075.png)
+
+Think It Over
+
+_ Question 1: _ _ How would you increase the thickness of a horizontal line? A
+vertical line? _
+
+![](images/icons/grey_arrow_down.png) Click here to show the answer...
+
+It's easy! Simply combine what you've learned about making a line longer in
+both directions.
+
+** ThickLines.spin **
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(@line1, 32, 24, 0)
+        gfx.Sprite(@line2, 90, 24, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    line1
+    word    0
+    word    24, 2
+    word    %%11111111, %%11111111, %%11111111
+    word    %%11111111, %%11111111, %%11111111
+    
+    line2
+    word    0
+    word    2, 16
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+    word    %%11
+
+![](attachments/35750076/35750078.png)
+
+We'll learn more about this in the next section, [ Boxes
+](Boxes_35750086.adoc) .
+

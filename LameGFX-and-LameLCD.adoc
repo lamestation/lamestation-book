@@ -1,0 +1,58 @@
+#### LameGFX and LameLCD
+
+Using the LameStation LCD requires two objects: LameLCD and LameGFX.
+
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+
+  * ** [ LameLCD ](LameLCD_13762612.adoc) ** provides a surface for us to draw on that displays on the screen. 
+  * ** [ LameGFX ](LameGFX_21725389.adoc) ** provides software drawing functions for creating different kinds of images on the screen. 
+
+Think of it like this: LameLCD provides you with a piece of paper, and LameGFX
+provides you with various pens and pencils to draw with. If you want to draw
+something in real life, you need both a pen and a paper to do it. That's why
+you should always include these two objects together.
+
+Before you can do any drawing, you must start these objects, ideally at the
+very beginning of your main function, before anything else. Here's how:
+
+    
+    
+    PUB Main
+        lcd.Start(gfx.Start)
+
+Okay, so it's not quite a pen and paper. LameGFX is more like a pen _ and _
+paper, and once it's done drawing, it hands it to LameLCD to hang up on the
+fridge (the LCD).
+
+There's one more command to call before you'll see anything on the screen. [
+lcd.DrawScreen ](lcd.DrawScreen_15400984.adoc) is the command that hangs the
+paper on the fridge.
+
+    
+    
+        lcd.DrawScreen
+
+Pro Tip
+
+The following is the minimum code needed to initialize and show graphics.
+
+    
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+     
+    PUB Main
+        lcd.Start(gfx.Start)
+     
+        ' draw stuff here
+     
+        lcd.DrawScreen
+
+However, when you run this, you still won't see anything, because you actually
+have to draw an image for it to appear on the LCD.
+

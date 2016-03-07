@@ -1,0 +1,27 @@
+#### audio.StartEnvelope
+
+Trigger the channel envelope to start.
+
+#####  Syntax
+
+    
+    
+    StartEnvelope(channel)
+
+  * ** channel ** \- The audio channel to trigger (0-3) 
+
+This command returns no values.
+
+#####  Description
+
+This command resets the ADSR filter volume  to zero and begins the cycle over
+in the attack phase. It does nothing if the envelope is disabled.
+
+#####  Example
+
+    
+    
+    some code...
+
+See also: link.
+

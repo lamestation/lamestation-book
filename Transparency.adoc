@@ -1,0 +1,144 @@
+#### Transparency
+
+There's one other "color" that you can use, if you want to call it that.
+Here's what a block of  _ transparency _ looks in the sprite format.
+
+    
+    
+    word    %%22222222
+    word    %%22222222
+    word    %%22222222
+    word    %%22222222
+    word    %%22222222
+    word    %%22222222
+    word    %%22222222
+    word    %%22222222
+
+We won't even bother trying to run it though because, well... you won't be
+able to see it!
+
+#######  How Does It Work?
+
+If you were paying attention to the explanation of color bits and flip bits (I
+can understand if you weren't), you may have noticed something interesting. If
+00 equals black, 01 equals white, and 11 equals gray, what does 10 equal? What
+happens when the flip bit is enabled but the color is off?
+
+Well, nothing happens, and it wouldn't make sense if something did. So we
+decided to do something useful with that extra "color", and use it for
+transparency. The best way to show what this draws is by showing what it
+doesn't draw.
+
+Here is a drawing of a ball on top of a square.
+
+** BallWithoutTransparency.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+        
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(@box, 40, 20, 0)
+        gfx.Sprite(@ball, 42, 22, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    box
+    word    0
+    word    8, 8
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    
+    ball
+    word    0
+    word    8, 8
+    word    %%00000000
+    word    %%00011000
+    word    %%00111100
+    word    %%01111110
+    word    %%01111110
+    word    %%00111100
+    word    %%00011000
+    word    %%00000000
+
+Here's what it looks like. The first thing you notice is that the ball
+completely obstructs the square.
+
+![](attachments/35750102/35750100.png)
+
+Here is the same example again, but with the ball image modified to use
+transparency.
+
+** BallWithTransparency.spin **
+    
+    
+    CON
+        _clkmode = xtal1|pll16x
+        _xinfreq = 5_000_000
+    
+    OBJ
+        lcd : "LameLCD"
+        gfx : "LameGFX"
+        
+    PUB Main
+        lcd.Start(gfx.Start)
+        gfx.Sprite(@box, 40, 20, 0)
+        gfx.Sprite(@ball, 42, 22, 0)
+        lcd.DrawScreen
+    
+    DAT
+    
+    box
+    word    0
+    word    8, 8
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    word    %%33333333
+    
+    ball
+    word    0
+    word    8, 8
+    word    %%22222222
+    word    %%22211222
+    word    %%22111122
+    word    %%21111112
+    word    %%21111112
+    word    %%22111122
+    word    %%22211222
+    word    %%22222222
+
+Now it actually looks like a ball in front of a square instead of a random
+square thing in front of a square.
+
+![](attachments/35750102/35750101.png)
+
+And voila, that's transparency!
+
+Think It Over
+
+_ Question 1: How does LameGFX actually _ draw _ transparent pixels? How does
+this work? _
+
+![](images/icons/grey_arrow_down.png) Click here to show the answer...
+
+When LameGFX encounters a transparent picture, it simply ignores it. There's
+no drawing involved.
+

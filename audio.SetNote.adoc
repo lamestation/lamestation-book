@@ -1,0 +1,27 @@
+#### audio.SetNote
+
+Set the note of the given audio channel.
+
+#####  Syntax
+
+    
+    
+    SetNote(channel, value)
+
+  * ** channel ** \- the audio channel to change (0-3). 
+  * ** value ** \- the note to play (0-127). 
+
+This command returns no values.
+
+#####  Description
+
+This command allows the user to manually change the note on an audio channel.
+
+#####  Example
+
+    
+    
+    some code...
+
+See also: .
+

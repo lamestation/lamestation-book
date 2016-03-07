@@ -1,0 +1,15 @@
+### LameLCD
+
+![](attachments/13762612/23396357.jpg)
+
+LameLCD provides a ** 3-color buffered display driver ** for monochrome KS0108
+LCDs. Which is awesome!
+
+####  Commands
+
+  * [ lcd.Start ](lcd.Start_15400977.adoc) —  Initialize the LameLCD library. 
+  * [ lcd.DrawScreen ](lcd.DrawScreen_15400984.adoc) —  Show the contents of the drawing buffer on the screen. 
+  * [ lcd.InvertScreen ](lcd.InvertScreen_16548052.adoc) —  Invert black and white pixels on the entire screen. 
+  * [ lcd.SetFrameLimit ](lcd.SetFrameLimit_14811144.adoc) —  Set an upper limit to the number of times the screen will be redrawn a second. 
+  * [ lcd.WaitForVerticalSync ](lcd.WaitForVerticalSync_15400983.adoc) —  Wait until the start of the next LCD frame before continuing. 
+

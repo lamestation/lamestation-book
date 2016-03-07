@@ -1,0 +1,38 @@
+#### audio.SetWaveform
+
+Set the waveform of the given audio channel.
+
+#####  Syntax
+
+    
+    
+    SetWaveform(channel, value)
+
+  * ** channel ** \- audio channel on which to change the waveform (0-3) 
+  * ** value ** \- choice between possible waveforms: 
+    * _SQUARE - a square waveform 
+    * _SAW - a sawtooth waveform 
+    * _TRIANGLE - a  triangular waveform 
+    * _SINE - a sine waveform 
+    * _NOISE - white noise 
+    * _SAMPLE - a 512-byte sampled waveform 
+
+This command returns no values.
+
+#####  Description
+
+LameAudio supports six different waveforms. This command allows you to choose
+between them.
+
+#####  Example
+
+    
+    
+    PUB Main
+        audio.Start
+    
+        audio.SetWaveform(1, _SAW)
+        audio.PlaySound(1,note)
+
+See also: link.
+

@@ -1,0 +1,17 @@
+### LameControl
+
+[ LameControl ](LameControl_15401019.adoc) is a thin wrapper library for using
+the LameStation's joystick and buttons, to give game designers more control
+over how the inputs behave.
+
+####  Commands
+
+  * [ ctrl.Start ](ctrl.Start_15401027.adoc) —  Initialize the LameControl library. 
+  * [ ctrl.Update ](ctrl.Update_15401025.adoc) —  Update the state of all LameStation controls. 
+  * [ ctrl.A ](ctrl.A_15401021.adoc) —  Return the current state of the 'A' button. 
+  * [ ctrl.B ](ctrl.B_15401023.adoc) —  Return the current state of the 'B' button. 
+  * [ ctrl.Up ](ctrl.Up_15401033.adoc) —  Return whether the joystick is tilted upwards. 
+  * [ ctrl.Right ](ctrl.Right_15401038.adoc) —  Return whether the joystick is tilted to the right. 
+  * [ ctrl.Down ](ctrl.Down_15401035.adoc) —  Return whether the joystick is tilted downwards. 
+  * [ ctrl.Left ](ctrl.Left_15401041.adoc) —  Return whether the joystick is tilted to the left. 
+

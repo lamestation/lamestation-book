@@ -1,0 +1,21 @@
+### LameSerial
+
+LameSerial is a modified version of the original Parallax Serial Terminal with
+some functionality removed. It allows you to write applications that
+communicate with a serial device.
+
+####  Commands
+
+  * [ serial.Start ](serial.Start_34177032.adoc) —  Start serial communication with the default pins, mode and baud rate. 
+  * [ serial.StartRxTx ](serial.StartRxTx_34177034.adoc) —  Start serial communication with the designated pins, mode and baud rate. 
+  * [ serial.Char ](serial.Char_34177041.adoc) —  Send a single-byte character. 
+  * [ serial.Dec ](serial.Dec_34177047.adoc) —  Send a value as a decimal number string. 
+  * [ serial.Bin ](serial.Bin_34177049.adoc) —  Send a value as a binary number string. 
+  * [ serial.Hex ](serial.Hex_34177051.adoc) —  Send a value as a hexadecimal number string. 
+  * [ serial.Str ](serial.Str_34177045.adoc) —  Send a zero-terminated string. 
+  * [ serial.Clear ](serial.Clear_34177055.adoc) —  Clear screen and place cursor at the top-left of the console. 
+  * [ serial.CharIn ](serial.CharIn_34177043.adoc) —  Receive single-byte character. 
+  * [ serial.RxCount ](serial.RxCount_34177058.adoc) —  Get count of characters in receive buffer. 
+  * [ serial.RxFlush ](serial.RxFlush_34177061.adoc) —  Empty the receive buffer. 
+  * [ serial.Stop ](serial.Stop_34177037.adoc) —  Stop serial communication and free the cog. 
+

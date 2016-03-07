@@ -1,0 +1,35 @@
+#### serial.Dec
+
+Send a value as a decimal number string.
+
+#####  Syntax
+
+    
+    
+    serial.Dec(value)
+
+  * ** value ** \- byte, word, or long value to send as a string of decimal digits. 
+
+Returns no values.
+
+#####  Description
+
+Use this command to send formatted decimal numbers to an external serial
+device.
+
+#####  Example
+
+    
+    
+    PUB Main
+        serial.Start
+     
+        serial.Dec(25)
+        serial.Dec(3543)
+        serial.Dec(189242)
+     
+        serial.Stop
+
+See also: [ serial.Bin ](serial.Bin_34177049.adoc) , [ serial.Hex
+](serial.Hex_34177051.adoc) .
+
