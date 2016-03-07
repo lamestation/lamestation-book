@@ -1,7 +1,6 @@
 = Basics
 
-The examples in this section can be found in the ` "demos/basics/" ` folder of
-the LameStation SDK.
+The examples in this section can be found in the `demos/basics/` folder of the LameStation SDK.
 
   * Hello Nothing 
   * Lights On 
@@ -11,36 +10,26 @@ the LameStation SDK.
 
 ==  Hello Nothing
 
-Attempting to download an empty file to the LameStation will generate an error
-from PropellerIDE.
+Attempting to download an empty file to the LameStation will generate an error from PropellerIDE.
 
-** An empty file **
-    
-    
-     
+.An empty file.
+----
+
+
+
+----
 
 so here we see the bare minimum that constitutes a Spin program.
 
-** HelloNothing.spin **
-    
-    
-    PUB Main
-    
-    
+.HelloNothing.spin
+----
+PUB Main
+----
 
 Well, that was easy!
 
-This is called a ** ` [ PUB
-](https://lamestation.atlassian.net/wiki/display/SPIN/PUB) ` ** block, which
-is short for _ public function _ . Functions are areas where you write code
-that can _ do stuff _ . If your code is a sentence, a function is the verb,
-the action. You can put as many ` PUB ` blocks as you want into a file, but
-when you run your code, the Propeller will start by running the first public
-function that appears in the file. From that function, you can call other
-functions.
+This is called a `PUB` block, which is short for _public function_ . Functions are areas where you write code that can _do stuff_. If your code is a sentence, a function is the verb, the action. You can put as many `PUB` blocks as you want into a file, but when you run your code, the Propeller will start by running the first public function that appears in the file. From that function, you can call other functions.
 
-    
-    
     PUB Main
         Third
      
@@ -49,328 +38,251 @@ functions.
     PUB Third
         Another
 
-All Spin programs _ must _ include a ** ` [ PUB
-](https://lamestation.atlassian.net/wiki/display/SPIN/PUB) ` ** block.
+All Spin programs _must_ include a `PUB` block.
 
 Spin is ** not ** case-sensitive.
-
-    
     
     PUB Main
 
 is the same as
-
-    
     
     pub main
 
 Remember that!
 
-####  Lights On
+==  Lights On
 
-If we look at the LameStation's board layout, we'll find that there's a single
-LED we can toggle. This was designed into the board as an easy way for the
-LameStation to do _ something _ . As you might have gathered putting it
-together, getting a board to do _ something _ can be half the battle.
+If we look at the LameStation's board layout, we'll find that there's a single LED we can toggle. This was designed into the board as an easy way for the LameStation to do _ something _ . As you might have gathered putting it together, getting a board to do _ something _ can be half the battle.
 
-All we have to do to turn on this light is toggle the microcontroller pin it
-is connected to. In [ this board version ](Hardware-Reference_17924506.adoc) ,
-it's connected to pin 24. To turn on a pin, two steps are required:
+All we have to do to turn on this light is toggle the microcontroller pin it is connected to. On this board, it's connected to pin 24. To turn on a pin, two steps are required:
 
-  1. Use the ` [ DIRA ](https://lamestation.atlassian.net/wiki/display/SPIN/DIRA%2C+DIRB) ` command to enable the pin as an output. 
-  2. Use the ` [ OUTA ](https://lamestation.atlassian.net/wiki/display/SPIN/OUTA%2C+OUTB) ` command to set the pin to 0V (why this works was explained in [ Step 5: Software-Controlled LED ](15958346.adoc) ). 
+  1. Use the `DIRA` command to enable the pin as an output. 
+  2. Use the `OUTA` command to set the pin to 0V. 
 
 So here's how you do it:
-
-    
     
      PUB Main
         dira[24]~~
         outa[24]~
 
-The ` '~' ` and ` '~~' ` characters set the pin to high and low, respectively.
+The `~` and `~~` characters set the pin to high and low, respectively.
 
-One thing you'll notice: if you run it as is, you'll never see the light come
-on. This is because as soon as your commands are finished, the Propeller has
-no more code to run so it decides to shut down. If you want your Propeller to
-stay awake, you have to keep it busy (where have I heard that before?).
+One thing you'll notice: if you run it as is, you'll never see the light come on. This is because as soon as your commands are finished, the Propeller has no more code to run so it decides to shut down. If you want your Propeller to stay awake, you have to keep it busy.
 
-Use the ` [ REPEAT
-](https://lamestation.atlassian.net/wiki/display/SPIN/REPEAT) ` command to
-keep the LameStation in an infinite loop.
+Use the `REPEAT` command to keep the LameStation in an infinite loop.
 
-** LightsOn.spin **
-    
-    
-    PUB Main
-        dira[24]~~
-        outa[24]~
-     
-        repeat
+.LightsOn.spin
+----
+PUB Main
+    dira[24]~~
+    outa[24]~
+
+    repeat
+----
 
 Now both LEDs on the LameStation should be active.
 
-####  Lights Blinking
+== Lights Blinking
 
 Let's get a little fancier. You'll stop paying attention to a solid green
 light pretty quickly, but make it blink and you'll be entertained all day
 (trust me, I am!).
 
-#####  Repeating blocks of code with ` REPEAT `
+=== Repeating blocks of code with `REPEAT`
 
-The ` REPEAT ` command does a lot more than waste time. It allows you to do
-all kinds of stuff.
+The ` REPEAT ` command does a lot more than waste time. It allows you to do all kinds of stuff.
 
-First of all, you can put statements "inside" of it by indenting them. This
-will make Spin repeat them forever. A first guess at how to make the light
-turn on and off then would be this.
+First of all, you can put statements "inside" of it by indenting them. This will make Spin repeat them forever. A first guess at how to make the light turn on and off then would be this.
 
-    
-    
-    PUB Main
-        dira[24]~~
-    
-        repeat
-            outa[24]~
-            outa[24]~~
+----
+PUB Main
+    dira[24]~~
 
-If you try to run it though, you'll be disappointed to find that it looks like
-a solid green light, although slightly dimmer than before. Well, the LED _ is
-_ blinking, but it's blinking way faster than you and I can actually see
-(that's eye-sight for you), so it just looks like it's not quite on.
+    repeat
+        outa[24]~
+        outa[24]~~
+----
 
-If you really want to see the light ** blink ** , you have to slow the process
-_ way _ down. Repeat is helpful here again. Instead of repeating forever, you
-can tell it to repeat a specific number of times and then continue. Say, if
-you wanted it to repeat 1000 times, you could write:
+If you try to run it though, you'll be disappointed to find that it looks like a solid green light, although slightly dimmer than before. Well, the LED _is_ blinking, but it's blinking way faster than you and I can actually see (that's eye-sight for you), so it just looks like it's not quite on.
 
-    
-    
+If you really want to see the light ** blink ** , you have to slow the process _way_ down. Repeat is helpful here again. Instead of repeating forever, you can tell it to repeat a specific number of times and then continue. Say, if you wanted it to repeat 1000 times, you could write:    
     repeat 1000
 
-How long that command actually takes to complete depends on how fast the
-Propeller is actually running, so you'd have to try some different numbers
-before you arrived at a good one. Let's look at the finished example.
+How long that command actually takes to complete depends on how fast the Propeller is actually running, so you'd have to try some different numbers before you arrived at a good one. Let's look at the finished example.
 
-** LightsBlinking.spin **
-    
-    
-    PUB Main
-        dira[24]~~
-        
-        repeat
-            outa[24]~
-            repeat 10000
-    
-            outa[24]~~
-            repeat 10000
+.LightsBlinking.spin
+----
+PUB Main
+    dira[24]~~
+
+    repeat
+        outa[24]~
+        repeat 10000
+
+        outa[24]~~
+        repeat 10000
+----
 
 REPEAT is your go-to command for looping in Spin.
 
-  * Can be used as a ` "for" ` loop in other languages, but also as a ` "while" ` loop. 
-  * Can contain statements in a ` "conditional" ` . 
+- Can be used as a `for` loop in other languages, but also as a 
+  `while` loop. 
+- Can contain statements in a ` "conditional" ` . 
 
 Spin is indent-sensitive. The code:
 
-    
-    
-            outa[24]~
-            repeat 10000
-    
-            outa[24]~~
-            repeat 10000
+----
+outa[24]~
+repeat 10000
+
+outa[24]~~
+repeat 10000
+----
 
 is ** NOT ** the same as:
 
-    
-    
-            outa[24]~
-        repeat 10000
-    
-            outa[24]~~
-        repeat 10000
+----
+    outa[24]~
+repeat 10000
+
+    outa[24]~~
+repeat 10000
+----
 
 Remember that!
 
-####  I'm Alive!
+==  I'm Alive!
 
-Having to write out specific values every time you need them is starting to
-become a problem. In the previous example, you had to write ` "24" ` three
-times and ` "10000" ` twice. Unless those values stay the same forever (which
-they might not, especially for the "10000", a value you may want to adjust),
-you'll have to update them everywhere they are used. Not only that, but you'll
-always have to remember what they mean, which is next to impossible if your
-code is more than a few lines long.
+Having to write out specific values every time you need them is starting to become a problem. In the previous example, you had to write `24` three times and `10000` twice. Unless those values stay the same forever (which they might not, especially for the "10000", a value you may want to adjust), you'll have to update them everywhere they are used. Not only that, but you'll always have to remember what they mean, which is next to impossible if your code is more than a few lines long.
 
 Luckily, there's a way around this problem.
 
-#####  Introducing ** CON ** blocks
+===  Introducing `CON` blocks
 
-** PUB ** isn't the only kind of block available. ** [ CON ](https://lamestation.atlassian.net/wiki/display/SPIN/CON) ** blocks allow you to set _ constant _ values, that don't change, allowing you to call them by name. 
+`PUB` isn't the only kind of block available. `CON` blocks allow you to set _constant_ values, that don't change, allowing you to call them by name. 
 
-Setting a constant is easy. Constant names can contain letters, numbers, and
-underscores ( ` "_" ` ), but must start with a letter or underscore.
+Setting a constant is easy. Constant names can contain letters, numbers, and underscores (`_`), but must start with a letter or underscore.
 
-Let's set constants for the LED pin and the count of times ` repeat ` will run
-before continuing. You can set as many as you want, but they must be inside a
-** CON ** block.
+Let's set constants for the LED pin and the count of times `repeat` will run before continuing. You can set as many as you want, but they must be inside a `CON` block.
 
-    
-    
     CON
         LED_PIN = 24
         COUNT   = 1000
 
-There can also be as many ** CON ** blocks as you like too.
-
-    
+There can also be as many `CON` blocks as you like too.
     
     CON
         LED_PIN = 24
     CON
         COUNT   = 1000
 
-It works exactly the same, but now if we need to change the values, we only
-need to change them in one place.
+It works exactly the same, but now if we need to change the values, we only need to change them in one place.
 
-    
-    
-    CON
-        LED_PIN = 24
-        COUNT   = 1000
-    
-    PUB Main
-        dira[LED_PIN]~~
-    
-        repeat
-            outa[LED_PIN]~
-            repeat COUNT
-    
-            outa[LED_PIN]~~
-            repeat COUNT
+----
+CON
+    LED_PIN = 24
+    COUNT   = 1000
 
-Style is important
+PUB Main
+    dira[LED_PIN]~~
 
-You may have noticed that all the constants are in capital letters when Spin
-is case insensitive.
+    repeat
+        outa[LED_PIN]~
+        repeat COUNT
+
+        outa[LED_PIN]~~
+        repeat COUNT
+----
+
+[TIP]
+.Style is important
+====
+You may have noticed that all the constants are in capital letters when Spin is case-insensitive.
 
 Why? It makes it easier to remember that it's a constant value.
+====
 
-#####  Introducing ** OBJ ** blocks
+=== Introducing `OBJ` blocks
 
-Sometimes it's helpful to put code into a separate file. That way, if you have
-a nice piece of code that does something useful, you don't have to keep
-rewriting it for every project you work on. Instead, you can use it from where
-it is. Spin allows us to do this using the ` ** [ OBJ
-](https://lamestation.atlassian.net/wiki/display/SPIN/OBJ) ** ` block. ` OBJ `
-is short for _ object _ , because code files are called "objects" in Spin
-lingo.
+Sometimes it's helpful to put code into a separate file. That way, if you have a nice piece of code that does something useful, you don't have to keep rewriting it for every project you work on. Instead, you can use it from where it is. Spin allows us to do this using the `OBJ` block. `OBJ` is short for _object_, because code files are called "objects" in Spin lingo.
 
-To include an object in your code, you will need to provide the name of the
-file in quotes, and a short name under which you'd like to use the object. In
-our case, we'd like to add the file ` LamePinout.spin ` which contains pin
-assignments for the LameStation board. You can include the ` ".spin" `
-extension or not, but the include file _ must _ be a Spin file.
+To include an object in your code, you will need to provide the name of the file in quotes, and a short name under which you'd like to use the object. In our case, we'd like to add the file `LamePinout.spin` which contains pin assignments for the LameStation board. You can include the `.spin` extension or not, but the include file _must_ be a Spin file.
 
-    
-    
     OBJ
         pin : "LamePinout"
 
-Now that you have the object included, you will be able to use the functions
-and constants inside of it.
+Now that you have the object included, you will be able to use the functions and constants inside of it.
 
-To call a function in another object, prefix the short name of the included
-object, separating it with a period ( ` "." ` ) .
+To call a function in another object, prefix the short name of the included object, separating it with a period (`.`).
 
-    
-    
     PUB Main
         pin.Null
 
-To get the value of a constant in another object, add the short name and the
-hash symbol ( ` "#" ` ). Here's us grabbing the pin assignment for the LED
-from ` LamePinout.spin ` .
-
-    
+To get the value of a constant in another object, add the short name and the hash symbol (`#`). Here's us grabbing the pin assignment for the LED from `LamePinout.spin`.
     
     CON
         VALUE = pin#LED
 
-So now let's set ` LED_PIN ` to ` pin#LED ` instead of having to remember what
-the pin is ourselves.
+So now let's set `LED_PIN` to `pin#LED` instead of having to remember what the pin is ourselves.
 
-** ImAlive.spin **
-    
-    
-    OBJ
-        pin : "LamePinout"
-    
-    CON
-        LED_PIN = pin#LED
-        COUNT = 1000
-    
-    PUB Main
-        dira[LED_PIN]~~
-    
-        repeat
-            outa[LED_PIN]~
-            repeat COUNT
-    
-            outa[LED_PIN]~~
-            repeat COUNT
+.ImAlive.spin
+----
+OBJ
+    pin : "LamePinout"
+
+CON
+    LED_PIN = pin#LED
+    COUNT = 1000
+
+PUB Main
+    dira[LED_PIN]~~
+
+    repeat
+        outa[LED_PIN]~
+        repeat COUNT
+
+        outa[LED_PIN]~~
+        repeat COUNT
+----
 
 Woohoo!
 
-Fun Fact
+[TIP]
+.Fun Fact
+This happens to be the example that comes pre-loaded on every LameStation unit!
 
-This happens to be the example that comes pre-loaded on every LameStation
-unit!
+==  Take Control!
 
-####  Take Control!
+Now that we've learned how to include objects, let's look a little further into what's inside the LameStation SDK. In this example, we see how to control the LED using the buttons and joystick on the LameStation.
 
-Now that we've learned how to include objects, let's look a little further
-into what's inside the LameStation SDK. In this example, we see how to control
-the LED using the buttons and joystick on the LameStation.
-
-Introducing [ LameControl ](LameControl_15401019.adoc) ! LameControl is a
-small library for getting user input for your application. Setting it up is
-straight forward; just include it in your application.
-
-** TakeControl.spin **
-    
+Introducing link:LameControl.adoc[LameControl]! LameControl is a
+small library for getting user input for your application. Setting it up is straight forward; just include it in your application.
     
     OBJ
         ctrl    : "LameControl"
     
+link:ctrl.Update.adoc[ctrl.Update] saves the current state of all the
+controls, so you can use them. Without using this command, LameControl
+does nothing, so make sure you call it. At the beginning of your loop is a good place for it.
 
-[ ctrl.Update ](ctrl.Update_15401025.adoc) saves the current state of all the
-controls, so you can use them. Without using this command, ` LameControl `
-does nothing, so make sure you call it. At the beginning of your loop is a
-good place to put it.
-
-    
-    
         repeat
             ctrl.Update
 
-Now you can get the values for any of the keys, that is: [ ctrl.A
-](ctrl.A_15401021.adoc) , [ ctrl.B ](ctrl.B_15401023.adoc) , [ ctrl.Left
-](ctrl.Left_15401041.adoc) , [ ctrl.Up ](ctrl.Up_15401033.adoc) , [ ctrl.Right
-](ctrl.Right_15401038.adoc) , and [ ctrl.Down ](ctrl.Down_15401035.adoc) .
-However, before you'll be able to see anything interesting happen, you need a
-way to test _ if _ a button has been pressed.
+Now you can get the values for any of the keys, that is: 
 
-That's right, the keyword ` ** [ IF
-](https://lamestation.atlassian.net/wiki/display/SPIN/IF) ** ` . ` IF ` does
-exactly what it sounds like; it allows you to test _ if _ something is true,
-and only run code if it has. Then, you can use the ** ` [ ELSE
-](https://lamestation.atlassian.net/wiki/display/SPIN/IF) ` ** command to run
-code if it is false. So here's how to test if any button has been pressed. The
-light turns off if it has, or stays on if it hasn't.
+- link:ctrl.A.adoc[ctrl.A]
+- link:ctrl.B.adoc[ctrl.B]
+- link:ctrl.Up.adoc[ctrl.Up]
+- link:ctrl.Right.adoc[ctrl.Right]
+- link:ctrl.Down.adoc[ctrl.Down]
+- link:ctrl.Left.adoc[ctrl.Left]
 
-    
-    
+However, before you'll be able to see anything interesting happen, you need a way to test _if_ a button has been pressed.
+
+You may have guessed that the keyword `IF` does just that. It allows you to only run code if a condition is true. Then, you can use the `ELSE` to run code if it is false.
+
+So here's how to test if any button has been pressed. The light turns off if it has, or stays on if it hasn't.
+
             if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
                 outa[LED_PIN]~~
             else
@@ -378,24 +290,23 @@ light turns off if it has, or stays on if it hasn't.
 
 So let's put it all together and put it to the test.
 
-** TakeControl.spin **
-    
-    
-    OBJ
-        ctrl : "LameControl"
-        pin  : "LamePinout"
-    
-    CON
-        LED_PIN = pin#LED
-    
-    PUB Main
-        dira[LED_PIN]~~
-    
-        repeat
-            ctrl.Update
-    
-            if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
-                outa[LED_PIN]~~
-            else
-                outa[LED_PIN]~
+.TakeControl.spin
+----
+OBJ
+    ctrl : "LameControl"
+    pin  : "LamePinout"
 
+CON
+    LED_PIN = pin#LED
+
+PUB Main
+    dira[LED_PIN]~~
+
+    repeat
+        ctrl.Update
+
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
+----
