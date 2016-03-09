@@ -2,7 +2,7 @@
 
 So far you've been introduced to black and white, but there are two other colors you can work with that are very important.
 
-== The Color Gray
+== Gray
 
 LameStation supports two more color choices other than plain black and white:
 the first of these is gray.
