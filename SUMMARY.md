@@ -32,7 +32,6 @@
    * [Adding A Ball](Adding-A-Ball.adoc)
 * [Hardware Reference](Hardware-Reference.adoc)
    * [PCB](PCB.adoc)
-       * [Design Files](Design-Files.adoc)
    * [Pinout](Pinout.adoc)
 * [Library Reference](Library-Reference.adoc)
    * [LameLCD](LameLCD.adoc)
