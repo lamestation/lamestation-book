@@ -34,7 +34,6 @@
    * [PCB](PCB.adoc)
        * [Design Files](Design-Files.adoc)
    * [Pinout](Pinout.adoc)
-   * [Schematic](Schematic.adoc)
 * [Library Reference](Library-Reference.adoc)
    * [LameLCD](LameLCD.adoc)
        * [lcd.Start](lcd.Start.adoc)
