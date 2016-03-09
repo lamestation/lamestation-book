@@ -30,7 +30,7 @@
    * [Adding A Paddle](Adding-A-Paddle.adoc)
    * [Making Things Move](Making-Things-Move.adoc)
    * [Adding A Ball](Adding-A-Ball.adoc)
-* [Hardware Reference](Hardware-Reference.adoc)
+* [Hardware Reference](hardware.adoc)
 * [Library Reference](Library-Reference.adoc)
    * [LameLCD](LameLCD.adoc)
        * [lcd.Start](lcd.Start.adoc)
