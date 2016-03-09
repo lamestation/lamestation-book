@@ -7,15 +7,3 @@ p {
 pre, code {
   font-size: 12px;
 }
-
-@page { margin: 2cm }
-
-@page :left {
-  margin-left: 4cm;
-  margin-right: 3cm;
-}
-
-@page :right {
-  margin-left: 3cm;
-  margin-right: 4cm;
-}
