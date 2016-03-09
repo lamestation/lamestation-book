@@ -76,7 +76,11 @@ Use the `REPEAT` command to keep the LameStation in an infinite loop.
 
 .LightsOn.spin
 ----
-{% include "./LightsOn.spin" %}
+PUB Main
+    dira[24]~~
+    outa[24]~
+    
+    repeat
 ----
 
 Now both LEDs on the LameStation should be active.
@@ -111,7 +115,15 @@ How long that command actually takes to complete depends on how fast the Propell
 
 .LightsBlinking.spin
 ----
-{% include "./LightsBlinking.spin" %}
+PUB Main
+    dira[24]~~
+    
+    repeat
+        outa[24]~
+        repeat 10000
+
+        outa[24]~~
+        repeat 10000
 ----
 
 REPEAT is your go-to command for looping in Spin.
@@ -218,7 +230,22 @@ So now let's set `LED_PIN` to `pin#LED` instead of having to remember what the p
 
 .ImAlive.spin
 ----
-{% include "./ImAlive.spin" %}
+OBJ
+    pin : "LamePinout"
+
+CON
+    LED_PIN = pin#LED
+    COUNT   = 10000
+
+PUB Main
+    dira[LED_PIN]~~
+    repeat
+        outa[LED_PIN]~
+        repeat COUNT
+
+        outa[LED_PIN]~~
+
+        repeat COUNT
 ----
 
 Woohoo!
@@ -233,16 +260,20 @@ Now that we've learned how to include objects, let's look a little further into 
 
 Introducing link:LameControl.adoc[LameControl]! LameControl is a
 small library for getting user input for your application. Setting it up is straight forward; just include it in your application.
-    
-    OBJ
-        ctrl    : "LameControl"
-    
+
+----
+OBJ
+    ctrl    : "LameControl"
+----
+
 link:ctrl.Update.adoc[ctrl.Update] saves the current state of all the
 controls, so you can use them. Without using this command, LameControl
 does nothing, so make sure you call it. At the beginning of your loop is a good place for it.
 
-        repeat
-            ctrl.Update
+----
+    repeat
+        ctrl.Update
+----
 
 Now you can get the values for any of the keys, that is: 
 
@@ -259,14 +290,33 @@ You may have guessed that the keyword `IF` does just that. It allows you to only
 
 So here's how to test if any button has been pressed. The light turns off if it has, or stays on if it hasn't.
 
-            if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
-                outa[LED_PIN]~~
-            else
-                outa[LED_PIN]~
+----
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
+----
 
 So let's put it all together and put it to the test.
 
 .TakeControl.spin
 ----
-{% include "./TakeControl.spin" %}
+OBJ
+    ctrl : "LameControl"
+    pin  : "LamePinout"
+
+CON
+    LED_PIN = pin#LED
+
+PUB Main
+
+    dira[LED_PIN]~~
+
+    repeat
+        ctrl.Update
+
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
 ----
