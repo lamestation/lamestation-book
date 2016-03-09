@@ -4,8 +4,6 @@ Show the contents of the drawing buffer on the screen.
 
 #####  Syntax
 
-    
-    
     DrawScreen
 
 This command takes no parameters and returns no values.
