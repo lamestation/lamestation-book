@@ -23,7 +23,7 @@ so here we see the bare minimum that constitutes a Spin program.
 
 .HelloNothing.spin
 ----
-PUB Main
+{% include "./HelloNothing.spin" %}
 ----
 
 Well, that was easy!
@@ -73,11 +73,7 @@ Use the `REPEAT` command to keep the LameStation in an infinite loop.
 
 .LightsOn.spin
 ----
-PUB Main
-    dira[24]~~
-    outa[24]~
-
-    repeat
+{% include "./LightsOn.spin" %}
 ----
 
 Now both LEDs on the LameStation should be active.
