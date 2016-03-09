@@ -1,2 +1,10 @@
 = Hardware
 
+== Schematic
+
+== Pinout
+
+== PCB
+
+== Parts List
+
