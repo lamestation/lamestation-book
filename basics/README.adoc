@@ -30,13 +30,15 @@ Well, that was easy!
 
 This is called a `PUB` block, which is short for _public function_ . Functions are areas where you write code that can _do stuff_. If your code is a sentence, a function is the verb, the action. You can put as many `PUB` blocks as you want into a file, but when you run your code, the Propeller will start by running the first public function that appears in the file. From that function, you can call other functions.
 
-    PUB Main
-        Third
-     
-    PUB Another
-     
-    PUB Third
-        Another
+----
+PUB Main
+    Third
+
+PUB Another
+
+PUB Third
+    Another
+----
 
 All Spin programs _must_ include a `PUB` block.
 
@@ -60,7 +62,7 @@ All we have to do to turn on this light is toggle the microcontroller pin it is 
   2. Use the `OUTA` command to set the pin to 0V. 
 
 So here's how you do it:
-    
+
      PUB Main
         dira[24]~~
         outa[24]~
@@ -108,15 +110,7 @@ How long that command actually takes to complete depends on how fast the Propell
 
 .LightsBlinking.spin
 ----
-PUB Main
-    dira[24]~~
-
-    repeat
-        outa[24]~
-        repeat 10000
-
-        outa[24]~~
-        repeat 10000
+{% include "./LightsBlinking.spin" %}
 ----
 
 REPEAT is your go-to command for looping in Spin.
@@ -223,22 +217,7 @@ So now let's set `LED_PIN` to `pin#LED` instead of having to remember what the p
 
 .ImAlive.spin
 ----
-OBJ
-    pin : "LamePinout"
-
-CON
-    LED_PIN = pin#LED
-    COUNT = 1000
-
-PUB Main
-    dira[LED_PIN]~~
-
-    repeat
-        outa[LED_PIN]~
-        repeat COUNT
-
-        outa[LED_PIN]~~
-        repeat COUNT
+{% include "./ImAlive.spin" %}
 ----
 
 Woohoo!
@@ -288,21 +267,5 @@ So let's put it all together and put it to the test.
 
 .TakeControl.spin
 ----
-OBJ
-    ctrl : "LameControl"
-    pin  : "LamePinout"
-
-CON
-    LED_PIN = pin#LED
-
-PUB Main
-    dira[LED_PIN]~~
-
-    repeat
-        ctrl.Update
-
-        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
-            outa[LED_PIN]~~
-        else
-            outa[LED_PIN]~
+{% include "./TakeControl.spin" %}
 ----
