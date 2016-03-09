@@ -23,7 +23,8 @@ so here we see the bare minimum that constitutes a Spin program.
 
 .HelloNothing.spin
 ----
-{% include "./HelloNothing.spin" %}
+PUB Main
+
 ----
 
 Well, that was easy!
