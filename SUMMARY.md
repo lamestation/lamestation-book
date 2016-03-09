@@ -31,7 +31,6 @@
    * [Making Things Move](Making-Things-Move.adoc)
    * [Adding A Ball](Adding-A-Ball.adoc)
 * [Hardware Reference](Hardware-Reference.adoc)
-   * [Pinout](Pinout.adoc)
 * [Library Reference](Library-Reference.adoc)
    * [LameLCD](LameLCD.adoc)
        * [lcd.Start](lcd.Start.adoc)
