@@ -1,172 +1,165 @@
-#### Boxes
+= Boxes
 
 We know how to increase the width and height of an image. If we do both at the
 same time, we can draw all kinds of things.
 
 Here's a plain old box.
 
-** Box.spin **
-    
-    
-    OBJ
-        lcd : "LameLCD"
-        gfx : "LameGFX"
-    PUB Main
-        lcd.Start(gfx.Start)
-        
-        gfx.Sprite(@data, 0, 0, 0)
-        lcd.DrawScreen
-    DAT
-     
-    data
-    word    0
-    word    8, 8
-    word    %%11111111
-    word    %%11111111
-    word    %%11111111
-    word    %%11111111
-    word    %%11111111
-    word    %%11111111
-    word    %%11111111
-    word    %%11111111
-    
+.Box.spin
+----
+OBJ
+    lcd : "LameLCD"
+    gfx : "LameGFX"
+PUB Main
+    lcd.Start(gfx.Start)
 
-![](attachments/35750086/35750081.png)
+    gfx.Sprite(@data, 0, 0, 0)
+    lcd.DrawScreen
+DAT
+
+data
+word    0
+word    8, 8
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+----
+
+image:Box.png[]
 
 Or here's a ring!
 
-** Ring.spin **
-    
-    
-    OBJ
-        lcd : "LameLCD"
-        gfx : "LameGFX"
-    PUB Main
-        lcd.Start(gfx.Start)
-        
-        gfx.Sprite(@data, 0, 0, 0)
-        lcd.DrawScreen
-    DAT
-    data
-    word    0
-    word    8, 8
-    word    %%00011000
-    word    %%01111110
-    word    %%01100110
-    word    %%11000011
-    word    %%11000011
-    word    %%01100110
-    word    %%01111110
-    word    %%00011000
+.Ring.spin
+----
+OBJ
+    lcd : "LameLCD"
+    gfx : "LameGFX"
+PUB Main
+    lcd.Start(gfx.Start)
 
-![](attachments/35750086/35750082.png)
+    gfx.Sprite(@data, 0, 0, 0)
+    lcd.DrawScreen
+DAT
+data
+word    0
+word    8, 8
+word    %%00011000
+word    %%01111110
+word    %%01100110
+word    %%11000011
+word    %%11000011
+word    %%01100110
+word    %%01111110
+word    %%00011000
+----
+
+image:Ring.png[]
 
 Or a square!
 
-** Square.spin **
-    
-    
-    OBJ
-        lcd : "LameLCD"
-        gfx : "LameGFX"
-    
-    PUB Main
-        lcd.Start(gfx.Start)
-        
-        gfx.Sprite(@data, 0, 0, 0)
-        lcd.DrawScreen
-    
-    DAT
-    
-    data
-    word    0
-    word    8, 8
-    word    %%11111111
-    word    %%11111111
-    word    %%11000011
-    word    %%11000011
-    word    %%11000011
-    word    %%11000011
-    word    %%11111111
-    word    %%11111111
+.Square.spin
+----
+OBJ
+    lcd : "LameLCD"
+    gfx : "LameGFX"
 
-![](attachments/35750086/35750083.png)
+PUB Main
+    lcd.Start(gfx.Start)
 
-Think It Over
+    gfx.Sprite(@data, 0, 0, 0)
+    lcd.DrawScreen
 
-_ Question 1: If you look at the following image data, what direction will the
-arrow point? Left or right? _
+DAT
 
-    
-    
-    word    %%11000000
-    word    %%11110000
-    word    %%11111100
-    word    %%11111111
-    word    %%11111111
-    word    %%11111100
-    word    %%11110000
-    word    %%11000000
+data
+word    0
+word    8, 8
+word    %%11111111
+word    %%11111111
+word    %%11000011
+word    %%11000011
+word    %%11000011
+word    %%11000011
+word    %%11111111
+word    %%11111111
+----
 
-![](images/icons/grey_arrow_down.png) Click here to show the answer...
+image:Ring.png[]
 
-** ![](attachments/35750086/35750084.png) **
+.Think It Over
+****
+_Question 1: If you look at the following image data, what direction will the arrow point? Left or right?_
 
-** To the left! Why?? **
+----    
+word    %%11000000
+word    %%11110000
+word    %%11111100
+word    %%11111111
+word    %%11111111
+word    %%11111100
+word    %%11110000
+word    %%11000000
+----
 
-It's important to remember that horizontally, in every word, ** the pixel data
-is reversed ** . So to create a right-facing arrow, your arrow data will need
+image:LeftArrow.png[]
+
+**To the left! Why??**
+
+It's important to remember that horizontally, in every word, **the pixel data
+is reversed** . So to create a right-facing arrow, your arrow data will need
 to point left. This will be important to remember once we start creating
 larger images.
 
 Here's an arrow that points to the right.
 
-    
-    
-    word    %%00000011
-    word    %%00001111
-    word    %%00111111
-    word    %%11111111
-    word    %%11111111
-    word    %%00111111
-    word    %%00001111
-    word    %%00000011
+----
+word    %%00000011
+word    %%00001111
+word    %%00111111
+word    %%11111111
+word    %%11111111
+word    %%00111111
+word    %%00001111
+word    %%00000011
+----
 
-![](attachments/35750086/35750085.png)
+image:RightArrow.png[]
 
-_ Question 2: How about this arrow? Which way does it _ _ point? _
+_Question 2: How about this arrow? Which way does it point?_
 
-    
-    
-    word    %%11
-    word    %%1111
-    word    %%111111
-    word    %%11111111
-    word    %%11111111
-    word    %%111111
-    word    %%1111
-    word    %%11
+----
+word    %%11
+word    %%1111
+word    %%111111
+word    %%11111111
+word    %%11111111
+word    %%111111
+word    %%1111
+word    %%11
+----
 
-![](images/icons/grey_arrow_down.png) Click here to show the answer...
-
-![](attachments/35750086/35750085.png)
+image:RightArrow.png[]
 
 ** To the right! **
 
 Because we left out all the leading zeroes, that syntax is actually equivalent
 to this:
 
-    
-    
-    word    %%00000011
-    word    %%00001111
-    word    %%00111111
-    word    %%11111111
-    word    %%11111111
-    word    %%00111111
-    word    %%00001111
-    word    %%00000011
+----
+word    %%00000011
+word    %%00001111
+word    %%00111111
+word    %%11111111
+word    %%11111111
+word    %%00111111
+word    %%00001111
+word    %%00000011
+----
 
 This is why it's important not to forget those zeroes otherwise your image
 might not look anything like you thought.
-
