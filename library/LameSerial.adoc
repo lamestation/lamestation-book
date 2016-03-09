@@ -1,21 +1,36 @@
-### LameSerial
+[[lameserial]]
+LameSerial
+^^^^^^^^^^
 
-LameSerial is a modified version of the original Parallax Serial Terminal with
-some functionality removed. It allows you to write applications that
-communicate with a serial device.
+LameSerial is a modified version of the original Parallax Serial
+Terminal with some functionality removed. It allows you to write
+applications that communicate with a serial device.
 
-####  Commands
+[[commands]]
+Commands
+++++++++
 
-  * [ serial.Start ](serial.Start_34177032.adoc) —  Start serial communication with the default pins, mode and baud rate. 
-  * [ serial.StartRxTx ](serial.StartRxTx_34177034.adoc) —  Start serial communication with the designated pins, mode and baud rate. 
-  * [ serial.Char ](serial.Char_34177041.adoc) —  Send a single-byte character. 
-  * [ serial.Dec ](serial.Dec_34177047.adoc) —  Send a value as a decimal number string. 
-  * [ serial.Bin ](serial.Bin_34177049.adoc) —  Send a value as a binary number string. 
-  * [ serial.Hex ](serial.Hex_34177051.adoc) —  Send a value as a hexadecimal number string. 
-  * [ serial.Str ](serial.Str_34177045.adoc) —  Send a zero-terminated string. 
-  * [ serial.Clear ](serial.Clear_34177055.adoc) —  Clear screen and place cursor at the top-left of the console. 
-  * [ serial.CharIn ](serial.CharIn_34177043.adoc) —  Receive single-byte character. 
-  * [ serial.RxCount ](serial.RxCount_34177058.adoc) —  Get count of characters in receive buffer. 
-  * [ serial.RxFlush ](serial.RxFlush_34177061.adoc) —  Empty the receive buffer. 
-  * [ serial.Stop ](serial.Stop_34177037.adoc) —  Stop serial communication and free the cog. 
-
+* link:serial.Start_34177032.adoc[serial.Start] — Start serial
+communication with the default pins, mode and baud rate.
+* link:serial.StartRxTx_34177034.adoc[serial.StartRxTx] — Start serial
+communication with the designated pins, mode and baud rate.
+* link:serial.Char_34177041.adoc[serial.Char] — Send a single-byte
+character.
+* link:serial.Dec_34177047.adoc[serial.Dec] — Send a value as a decimal
+number string.
+* link:serial.Bin_34177049.adoc[serial.Bin] — Send a value as a binary
+number string.
+* link:serial.Hex_34177051.adoc[serial.Hex] — Send a value as a
+hexadecimal number string.
+* link:serial.Str_34177045.adoc[serial.Str] — Send a zero-terminated
+string.
+* link:serial.Clear_34177055.adoc[serial.Clear] — Clear screen and place
+cursor at the top-left of the console.
+* link:serial.CharIn_34177043.adoc[serial.CharIn] — Receive single-byte
+character.
+* link:serial.RxCount_34177058.adoc[serial.RxCount] — Get count of
+characters in receive buffer.
+* link:serial.RxFlush_34177061.adoc[serial.RxFlush] — Empty the receive
+buffer.
+* link:serial.Stop_34177037.adoc[serial.Stop] — Stop serial
+communication and free the cog.
