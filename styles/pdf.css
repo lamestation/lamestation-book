@@ -8,12 +8,14 @@ pre, code {
   font-size: 12px;
 }
 
+@page { margin: 2cm }
+
 @page :left {
-  margin-left: 1in;
-  margin-right: 1.25in;
+  margin-left: 4cm;
+  margin-right: 3cm;
 }
 
 @page :right {
-  margin-left: 1.25in;
-  margin-right: 1in;
+  margin-left: 3cm;
+  margin-right: 4cm;
 }
