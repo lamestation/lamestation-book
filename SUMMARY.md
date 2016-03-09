@@ -7,7 +7,7 @@
    * [LameGFX and LameLCD](graphics/LameGFX-and-LameLCD.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
-   * [Boxes](graphics/Boxes.adoc)
+   * [Boxes](graphics/boxes.adoc)
    * [Animation](graphics/Animation.adoc)
    * [Animation With Frames](graphics/Animation-With-Frames.adoc)
    * [The Color Gray](graphics/The-Color-Gray.adoc)
