@@ -173,3 +173,5 @@ Hey, that's a fancy animation, but yuck!! What a mess! There's so much code
 that it's hard to tell what we're even looking at. That's where frames come
 in.
 
+== Animation With Frames
+
