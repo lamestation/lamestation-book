@@ -12,15 +12,11 @@ This command takes no parameters and returns no values.
 
 #####  Description
 
-LameLCD supports frame rate limiting using the [ lcd.SetFrameLimit
-](lcd.SetFrameLimit_14811144.adoc) command. If enabled, a call to DrawScreen
-will cause a delay until the next vertical syncing period. Frame rate limiting
-is disabled by default.
+LameLCD supports frame rate limiting using the link:lcd.SetFrameLimit.adoc[SetFrameLimit] command. If enabled, a call to DrawScreen will cause a delay until the next vertical syncing period. Frame rate limiting is disabled by default.
 
 #####  Example
 
-    
-    
+----
     PUB Main
     	lcd.Start(gfx.Start)
     	' ...
@@ -28,8 +24,4 @@ is disabled by default.
     	repeat
     		' draw some stuff
     		lcd.DrawScreen
-
-See also: [ lcd.WaitForVerticalSync ](lcd.WaitForVerticalSync_15400983.adoc) ,
-[ lcd.Start ](lcd.Start_15400977.adoc) , [ lcd.SetFrameLimit
-](lcd.SetFrameLimit_14811144.adoc) .
-
+----
