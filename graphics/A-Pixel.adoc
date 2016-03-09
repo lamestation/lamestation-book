@@ -1,4 +1,6 @@
-= A Pixel
+= Pixels
+
+== A Single Pixel
 
 Here is the most image we can draw to the screen: a single pixel. We will store the image in a `DAT` block, which allows you to store any kind of data you want. We'll do this by creating the block, adding the image data, and assigning the label "data" to it, so that we can refer to it by name in our program.
 
@@ -85,3 +87,42 @@ Here, the address you've given to [ gfx.Sprite ](gfx.Sprite_15958162.adoc) is
 not the start of an image, but the start of your entire program. That means
 what you see on the screen is the actual program itself. Crazy, right?
 ****
+
+== More Pixels
+
+The  `x` and  `y` parameters of `gfx.Sprite` determine where the sprite is drawn on the screen,
+so we can use them to place the image somewhere else.
+
+----
+gfx.Sprite(addr, x, y, frame)
+----
+
+Let's try setting x and y to some other values, and call the command multiple
+times. Let's draw the Big Dipper!
+
+.BigDipper.spin
+----
+OBJ
+    lcd : "LameLCD"
+    gfx : "LameGFX"
+
+PUB Main
+    lcd.Start(gfx.Start)
+
+    gfx.Sprite(@data, 15, 20, 0)
+    gfx.Sprite(@data, 35, 20, 0)
+    gfx.Sprite(@data, 20, 30, 0)
+    gfx.Sprite(@data, 30, 30, 0)
+    gfx.Sprite(@data, 45, 10, 0)
+
+    lcd.DrawScreen
+
+DAT
+
+data
+word    0
+word    1, 1
+word    1
+----
+
+image:BigDipper.png[]
