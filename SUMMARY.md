@@ -31,7 +31,6 @@
    * [Making Things Move](Making-Things-Move.adoc)
    * [Adding A Ball](Adding-A-Ball.adoc)
 * [Hardware Reference](Hardware-Reference.adoc)
-   * [Tools List](Tools-List.adoc)
    * [PCB](PCB.adoc)
        * [Design Files](Design-Files.adoc)
    * [Pinout](Pinout.adoc)
