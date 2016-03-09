@@ -1,58 +1,49 @@
-#### LameGFX and LameLCD
+= LameGFX and LameLCD
 
-Using the LameStation LCD requires two objects: LameLCD and LameGFX.
+Using the LameStation LCD requires two objects: link:../library/LameLCD.adoc[LameLCD] and link:../library/LameGFX.adoc[LameGFX].
 
-    
-    
-    OBJ
-        lcd : "LameLCD"
-        gfx : "LameGFX"
+----
+OBJ
+    lcd : "LameLCD"
+    gfx : "LameGFX"
+----
 
-  * ** [ LameLCD ](LameLCD_13762612.adoc) ** provides a surface for us to draw on that displays on the screen. 
-  * ** [ LameGFX ](LameGFX_21725389.adoc) ** provides software drawing functions for creating different kinds of images on the screen. 
+- LameGFX provides functions for drawing different kinds of things.
+- LameLCD takes your drawing and outputs it to the actual display.
 
 Think of it like this: LameLCD provides you with a piece of paper, and LameGFX
-provides you with various pens and pencils to draw with. If you want to draw
-something in real life, you need both a pen and a paper to do it. That's why
-you should always include these two objects together.
+provides you with various pens and pencils to draw with. That's why these objects are always included together.
 
-Before you can do any drawing, you must start these objects, ideally at the
-very beginning of your main function, before anything else. Here's how:
+Before any drawing, you must start these objects.
 
-    
-    
-    PUB Main
-        lcd.Start(gfx.Start)
+----
+PUB Main
+    lcd.Start(gfx.Start)
+----
 
-Okay, so it's not quite a pen and paper. LameGFX is more like a pen _ and _
-paper, and once it's done drawing, it hands it to LameLCD to hang up on the
-fridge (the LCD).
+Now, you can draw to your heart's content, but after drawing, you have to call link:../library/lcd.DrawScreen.adoc[`lcd.DrawScreen`] before you'll actually see anything.
 
-There's one more command to call before you'll see anything on the screen. [
-lcd.DrawScreen ](lcd.DrawScreen_15400984.adoc) is the command that hangs the
-paper on the fridge.
+----
+    lcd.DrawScreen
+----
 
-    
-    
-        lcd.DrawScreen
-
-Pro Tip
-
+.Remember This
+****
 The following is the minimum code needed to initialize and show graphics.
 
-    
-    
-    OBJ
-        lcd : "LameLCD"
-        gfx : "LameGFX"
-     
-    PUB Main
-        lcd.Start(gfx.Start)
-     
-        ' draw stuff here
-     
-        lcd.DrawScreen
+----
+OBJ
+    lcd : "LameLCD"
+    gfx : "LameGFX"
+
+PUB Main
+    lcd.Start(gfx.Start)
+
+    ' draw stuff here
+
+    lcd.DrawScreen
+----
 
 However, when you run this, you still won't see anything, because you actually
 have to draw an image for it to appear on the LCD.
-
+****
