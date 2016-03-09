@@ -1,9 +1,13 @@
-#### The Color Gray
+= Colors
+
+So far you've been introduced to black and white, but there are two other colors you can work with that are very important.
+
+== The Color Gray
 
 LameStation supports two more color choices other than plain black and white:
 the first of these is gray.
 
-#######  Increasing the clock speed
+===  Increasing the clock speed
 
 Up until now, you've only been using the LameStation at a reduced speed. As it
 turns out, it can go much faster, and you're gonna need to crank it up in
@@ -19,7 +23,7 @@ external crystal oscillator ( [ remember when we installed that?
         _clkmode = xtal1|pll16x
         _xinfreq = 5_000_000
 
-#######  Enabling gray pixels
+===  Enabling gray pixels
 
 Here's how to write a block of gray in the LameStation sprite format.
 
