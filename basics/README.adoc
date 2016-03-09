@@ -64,9 +64,11 @@ All we have to do to turn on this light is toggle the microcontroller pin it is 
 
 So here's how you do it:
 
-     PUB Main
-        dira[24]~~
-        outa[24]~
+----
+PUB Main
+    dira[24]~~
+    outa[24]~
+----
 
 The `~` and `~~` characters set the pin to high and low, respectively.
 
@@ -76,7 +78,11 @@ Use the `REPEAT` command to keep the LameStation in an infinite loop.
 
 .LightsOn.spin
 ----
-{% include "./LightsOn.spin" %}
+PUB Main
+    dira[24]~~
+    outa[24]~
+    
+    repeat
 ----
 
 Now both LEDs on the LameStation should be active.
@@ -111,7 +117,15 @@ How long that command actually takes to complete depends on how fast the Propell
 
 .LightsBlinking.spin
 ----
-{% include "./LightsBlinking.spin" %}
+PUB Main
+    dira[24]~~
+    
+    repeat
+        outa[24]~
+        repeat 10000
+
+        outa[24]~~
+        repeat 10000
 ----
 
 REPEAT is your go-to command for looping in Spin.
@@ -156,16 +170,20 @@ Setting a constant is easy. Constant names can contain letters, numbers, and und
 
 Let's set constants for the LED pin and the count of times `repeat` will run before continuing. You can set as many as you want, but they must be inside a `CON` block.
 
-    CON
-        LED_PIN = 24
-        COUNT   = 1000
+----
+CON
+    LED_PIN = 24
+    COUNT   = 1000
+----
 
 There can also be as many `CON` blocks as you like too.
-    
-    CON
-        LED_PIN = 24
-    CON
-        COUNT   = 1000
+
+----
+CON
+    LED_PIN = 24
+CON
+    COUNT   = 1000
+----
 
 It works exactly the same, but now if we need to change the values, we only need to change them in one place.
 
@@ -199,26 +217,47 @@ Sometimes it's helpful to put code into a separate file. That way, if you have a
 
 To include an object in your code, you will need to provide the name of the file in quotes, and a short name under which you'd like to use the object. In our case, we'd like to add the file `LamePinout.spin` which contains pin assignments for the LameStation board. You can include the `.spin` extension or not, but the include file _must_ be a Spin file.
 
-    OBJ
-        pin : "LamePinout"
+----
+OBJ
+    pin : "LamePinout"
+----
 
 Now that you have the object included, you will be able to use the functions and constants inside of it.
 
 To call a function in another object, prefix the short name of the included object, separating it with a period (`.`).
 
-    PUB Main
-        pin.Null
+----
+PUB Main
+    pin.Null
+----
 
 To get the value of a constant in another object, add the short name and the hash symbol (`#`). Here's us grabbing the pin assignment for the LED from `LamePinout.spin`.
-    
-    CON
-        VALUE = pin#LED
+
+----
+CON
+    VALUE = pin#LED
+----
 
 So now let's set `LED_PIN` to `pin#LED` instead of having to remember what the pin is ourselves.
 
 .ImAlive.spin
 ----
-{% include "./ImAlive.spin" %}
+OBJ
+    pin : "LamePinout"
+
+CON
+    LED_PIN = pin#LED
+    COUNT   = 10000
+
+PUB Main
+    dira[LED_PIN]~~
+    repeat
+        outa[LED_PIN]~
+        repeat COUNT
+
+        outa[LED_PIN]~~
+
+        repeat COUNT
 ----
 
 Woohoo!
@@ -234,15 +273,19 @@ Now that we've learned how to include objects, let's look a little further into 
 Introducing link:LameControl.adoc[LameControl]! LameControl is a
 small library for getting user input for your application. Setting it up is straight forward; just include it in your application.
     
-    OBJ
-        ctrl    : "LameControl"
-    
+----
+OBJ
+    ctrl    : "LameControl"
+----
+
 link:ctrl.Update.adoc[ctrl.Update] saves the current state of all the
 controls, so you can use them. Without using this command, LameControl
 does nothing, so make sure you call it. At the beginning of your loop is a good place for it.
 
-        repeat
-            ctrl.Update
+----
+    repeat
+        ctrl.Update
+----
 
 Now you can get the values for any of the keys, that is: 
 
@@ -259,14 +302,33 @@ You may have guessed that the keyword `IF` does just that. It allows you to only
 
 So here's how to test if any button has been pressed. The light turns off if it has, or stays on if it hasn't.
 
-            if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
-                outa[LED_PIN]~~
-            else
-                outa[LED_PIN]~
+----
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
+----
 
 So let's put it all together and put it to the test.
 
 .TakeControl.spin
 ----
-{% include "./TakeControl.spin" %}
+OBJ
+    ctrl : "LameControl"
+    pin  : "LamePinout"
+
+CON
+    LED_PIN = pin#LED
+
+PUB Main
+
+    dira[LED_PIN]~~
+
+    repeat
+        ctrl.Update
+
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
 ----
