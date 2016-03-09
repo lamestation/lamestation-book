@@ -1,23 +1,13 @@
-[[lamelcd]]
-LameLCD
-^^^^^^^
+= LameLCD
 
 image:attachments/13762612/23396357.jpg[image]
 
-LameLCD provides a ** 3-color buffered display driver ** for monochrome
-KS0108 LCDs. Which is awesome!
+LameLCD provides a **3-color buffered display driver** for monochrome KS0108 LCDs. Which is awesome!
 
-[[commands]]
-Commands
-++++++++
+== Commands
 
-* link:lcd.Start_15400977.adoc[lcd.Start] — Initialize the LameLCD
-library.
-* link:lcd.DrawScreen_15400984.adoc[lcd.DrawScreen] — Show the contents
-of the drawing buffer on the screen.
-* link:lcd.InvertScreen_16548052.adoc[lcd.InvertScreen] — Invert black
-and white pixels on the entire screen.
-* link:lcd.SetFrameLimit_14811144.adoc[lcd.SetFrameLimit] — Set an upper
-limit to the number of times the screen will be redrawn a second.
-* link:lcd.WaitForVerticalSync_15400983.adoc[lcd.WaitForVerticalSync] —
-Wait until the start of the next LCD frame before continuing.
+* link:lcd.Start.adoc[lcd.Start] - Initialize the LameLCD library.
+* link:lcd.DrawScreen.adoc[lcd.DrawScreen] - Show the contents of the drawing buffer on the screen.
+* link:lcd.InvertScreen.adoc[lcd.InvertScreen] - Invert black and white pixels on the entire screen.
+* link:lcd.SetFrameLimit.adoc[lcd.SetFrameLimit] - Set an upper limit to the number of times the screen will be redrawn a second.
+* link:lcd.WaitForVerticalSync.adoc[lcd.WaitForVerticalSync] - Wait until the start of the next LCD frame before continuing.
