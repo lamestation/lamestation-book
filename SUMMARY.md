@@ -29,6 +29,7 @@
    * [Adding A Paddle](pong/paddle.adoc)
    * [Making Things Move](pong/moving.adoc)
    * [Adding A Ball](pong/ball.adoc)
+* [Hardware Reference](hardware.adoc)
 * [Library Reference](library/README.adoc)
    * [LameLCD](library/LameLCD.adoc)
        * [lcd.Start](library/lcd.Start.adoc)
@@ -110,6 +111,5 @@
        * [fn.TestBoxCollision](library/fn.TestBoxCollision.adoc)
    * [Data Formats](Data-Formats.adoc)
        * [Sprite Format](Sprite-Format.adoc)
-* [Hardware Reference](hardware.adoc)
 * Appendix
 
