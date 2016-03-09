@@ -4,25 +4,18 @@ Set an upper limit to the number of times the screen will be redrawn a second.
 
 #####  Syntax
 
-    
-    
     SetFrameLimit(frequency)
 
-  * ** frequency ** \- The number of frames per second. Setting to 0 disables frame limiting. 
+* **frequency** - The number of frames per second. Setting to 0 disables frame limiting. 
 
 #####  Description
 
 SetFrameLimit behaves like a speed limit. By setting it, you are allowing
 games to run as slow as they want, but no faster than, the set frame rate.
 
-|  ![](attachments/14811144/14876721.png)  
----  
-  
-When frame limiting is disabled, [ lcd.DrawScreen
-](lcd.DrawScreen_15400984.adoc) does not wait for the vertical syncing period
-to update the screen, which may result in tearing. To prevent tearing when
-frame limiting is disabled, call the [ lcd.WaitForVerticalSync
-](lcd.WaitForVerticalSync_15400983.adoc) function before DrawScreen.
+image:attachments/14811144/14876721.png[]
+
+When frame limiting is disabled, link:lcd.DrawScreen.adoc[lcd.DrawScreen] does not wait for the vertical syncing period to update the screen, which may result in tearing. To prevent tearing when frame limiting is disabled, call the link:lcd.WaitForVerticalSync.adoc[lcd.WaitForVerticalSync] function before DrawScreen.
 
 Frame limiting is disabled by default.
 
@@ -30,21 +23,16 @@ Frame limiting is disabled by default.
 
 Setting the frame limit to ~36Hz after program startup.
 
-    
-    
-    PUB Main
-    	lcd.Start(gfx.Start)
-    	lcd.SetFrameLimit(40)
+----
+PUB Main
+    lcd.Start(gfx.Start)
+    lcd.SetFrameLimit(40)
+----
 
 Setting the frame limit to ~17Hz.
 
-    
-    
-    	lcd.SetFrameLimit(20)
+    lcd.SetFrameLimit(20)
 
 Disabling frame limiting.
 
-    
-    
-    	lcd.SetFrameLimit(0)
-
+    lcd.SetFrameLimit(0)
