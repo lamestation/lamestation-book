@@ -111,5 +111,4 @@
    * [Data Formats](Data-Formats.adoc)
        * [Sprite Format](Sprite-Format.adoc)
 * [Hardware Reference](hardware.adoc)
-* Appendix
 
