@@ -4,11 +4,9 @@ Invert black and white pixels on the entire screen.
 
 #####  Syntax
 
-    
-    
     InvertScreen(enabled)
 
-  * ** enabled ** \- A boolean expression (non/zero). A non-zero value is considered ** TRUE ** (colors inverted). Default setting is zero (no inversion). 
+  * ** enabled ** \- A boolean expression (non/zero). A non-zero value is considered **TRUE** (colors inverted). Default setting is zero (no inversion). 
 
 #####  Description
 
@@ -20,6 +18,7 @@ This method has an immediate effect on the output.
 
 #####  Example
 
+----
     
     
     CON
@@ -56,6 +55,4 @@ This method has an immediate effect on the output.
     word    128, 64   'width, height
     
     word    $43c4, ...
-
-See also: [ gfx.InvertColor ](gfx.InvertColor_16548054.adoc) .
-
+----
