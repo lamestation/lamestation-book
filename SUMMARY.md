@@ -9,7 +9,7 @@
    * [Lines](graphics/lines.adoc)
    * [Boxes](graphics/boxes.adoc)
    * [Animation](graphics/animation.adoc)
-   * [The Color Gray](graphics/colors.adoc)
+   * [Colors](graphics/colors.adoc)
    * [Transparency](graphics/Transparency.adoc)
    * [Large Images](graphics/Large-Images.adoc)
    * [Sprite Objects](graphics/Sprite-Objects.adoc)
