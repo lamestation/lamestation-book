@@ -3,8 +3,6 @@
 == Commands
 
 * link:txt.Load.adoc[txt.Load] - Load a font for drawing text.
-* link:txt.Char.adoc[txt.Char] - Draws a single character onto
-the screen at position (x, y).
-* link:txt.Str.adoc[txt.Str] - Draw a single-line string to the
-screen.
+* link:txt.Char.adoc[txt.Char] - Draws a single character onto the screen at position (x, y).
+* link:txt.Str.adoc[txt.Str] - Draw a single-line string to the screen.
 * link:txt.Box.adoc[txt.Box] - Draw a string to the screen.
