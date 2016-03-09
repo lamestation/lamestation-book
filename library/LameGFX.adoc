@@ -10,19 +10,11 @@ you draw to it. Have fun!
 
 == Commands
 
-* link:gfx.Start.adoc[gfx.Start] - Initialize the LameGFX
-drawing library.
-* link:gfx.ClearScreen.adoc[gfx.ClearScreen] - Fill the screen
-with a repeating word of color data specified by color.
-* link:gfx.Blit.adoc[gfx.Blit] - Copy a screen-sized (128x64)
-image to the screen.
-* link:gfx.Sprite.adoc[gfx.Sprite] - Draw an image of any size
-to the screen.
-* link:gfx.Map.adoc[gfx.Map] - Draw a tile-based level map at
-the specified coordinates.
-* link:gfx.InvertColor.adoc[gfx.InvertColor] - Invert black and
-white pixels sprite drawing.
-* link:gfx.SetClipRectangle.adoc[gfx.SetClipRectangle] - Change
-the portion of the screen that will be drawn to by LameGFX.
-* link:gfx.WaitToDraw.adoc[gfx.WaitToDraw] - Wait until the
-last drawing operation has completed before continuing.
+* link:gfx.Start.adoc[gfx.Start] - Initialize the LameGFX drawing library.
+* link:gfx.ClearScreen.adoc[gfx.ClearScreen] - Fill the screen with a repeating word of color data specified by color.
+* link:gfx.Blit.adoc[gfx.Blit] - Copy a screen-sized (128x64) image to the screen.
+* link:gfx.Sprite.adoc[gfx.Sprite] - Draw an image of any size to the screen.
+* link:gfx.Map.adoc[gfx.Map] - Draw a tile-based level map at the specified coordinates.
+* link:gfx.InvertColor.adoc[gfx.InvertColor] - Invert black and white pixels sprite drawing.
+* link:gfx.SetClipRectangle.adoc[gfx.SetClipRectangle] - Change the portion of the screen that will be drawn to by LameGFX.
+* link:gfx.WaitToDraw.adoc[gfx.WaitToDraw] - Wait until the last drawing operation has completed before continuing.
