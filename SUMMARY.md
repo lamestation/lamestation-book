@@ -25,7 +25,6 @@
    * [Box Collision](collision/box.adoc)
    * [Map Collision](collision/map.adoc)
    * [Movement](collision/movement.adoc)
-   * [Bouncing In Gravity](collision/gravity.adoc)
    * [Bouncing With Energy Loss](collision/energyloss.adoc)
 * [Audio](audio/README.adoc)
 * [Music](music/README.adoc)
