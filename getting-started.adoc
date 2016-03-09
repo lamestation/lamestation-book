@@ -4,6 +4,8 @@
 
 . First things first. link:https://github.com/lamestation/lamestation-sdk/releases[Download the SDK]!
 . Now,  link:https://lamestation.atlassian.net/wiki/display/IDE/Installing+PropellerIDE[install PropellerIDE] for your platform.
-. Open PropellerIDE and go to "_File -> Properties_".
-. Under the Spin tab, type or browse to the path to where you've unpacked the SDK.
-. PropellerIDE is now set up for use with the LameStation SDK.
+. Open PropellerIDE and go to "_Edit -> Preferences_".
+. Click the _Languages_ tab, and under _Includes_ in the _Spin_ box, click _Add Path_ and add the location of the unpacked SDK.
+. Hit _OK_!
+
+PropellerIDE is now set up for use with the LameStation SDK.
