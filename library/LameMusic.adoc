@@ -1,26 +1,16 @@
-[[lamemusic]]
-LameMusic
-^^^^^^^^^
+= LameMusic
 
 image:attachments/15401100/34177063.png[image]
 
-link:LameMusic_15401100.adoc[LameMusic] is a tiny sequencing engine
-designed to run on top of link:LameAudio_23429367.adoc[LameAudio] that
+link:LameMusic.adoc[LameMusic] is a tiny sequencing engine
+designed to run on top of link:LameAudio.adoc[LameAudio] that
 provides a compressed music format for scoring your LameStation games.
 
-[[commands]]
-Commands
-++++++++
+== Commands
 
-* link:music.Start_23429172.adoc[music.Start] — Start the LameMusic song
-player core.
-* link:music.Load_23429170.adoc[music.Load] — Loads song data from the
-given address.
-* link:music.Play_23429177.adoc[music.Play] — Play the currently loaded
-song only once.
-* link:music.Loop_23429182.adoc[music.Loop] — Play the currently loaded
-song forever.
-* link:music.IsPlaying_23429187.adoc[music.IsPlaying] — Return whether a
-song is currently playing.
-* link:music.Stop_23429189.adoc[music.Stop] — Stop the currently playing
-song.
+* link:music.Start.adoc[music.Start] - Start the LameMusic song player core.
+* link:music.Load.adoc[music.Load] - Loads song data from the given address.
+* link:music.Play.adoc[music.Play] - Play the currently loaded song only once.
+* link:music.Loop.adoc[music.Loop] - Play the currently loaded song forever.
+* link:music.IsPlaying.adoc[music.IsPlaying] - Return whether a song is currently playing.
+* link:music.Stop.adoc[music.Stop] - Stop the currently playing song.

@@ -1,28 +1,16 @@
-[[lamecontrol]]
-LameControl
-^^^^^^^^^^^
+= LameControl
 
-link:LameControl_15401019.adoc[LameControl] is a thin wrapper library
+link:LameControl.adoc[LameControl] is a thin wrapper library
 for using the LameStation's joystick and buttons, to give game designers
 more control over how the inputs behave.
 
-[[commands]]
-Commands
-++++++++
+== Commands
 
-* link:ctrl.Start_15401027.adoc[ctrl.Start] — Initialize the LameControl
-library.
-* link:ctrl.Update_15401025.adoc[ctrl.Update] — Update the state of all
-LameStation controls.
-* link:ctrl.A_15401021.adoc[ctrl.A] — Return the current state of the
-'A' button.
-* link:ctrl.B_15401023.adoc[ctrl.B] — Return the current state of the
-'B' button.
-* link:ctrl.Up_15401033.adoc[ctrl.Up] — Return whether the joystick is
-tilted upwards.
-* link:ctrl.Right_15401038.adoc[ctrl.Right] — Return whether the
-joystick is tilted to the right.
-* link:ctrl.Down_15401035.adoc[ctrl.Down] — Return whether the joystick
-is tilted downwards.
-* link:ctrl.Left_15401041.adoc[ctrl.Left] — Return whether the joystick
-is tilted to the left.
+* link:ctrl.Start.adoc[ctrl.Start] - Initialize the LameControl library.
+* link:ctrl.Update.adoc[ctrl.Update] - Update the state of all LameStation controls.
+* link:ctrl.A.adoc[ctrl.A] - Return the current state of the 'A' button.
+* link:ctrl.B.adoc[ctrl.B] - Return the current state of the 'B' button.
+* link:ctrl.Up.adoc[ctrl.Up] - Return whether the joystick is tilted upwards.
+* link:ctrl.Right.adoc[ctrl.Right] - Return whether the joystick is tilted to the right.
+* link:ctrl.Down.adoc[ctrl.Down] - Return whether the joystick is tilted downwards.
+* link:ctrl.Left.adoc[ctrl.Left] - Return whether the joystick is tilted to the left.

@@ -1,12 +1,6 @@
-[[lamefunctions]]
-LameFunctions
-^^^^^^^^^^^^^
+= LameFunctions
 
-[[commands]]
-Commands
-++++++++
+== Commands
 
-* link:fn.Sleep_23429355.adoc[fn.Sleep] — Wait the specified number of
-milliseconds before continuing.
-* link:fn.TestBoxCollision_23429357.adoc[fn.TestBoxCollision] — Test if
-two rectangular regions of the screen overlap.
+* link:fn.Sleep.adoc[fn.Sleep] - Wait the specified number of milliseconds before continuing.
+* link:fn.TestBoxCollision.adoc[fn.TestBoxCollision] - Test if two rectangular regions of the screen overlap.
