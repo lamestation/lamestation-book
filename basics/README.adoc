@@ -15,8 +15,6 @@ Attempting to download an empty file to the LameStation will generate an error f
 .An empty file.
 ----
 
-
-
 ----
 
 so here we see the bare minimum that constitutes a Spin program.
