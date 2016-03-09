@@ -1,6 +1,4 @@
-[[lamegfx]]
-LameGFX
-^^^^^^^
+= LameGFX
 
 image:attachments/21725389/23396358.png[image]
 
@@ -10,23 +8,21 @@ commands for the 3-color graphics format native to the LameStation.
 There is no concept of sprite layers in LameGFX; you get a buffer and
 you draw to it. Have fun!
 
-[[commands]]
-Commands
-++++++++
+== Commands
 
-* link:gfx.Start_15400979.adoc[gfx.Start] — Initialize the LameGFX
+* link:gfx.Start.adoc[gfx.Start] — Initialize the LameGFX
 drawing library.
-* link:gfx.ClearScreen_15401080.adoc[gfx.ClearScreen] — Fill the screen
+* link:gfx.ClearScreen.adoc[gfx.ClearScreen] — Fill the screen
 with a repeating word of color data specified by color.
-* link:gfx.Blit_15958136.adoc[gfx.Blit] — Copy a screen-sized (128x64)
+* link:gfx.Blit.adoc[gfx.Blit] — Copy a screen-sized (128x64)
 image to the screen.
-* link:gfx.Sprite_15958162.adoc[gfx.Sprite] — Draw an image of any size
+* link:gfx.Sprite.adoc[gfx.Sprite] — Draw an image of any size
 to the screen.
-* link:gfx.Map_23429363.adoc[gfx.Map] — Draw a tile-based level map at
+* link:gfx.Map.adoc[gfx.Map] — Draw a tile-based level map at
 the specified coordinates.
-* link:gfx.InvertColor_16548054.adoc[gfx.InvertColor] — Invert black and
+* link:gfx.InvertColor.adoc[gfx.InvertColor] — Invert black and
 white pixels sprite drawing.
-* link:gfx.SetClipRectangle_14811180.adoc[gfx.SetClipRectangle] — Change
+* link:gfx.SetClipRectangle.adoc[gfx.SetClipRectangle] — Change
 the portion of the screen that will be drawn to by LameGFX.
-* link:gfx.WaitToDraw_15958147.adoc[gfx.WaitToDraw] — Wait until the
+* link:gfx.WaitToDraw.adoc[gfx.WaitToDraw] — Wait until the
 last drawing operation has completed before continuing.
