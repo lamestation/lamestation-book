@@ -1,14 +1,10 @@
-[[lametext]]
-LameText
-^^^^^^^^
+= LameText
 
-[[commands]]
-Commands
-++++++++
+== Commands
 
-* link:txt.Load_14811171.adoc[txt.Load] — Load a font for drawing text.
-* link:txt.Char_14811161.adoc[txt.Char] — Draws a single character onto
+* link:txt.Load.adoc[txt.Load] - Load a font for drawing text.
+* link:txt.Char.adoc[txt.Char] - Draws a single character onto
 the screen at position (x, y).
-* link:txt.Str_14811163.adoc[txt.Str] — Draw a single-line string to the
+* link:txt.Str.adoc[txt.Str] - Draw a single-line string to the
 screen.
-* link:txt.Box_14811165.adoc[txt.Box] — Draw a string to the screen.
+* link:txt.Box.adoc[txt.Box] - Draw a string to the screen.
