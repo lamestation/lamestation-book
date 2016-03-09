@@ -6,7 +6,7 @@
 * [Graphics](graphics/README.adoc)
    * [LameGFX and LameLCD](graphics/LameGFX-and-LameLCD.adoc)
    * [Pixels](graphics/pixels.adoc)
-   * [Lines](graphics/Lines.adoc)
+   * [Lines](graphics/lines.adoc)
    * [Boxes](graphics/Boxes.adoc)
    * [Animation](graphics/Animation.adoc)
    * [Animation With Frames](graphics/Animation-With-Frames.adoc)
