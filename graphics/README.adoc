@@ -1,4 +1,4 @@
-= Graphics
+### Graphics
 
 LameStation graphics are built around sprites. What is a sprite?
 
@@ -11,7 +11,25 @@ The LameStation has it's own format for storing graphics that you will need to
 use to draw with [ LameGFX ](LameGFX_21725389.adoc) . In this section, we walk
 you through understanding how to create images that LameGFX can read and draw.
 
-[NOTE]
-====
-The examples in this section can be found in the `demos/graphics/` folder of the SDK.
-====
+The examples in this section can be found in ` "demos/graphics/" ` of the
+LameStation SDK.
+
+####  Examples
+
+* * *
+
+  * [ LameGFX and LameLCD ](LameGFX-and-LameLCD_35750062.adoc)
+  * [ A Pixel ](A-Pixel_35750070.adoc)
+  * [ More Pixels ](More-Pixels_35750115.adoc)
+  * [ Lines ](Lines_35750076.adoc)
+  * [ Boxes ](Boxes_35750086.adoc)
+  * [ Animation ](Animation_35750091.adoc)
+  * [ Animation With Frames ](Animation-With-Frames_35750121.adoc)
+  * [ The Color Gray ](The-Color-Gray_35750096.adoc)
+  * [ Transparency ](Transparency_35750102.adoc)
+  * [ Large Images ](Large-Images_35750108.adoc)
+  * [ Sprite Objects ](Sprite-Objects_35750148.adoc)
+  * [ Moving Sprites ](Moving-Sprites_35750156.adoc)
+  * [ More Fun with ClearScreen ](More-Fun-with-ClearScreen_35750158.adoc)
+  * [ The Loop ](The-Loop_35750160.adoc)
+

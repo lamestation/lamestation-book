@@ -1,6 +1,0 @@
-= Maps
-
-[NOTE]
-====
-The examples in this section can be found in the `demos/maps/` folder of the SDK.
-====
