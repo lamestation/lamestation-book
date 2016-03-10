@@ -44,6 +44,67 @@ To span multiple lines, use curly braces (`{`,`}`).
     newFeature(x, y)
 ----
 
+== Operators
+
+=== Arithmetic Operators
+
+The `=` operator assigns values to constants.
+
+----
+VALUE = 10
+----
+
+The `:=` operator assigns values to variables.
+
+----
+x := 5
+----
+
+You can use basic arithmetic operations. 
+
+----
+x := y + z      ' addition
+x := y - z      ' subtraction
+x := y * z      ' multiplication
+x := y / z      ' division
+----
+
+You can also group expressions using parentheses.
+
+----
+x := (y + 4) - (z + 3)
+x := ((y + 4) + 4)
+----
+
+==== Advanced Arithmetic Operators
+
+Decrement (`--`) subtracts one from a value, while increment (`++`) adds one.
+
+----
+x++
+x--
+----
+
+Modulo (`//`) finds the remainder after division.
+
+----
+x := y // z
+----
+
+=== Boolean Operators
+
+Equal `==`, `===`
+Not equal `<>`
+Less Than <
+Greater Than >
+Equal or Less =<
+Equal or Greater =>
+
+`AND`, `OR`, and `NOT`
+
+
+
+
 == Constants
 
 Constants are named values that cannot change. They work like integers, but if a value is used often enough, using constants makes your code easier to read and modify.
