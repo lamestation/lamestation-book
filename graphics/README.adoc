@@ -1,8 +1,11 @@
 = Graphics
 
-LameStation graphics are built around sprites. What is a sprite?
+LameStation graphics are built around sprites, but what on earth are those?
 
 A sprite is an image that is drawn to the screen as a single piece. So in a game, if you have a palm tree or a hamster or donkey, those are all sprites.
+
+.An example of an explosion sprite
+image:explosion.png[title="An example of an explosion sprite"]
 
 LameStation has its own format for storing sprites that we will learn in the following exercises.
 
