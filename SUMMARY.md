@@ -111,4 +111,5 @@
    * [Data Formats](Data-Formats.adoc)
        * [Sprite Format](Sprite-Format.adoc)
 * [Hardware Reference](hardware.adoc)
+* [Glossary](glossary.adoc)
 
