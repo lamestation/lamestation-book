@@ -1,5 +1,29 @@
 = Spin Quick Reference
 
+== Blocks
+
+A feature unique to Spin is the use of _blocks_. Objects can contain six kinds of blocks: `CON`, `VAR`, `PUB`, `PRI`, `OBJ`, and `DAT`. Each block has its own syntax and allowed keywords, like mini-languages in their own right.
+
+== Objects
+
+A file in Spin is called an _object_, and ends with the `.spin` extension.
+
+An object can be written as the main program, or as a _library_ that can be used by other objects.
+
+External objects are declared in an `OBJ` block, and given a unique alias.
+
+----
+OBJ
+    str : "string"
+----
+
+Multiple copies of an object can be used.
+
+----
+    str : "
+
+----
+
 == Comments
 
 Comments are text that are intended only for the programmer, and ignored by the compiler.
@@ -78,13 +102,15 @@ You can create strings on the fly and use them right away with the `string` keyw
 string("Hello world!")
 ----
 
-Strings can also be declared in `DAT` blocks for reuse, then used with the `@` operator.
+Strings can also be declared in `DAT` blocks for reuse, then used with their address.
 
 ----
 hellostring     byte    "Hello world!",0
 ----
 
 == Flow Control
+
+=== Indentation
 
 === If Statements
 
@@ -97,3 +123,8 @@ All loops in Spin use the `REPEAT` command.
 
 == Functions
 
+Functions
+
+The first function in an object is 
+
+All Spin objects must have at least one public function.
