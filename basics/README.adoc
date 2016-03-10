@@ -1,4 +1,5 @@
 = Basics
+:experimental:
 
 In this chapter, you'll be introduced to the Spin programming language.
 
