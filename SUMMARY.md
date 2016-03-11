@@ -109,7 +109,6 @@
        * [fn.Sleep](library/fn.Sleep.adoc)
        * [fn.TestBoxCollision](library/fn.TestBoxCollision.adoc)
    * [Data Formats](Data-Formats.adoc)
-       * [Sprite Format](Sprite-Format.adoc)
 * [Hardware Reference](hardware.adoc)
 * [Spin Quick Reference](spin.adoc)
 * [Glossary](glossary.adoc)
