@@ -1,1 +1,6 @@
 compiler:: A program that transforms source code into another form, often one that a computer understands.
+
+programmer:: A programmer is a person who writes computer software.
+
+program:: A series of instructions to tell a computer what to do.
+
