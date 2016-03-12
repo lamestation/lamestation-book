@@ -81,7 +81,6 @@
        * [music.Load](library/music.Load.adoc)
        * [music.Play](library/music.Play.adoc)
        * [music.Loop](library/music.Loop.adoc)
-       * [music.IsPlaying](library/music.IsPlaying.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
