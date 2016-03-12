@@ -94,7 +94,6 @@
        * [serial.Clear](library/serial.Clear.adoc)
        * [serial.CharIn](library/serial.CharIn.adoc)
        * [serial.RxCount](library/serial.RxCount.adoc)
-       * [serial.RxFlush](library/serial.RxFlush.adoc)
        * [serial.Stop](library/serial.Stop.adoc)
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
