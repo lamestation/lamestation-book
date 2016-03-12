@@ -26,7 +26,11 @@ ctrl : "LameControl"
 
 == About
 
-Before anything else, you must call `ctrl.Start` at the beginning of your program. This tells the Propeller to listen to the controls.
+The LameStation has six hardware controls for user input.
+
+image::control_layout.png[title="LameStation Control Layout"]
+
+Before you can use them, you must call `ctrl.Start` once at the beginning of your program. This tells the Propeller to listen to the controls.
 
 To read the current state of the controls, call `ctrl.Update`. A good place to do this is at the beginning of your main game loop, but it can be called at any time. If this is never called, all other commands will always return false.
 
@@ -35,10 +39,6 @@ PUB Main
     repeat
         ctrl.Update
 ----
-
-The LameStation has six hardware controls.
-
-image::control_layout.png[title="LameStation Control Layout"]
 
 After calling `ctrl.Update`, you can call any of the button or joystick commands to get their state. The values returned will not update until `ctrl.Update` is called again.
 
