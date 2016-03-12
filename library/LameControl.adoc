@@ -1,16 +1,33 @@
 = LameControl
 
-link:LameControl.adoc[LameControl] is a thin wrapper library
-for using the LameStation's joystick and buttons, to give game designers
-more control over how the inputs behave.
+LameControl allows you to use the LameStation's joystick and buttons.
+
+----
+ctrl : "LameControl"
+----
 
 == Commands
 
-* link:ctrl.Start.adoc[ctrl.Start] - Initialize the LameControl library.
-* link:ctrl.Update.adoc[ctrl.Update] - Update the state of all LameStation controls.
-* link:ctrl.A.adoc[ctrl.A] - Return the current state of the 'A' button.
-* link:ctrl.B.adoc[ctrl.B] - Return the current state of the 'B' button.
-* link:ctrl.Up.adoc[ctrl.Up] - Return whether the joystick is tilted upwards.
-* link:ctrl.Right.adoc[ctrl.Right] - Return whether the joystick is tilted to the right.
-* link:ctrl.Down.adoc[ctrl.Down] - Return whether the joystick is tilted downwards.
-* link:ctrl.Left.adoc[ctrl.Left] - Return whether the joystick is tilted to the left.
+- `ctrl.Start` - Initialize the LameControl library.
+- `ctrl.Update` - Update the state of all LameStation controls.
+- `ctrl.A` - Return the current state of the 'A' button.
+- `ctrl.B` - Return the current state of the 'B' button.
+- `ctrl.Up` - Return whether the joystick is tilted upwards.
+- `ctrl.Right` - Return whether the joystick is tilted to the right.
+- `ctrl.Down` - Return whether the joystick is tilted downwards.
+- `ctrl.Left` - Return whether the joystick is tilted to the left.
+
+== Description
+
+Before anything else, you must call `ctrl.Start` at the beginning of your program. This tells the Propeller to listen to the controls.
+
+To read the current state of the controls, call `ctrl.Update`. A good place to do this is at the beginning of your main game loop, but it can be called at any time. If this is never called, all other commands will always return false.
+
+----
+PUB Main
+
+    repeat
+        ctrl.Update
+        
+        ' more code ...
+----
