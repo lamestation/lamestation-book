@@ -8,5 +8,13 @@ fn : "LameFunctions"
 
 == Commands
 
-* link:fn.Sleep.adoc[fn.Sleep] - Wait the specified number of milliseconds before continuing.
-* link:fn.TestBoxCollision.adoc[fn.TestBoxCollision] - Test if two rectangular regions of the screen overlap.
+- `fn.Sleep` - Wait the specified number of milliseconds before continuing.
+- `fn.TestBoxCollision` - Test if two rectangular regions of the screen overlap.
+
+== About
+
+*fn.Sleep(milliseconds)*
+
+Sometimes you need a time delay in your program, and calling `repeat 20000` just isn't good enough. `fn.Sleep` lets you pause for a specified time with millisecond accuracy.
+
+*fn.TestBoxCollision(
