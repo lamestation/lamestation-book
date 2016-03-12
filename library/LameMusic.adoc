@@ -17,7 +17,7 @@ Demos for this object can be found in the `demos/music/` folder of the SDK.
 - `music.IsPlaying` - Return whether a song is currently playing.
 - `music.Stop` - Stop the currently playing song.
 
-== Usage
+== About
 
 [IMPORTANT]
 LameAudio must be started before LameMusic.
