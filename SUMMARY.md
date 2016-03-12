@@ -88,7 +88,6 @@
        * [serial.StartRxTx](library/serial.StartRxTx.adoc)
        * [serial.Char](library/serial.Char.adoc)
        * [serial.Dec](library/serial.Dec.adoc)
-       * [serial.Bin](library/serial.Bin.adoc)
        * [serial.Hex](library/serial.Hex.adoc)
        * [serial.Clear](library/serial.Clear.adoc)
        * [serial.CharIn](library/serial.CharIn.adoc)
