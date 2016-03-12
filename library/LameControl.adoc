@@ -26,9 +26,9 @@ ctrl : "LameControl"
 
 == About
 
-The LameStation has six hardware controls for user input.
-
 image::control_layout.png[title="LameStation Control Layout"]
+
+The LameStation has six hardware controls for user input.
 
 Before you can use them, you must call `ctrl.Start` once at the beginning of your program. This tells the Propeller to listen to the controls.
 
