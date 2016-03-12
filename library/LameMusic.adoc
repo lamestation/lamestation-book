@@ -6,7 +6,7 @@ LameMusic is a sequencer for LameAudio that allows your games to play arranged m
 music : "LameMusic"
 ----
 
-Demos for this object can be found in `demos/music/` of the SDK.
+Demos for this object can be found in the `demos/music/` folder of the SDK.
 
 == Commands
 
@@ -19,15 +19,25 @@ Demos for this object can be found in `demos/music/` of the SDK.
 
 == Usage
 
-To start using LameMusic, call `music.Start` once at the beginning of your program to start the music engine.
+[IMPORTANT]
+LameAudio must be started before LameMusic.
 
-Call `music.Load` to load a song, stopping the current song if one was playing. Only one song can play at a time.
+Call `music.Start` once at the beginning of your program to start the music engine.
+
+To load a song, call `music.Load` using the `Addr` function of the song object as an argument.  Only one song can play at a time. Loading a new song will stop any currently playing one.
+
+----
+    music.Load(mycoolsong.Addr)
+----
 
 You can use the `music.Play` command to play a song once, or `music.Loop` to play it forever. Call `music.IsPlaying` to find out if a song is currently playing.
 
-Once you're tired of listening to music, call `music.Stop` to end the song.
+Once you're tired of listening to music, call `music.Stop` to end the song. Playing the song again will start over from the beginning.
 
 == Song Format (Advanced)
+
+[NOTE]
+Software to create LameMusic song objects is planned; for now, songs must be created by hand.
 
 LameStation songs consist of two main sections: pattern and sequence data.
 
@@ -35,9 +45,17 @@ LameStation songs consist of two main sections: pattern and sequence data.
 
 Patterns contain melodies, riffs, harmonies and any musical parts that fit in a measure.
 
+- *Note* (`0-127`) - Play note n between 0 and 127.
+- *Stop note* (`$83`) - Stop playing note.
+- *Do nothing* (`$82`) - Do nothing (continue playing or not playing current note).
+- *End song* (`$80`) - End the song.
+
 ==== Sequence Data
 
 The sequence defines how the patterns are arranged in time and across channels.
 
-[NOTE]
-Software to create LameMusic song files is planned; for now, songs must be created by hand.
+- *Pattern* (`0-127`) - Play pattern n between 0 and 127.
+- *ADSRW* (`$A0`) - Change the sound of channel(s).
+- *Tempo* (`$B0`) - Change the tempo of the song.
+- *Transpose* (`$C0`) - Transpose the channel up or down number of notes.
+
