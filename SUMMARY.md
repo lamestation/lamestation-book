@@ -98,7 +98,6 @@
        * [serial.Stop](library/serial.Stop.adoc)
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
-       * [fn.Sleep](library/fn.Sleep.adoc)
 * [Hardware Reference](hardware.adoc)
 * [Spin Quick Reference](spin.adoc)
 * [Glossary](glossary.adoc)
