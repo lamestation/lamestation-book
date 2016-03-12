@@ -1,16 +1,41 @@
 = LameMusic
 
-image:attachments/15401100/34177063.png[image]
+LameMusic is a sequencer for LameAudio that allows your games to play arranged music.
 
-link:LameMusic.adoc[LameMusic] is a tiny sequencing engine
-designed to run on top of link:LameAudio.adoc[LameAudio] that
-provides a compressed music format for scoring your LameStation games.
+----
+music : "LameMusic"
+----
+
+Demos for this object can be found in `demos/music/` of the SDK.
 
 == Commands
 
-* link:music.Start.adoc[music.Start] - Start the LameMusic song player core.
-* link:music.Load.adoc[music.Load] - Loads song data from the given address.
-* link:music.Play.adoc[music.Play] - Play the currently loaded song only once.
-* link:music.Loop.adoc[music.Loop] - Play the currently loaded song forever.
-* link:music.IsPlaying.adoc[music.IsPlaying] - Return whether a song is currently playing.
-* link:music.Stop.adoc[music.Stop] - Stop the currently playing song.
+- `music.Start` - Start the LameMusic song player core.
+- `music.Load` - Load a song to play.
+- `music.Play` - Play the current song once.
+- `music.Loop` - Play the current song forever.
+- `music.IsPlaying` - Return whether a song is currently playing.
+- `music.Stop` - Stop the currently playing song.
+
+== Usage
+
+To start using LameMusic, call `music.Start` once at the beginning of your program to start the music engine.
+
+Call `music.Load` to load a song, stopping the current song if one was playing. Only one song can play at a time.
+
+You can use the `music.Play` command to play a song once, or `music.Loop` to play it forever. Call `music.IsPlaying` to find out if a song is currently playing.
+
+== Song Format (Advanced)
+
+LameStation songs consist of two main sections: pattern and sequence data.
+
+==== Pattern Data
+
+Patterns contain melodies, riffs, harmonies and any musical parts that fit in a measure.
+
+==== Sequence Data
+
+The sequence defines how the patterns are arranged in time and across channels.
+
+[NOTE]
+Software to create LameMusic song files is planned; for now, songs must be created by hand.
