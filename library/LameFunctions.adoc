@@ -13,8 +13,12 @@ fn : "LameFunctions"
 
 == About
 
-*fn.Sleep(milliseconds)*
+=== fn.Sleep(milliseconds)
 
 Sometimes you need a time delay in your program, and calling `repeat 20000` just isn't good enough. `fn.Sleep` lets you pause for a specified time with millisecond accuracy.
 
-*fn.TestBoxCollision(
+=== fn.TestBoxCollision(x1, y1, w1, h1, x2, y2, w2, h2)
+
+Test if two rectangles on the screen overlap. If you want two objects the screen to interact with each other, you might need this.
+
+For a working example, try `demos/collision/TestBoxCollision.spin` in the LameStation SDK.
