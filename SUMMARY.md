@@ -97,7 +97,6 @@
        * [serial.RxFlush](library/serial.RxFlush.adoc)
        * [serial.Stop](library/serial.Stop.adoc)
    * [LameControl](library/LameControl.adoc)
-       * [ctrl.Up](library/ctrl.Up.adoc)
        * [ctrl.Right](library/ctrl.Right.adoc)
        * [ctrl.Down](library/ctrl.Down.adoc)
        * [ctrl.Left](library/ctrl.Left.adoc)
