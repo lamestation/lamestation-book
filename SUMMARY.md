@@ -90,7 +90,6 @@
        * [serial.Dec](library/serial.Dec.adoc)
        * [serial.Bin](library/serial.Bin.adoc)
        * [serial.Hex](library/serial.Hex.adoc)
-       * [serial.Str](library/serial.Str.adoc)
        * [serial.Clear](library/serial.Clear.adoc)
        * [serial.CharIn](library/serial.CharIn.adoc)
        * [serial.Stop](library/serial.Stop.adoc)
