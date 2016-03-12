@@ -36,7 +36,11 @@ PUB Main
         ctrl.Update
 ----
 
-After calling `ctrl.Update`, you can call any of the button or joystick commands to check the state of the controls.
+The LameStation has six hardware controls.
+
+image::control_layout.png[title="LameStation Control Layout"]
+
+After calling `ctrl.Update`, you can call any of the button or joystick commands to get their state. The values returned will not update until `ctrl.Update` is called again.
 
 ----
 if ctrl.Up
