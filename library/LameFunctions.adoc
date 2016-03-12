@@ -1,5 +1,11 @@
 = LameFunctions
 
+LameFunctions holds a few functions that don't really fit anywhere else.
+
+----
+fn : "LameFunctions"
+----
+
 == Commands
 
 * link:fn.Sleep.adoc[fn.Sleep] - Wait the specified number of milliseconds before continuing.
