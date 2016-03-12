@@ -97,7 +97,6 @@
        * [serial.RxFlush](library/serial.RxFlush.adoc)
        * [serial.Stop](library/serial.Stop.adoc)
    * [LameControl](library/LameControl.adoc)
-       * [ctrl.Left](library/ctrl.Left.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
        * [fn.Sleep](library/fn.Sleep.adoc)
        * [fn.TestBoxCollision](library/fn.TestBoxCollision.adoc)
