@@ -2,6 +2,10 @@
 
 LameSerial allows you to write code to communicate with your computer.
 
+----
+ser : "LameSerial"
+----
+
 == Commands
 
 - `serial.Start` - Start serial communication with the default pins, mode and baud rate.
