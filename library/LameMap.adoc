@@ -1,21 +1,21 @@
 = LameMap
 
-image:attachments/15958149/23396355.png[image]
+image:ParallaxScrolling.png[]
 
-link:LameMap.adoc[LameMap] is an extension to
+LameMap is an extension to
 link:LameGFX.adoc[LameGFX] for tile-based game maps. It is
-built on the underlying link:gfx.Map.adoc[gfx.Map] command, but
+built on the underlying `gfx.Map` command, but
 provides additional informational functionality for managing map data
 and testing for map-based collision.
 
 == Commands
 
-* link:map.Load.adoc[map.Load] - Load a map into LameMap for drawing to the screen.
-* link:map.Draw.adoc[map.Draw] - Draw the current map to the screen.
-* link:map.DrawRectangle.adoc[map.DrawRectangle] - Draw the current map to a portion of the screen.
-* link:map.Width.adoc[map.Width] - Return the width of the currently loaded map in tiles.
-* link:map.Height.adoc[map.Height] - Return the height of the currently loaded map in tiles.
-* link:map.TestCollision.adoc[map.TestCollision] - Test if the region has collided with a map tile.
-* link:map.TestMoveX.adoc[map.TestMoveX] - Apply horizontal movement to an object's position and test if it will collide.
-* link:map.TestMoveY.adoc[map.TestMoveY] - Apply vertical movement to an object's position and test if it will collide.
-* link:map.TestPoint.adoc[map.TestPoint] - Test whether tile on a map is collidable.
+- `map.Load` - Load a map into LameMap for drawing to the screen.
+- `map.Draw` - Draw the current map to the screen.
+- `map.DrawRectangle` - Draw the current map to a portion of the screen.
+- `map.Width` - Return the width of the currently loaded map in tiles.
+- `map.Height` - Return the height of the currently loaded map in tiles.
+- `map.TestCollision` - Test if the region has collided with a map tile.
+- `map.TestMoveX` - Apply horizontal movement to an object's position and test if it will collide.
+- `map.TestMoveY` - Apply vertical movement to an object's position and test if it will collide.
+- `map.TestPoint` - Test whether tile on a map is collidable.
