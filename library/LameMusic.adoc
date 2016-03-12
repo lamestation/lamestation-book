@@ -82,7 +82,7 @@ byte    $80
 
 ==== Song Interface
 
-For LameMusic to access the song object, some extra code is needed. This code provides an address which LameMusic knows how to read to figure out where the song data is.
+For LameMusic to access the song object, some extra code is needed. This code provides an address which LameMusic reads to figure out where the song data is.
 
 .Song interface code
 ----
