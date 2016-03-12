@@ -25,6 +25,8 @@ Call `music.Load` to load a song, stopping the current song if one was playing. 
 
 You can use the `music.Play` command to play a song once, or `music.Loop` to play it forever. Call `music.IsPlaying` to find out if a song is currently playing.
 
+Once you're tired of listening to music, call `music.Stop` to end the song.
+
 == Song Format (Advanced)
 
 LameStation songs consist of two main sections: pattern and sequence data.
