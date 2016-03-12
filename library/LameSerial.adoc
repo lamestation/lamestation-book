@@ -1,20 +1,18 @@
 = LameSerial
 
-LameSerial is a modified version of the original Parallax Serial
-Terminal with some functionality removed. It allows you to write
-applications that communicate with a serial device.
+LameSerial allows you to write code to communicate with your computer.
 
 == Commands
 
-* link:serial.Start.adoc[serial.Start] - Start serial communication with the default pins, mode and baud rate.
-* link:serial.StartRxTx.adoc[serial.StartRxTx] - Start serial communication with the designated pins, mode and baud rate.
-* link:serial.Char.adoc[serial.Char] - Send a single-byte character.
-* link:serial.Dec.adoc[serial.Dec] - Send a value as a decimal number string.
-* link:serial.Bin.adoc[serial.Bin] - Send a value as a binary number string.
-* link:serial.Hex.adoc[serial.Hex] - Send a value as a hexadecimal number string.
-* link:serial.Str.adoc[serial.Str] - Send a zero-terminated string.
-* link:serial.Clear.adoc[serial.Clear] - Clear screen and place cursor at the top-left of the console.
-* link:serial.CharIn.adoc[serial.CharIn] - Receive single-byte character.
-* link:serial.RxCount.adoc[serial.RxCount] - Get count of characters in receive buffer.
-* link:serial.RxFlush.adoc[serial.RxFlush] - Empty the receive buffer.
-* link:serial.Stop.adoc[serial.Stop] - Stop serial communication and free the cog.
+- `serial.Start` - Start serial communication with the default pins, mode and baud rate.
+- `serial.StartRxTx` - Start serial communication with the designated pins, mode and baud rate.
+- `serial.Char` - Send a single-byte character.
+- `serial.Dec` - Send a value as a decimal number string.
+- `serial.Bin` - Send a value as a binary number string.
+- `serial.Hex` - Send a value as a hexadecimal number string.
+- `serial.Str` - Send a zero-terminated string.
+- `serial.Clear` - Clear screen and place cursor at the top-left of the console.
+- `serial.CharIn` - Receive single-byte character.
+- `serial.Count` - Get count of characters in receive buffer.
+- `serial.Flush` - Empty the receive buffer.
+- `serial.Stop` - Stop serial communication and free the cog.
