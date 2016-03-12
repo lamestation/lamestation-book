@@ -41,7 +41,7 @@ Software to create LameMusic song objects is planned; for now, songs must be cre
 
 LameStation songs consist of two main sections: pattern and sequence data.
 
-==== Pattern Data
+=== Pattern Data
 
 Patterns contain melodies, riffs, harmonies and any musical parts that fit in a measure.
 
@@ -61,7 +61,7 @@ byte    42,  44,  46,  49
 byte    42, $82, $82, $83
 ----
 
-==== Sequence Data
+=== Sequence Data
 
 The sequence defines how the patterns are arranged in time and across channels. Any one of the commands can be used at any time.
 
@@ -80,7 +80,7 @@ byte    1, 0, 0, 0
 byte    $80
 ----
 
-==== Song Interface
+=== Song Interface
 
 For LameMusic to access the song object, some extra code is needed. This code provides an address which LameMusic reads to figure out where the song data is.
 
