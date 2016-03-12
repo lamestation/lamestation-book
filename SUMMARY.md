@@ -99,7 +99,6 @@
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
        * [fn.Sleep](library/fn.Sleep.adoc)
-       * [fn.TestBoxCollision](library/fn.TestBoxCollision.adoc)
 * [Hardware Reference](hardware.adoc)
 * [Spin Quick Reference](spin.adoc)
 * [Glossary](glossary.adoc)
