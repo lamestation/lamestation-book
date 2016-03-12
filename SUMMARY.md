@@ -84,7 +84,6 @@
        * [music.IsPlaying](library/music.IsPlaying.adoc)
        * [music.Stop](library/music.Stop.adoc)
    * [LameSerial](library/LameSerial.adoc)
-       * [serial.Start](library/serial.Start.adoc)
        * [serial.StartRxTx](library/serial.StartRxTx.adoc)
        * [serial.CharIn](library/serial.CharIn.adoc)
        * [serial.Stop](library/serial.Stop.adoc)
