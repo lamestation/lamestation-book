@@ -27,7 +27,7 @@ Call `music.Start` once at the beginning of your program to start the music engi
 To load a song, call `music.Load` using the `Addr` function of the song object as an argument.  Only one song can play at a time. Loading a new song will stop any currently playing one.
 
 ----
-    music.Load(mycoolsong.Addr)
+music.Load(mycoolsong.Addr)
 ----
 
 You can use the `music.Play` command to play a song once, or `music.Loop` to play it forever. Call `music.IsPlaying` to find out if a song is currently playing.
@@ -45,17 +45,52 @@ LameStation songs consist of two main sections: pattern and sequence data.
 
 Patterns contain melodies, riffs, harmonies and any musical parts that fit in a measure.
 
+- *Notes per measure* (first byte) (`0-255`) - Each pattern must have exactly this many notes.
 - *Note* (`0-127`) - Play note n between 0 and 127.
 - *Stop note* (`$83`) - Stop playing note.
 - *Do nothing* (`$82`) - Do nothing (continue playing or not playing current note).
-- *End song* (`$80`) - End the song.
+
+.Example pattern section
+----
+DAT
+
+pattern_data
+byte    4
+
+byte    42,  44,  46,  49
+byte    42, $82, $82, $83
+----
 
 ==== Sequence Data
 
-The sequence defines how the patterns are arranged in time and across channels.
+The sequence defines how the patterns are arranged in time and across channels. Any one of the commands can be used at any time.
 
-- *Pattern* (`0-127`) - Play pattern n between 0 and 127.
+- *Pattern* (`0-127`) - Set patterns to play on all four channels. Passing zero plays nothing.
+- *End song* (`$80`) - End the song. Naturally, this should be at the end.
 - *ADSRW* (`$A0`) - Change the sound of channel(s).
 - *Tempo* (`$B0`) - Change the tempo of the song.
 - *Transpose* (`$C0`) - Transpose the channel up or down number of notes.
 
+.Example pattern section
+----
+DAT
+
+sequence_data
+byte    1, 0, 0, 0
+byte    $80
+----
+
+==== Song Interface
+
+For LameMusic to access the song object, some extra code is needed. This code provides an address which LameMusic knows how to read to figure out where the song data is.
+
+.Song interface code
+----
+DAT
+song_data
+word    @pattern_data, @sequence_data
+
+PUB Addr
+    result.word[1] := @@0
+    result.word{0} := @song_data
+----
