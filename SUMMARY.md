@@ -77,7 +77,6 @@
        * [audio.StartEnvelope](library/audio.StartEnvelope.adoc)
        * [audio.StopEnvelope](library/audio.StopEnvelope.adoc)
    * [LameMusic](library/LameMusic.adoc)
-       * [music.Load](library/music.Load.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
