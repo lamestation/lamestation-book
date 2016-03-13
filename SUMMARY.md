@@ -65,7 +65,6 @@
        * [audio.PlaySound](library/audio.PlaySound.adoc)
        * [audio.StopSound](library/audio.StopSound.adoc)
        * [audio.StopAllSound](library/audio.StopAllSound.adoc)
-       * [audio.SetNote](library/audio.SetNote.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
