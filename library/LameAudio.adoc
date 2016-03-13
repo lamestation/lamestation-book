@@ -1,19 +1,53 @@
 = LameAudio
 
+LameAudio is a 4-channel synthesizer for the LameStation.
+
+----
+audio : "LameAudio"
+----
+
+Demos for this object can be found in the `/demos/audio/` folder of the SDK.
+
 == Commands
 
 - `audio.Start` - Initialize the LameAudio synthesizer.
-- `audio.PlaySound` - Play the specified note on the specified audio channel.
-- `audio.StopSound` - Stop sound on the specified channel.
+- `audio.SetEnvelope` - Toggle the ADSR envelope generator on the given audio channel.
 - `audio.StopAllSound` - Stop sound on all channels.
-- `audio.SetNote` - Set the note of the given audio channel.
-- `audio.SetFrequency` - Set the frequency increment of the specified audio channel.
+
+*Sound Shaping Commands*
+
 - `audio.SetParam` - Manually set a parameter of the audio channel.
 - `audio.SetADSR` - Set all parameters of the ADSR envelope shape.
 - `audio.SetWaveform` - Set the waveform of the given audio channel.
 - `audio.SetVolume` - Set the volume of the target note.
-- `audio.LoadPatch` - Load a complete patch configuration from memory to any desired channels.
 - `audio.SetSample` - Load a new sample.
-- `audio.SetEnvelope` - Toggle the ADSR envelope generator on the given audio channel.
+- `audio.LoadPatch` - Load a complete patch configuration from memory to any desired channels.
+
+*Keyboard Mode Commands*
+
+- `audio.PlaySound` - Play the specified note on the specified audio channel.
+- `audio.StopSound` - Stop sound on the specified channel.
+
+*Manual Mode Commands*
+
+- `audio.SetNote` - Set the note of the given audio channel.
+- `audio.SetFrequency` - Set the frequency increment of the specified audio channel.
 - `audio.StartEnvelope` - Trigger the channel envelope to start.
 - `audio.StopEnvelope` - Trigger the channel envelope to stop.
+
+== About
+
+LameAudio provides a number of commands for shaping the sounds it makes.
+
+=== Waveforms
+
+- Square (0)
+- Saw
+- Triangle
+- Sine
+- White Noise
+- Sample
++
+A collection of ready-made samples can be found in the `media/samples/` folder of the SDK.
+
+Each channel has an envelope setting. If the envelope is turned on, the channel will play like a keyboard and the Sound commands will work.
