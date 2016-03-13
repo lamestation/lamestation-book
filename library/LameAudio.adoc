@@ -39,15 +39,33 @@ Demos for this object can be found in the `/demos/audio/` folder of the SDK.
 
 LameAudio provides a number of commands for shaping the sounds it makes.
 
-=== Waveforms
-
-- Square (0)
-- Saw
-- Triangle
-- Sine
-- White Noise
-- Sample
-+
-A collection of ready-made samples can be found in the `media/samples/` folder of the SDK.
 
 Each channel has an envelope setting. If the envelope is turned on, the channel will play like a keyboard and the Sound commands will work.
+
+=== Waveforms
+
+==== Square Wave (0)
+
+image::0_square.png[]
+
+==== Sawtooth Wave (1)
+
+image:1_saw.png[]
+
+==== Triangle (2)
+
+image:2_triangle.png[]
+
+==== Sine (3)
+
+image:3_sine.png[]
+
+==== Noise (4)
+
+image:4_noise.png[]
+
+==== Sample (5)
+
+image:5_sample.png[]
+
+A collection of ready-made samples can be found in the `media/samples/` folder of the SDK.
