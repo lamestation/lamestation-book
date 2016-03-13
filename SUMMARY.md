@@ -67,7 +67,6 @@
        * [audio.StopAllSound](library/audio.StopAllSound.adoc)
        * [audio.SetNote](library/audio.SetNote.adoc)
        * [audio.SetFrequency](library/audio.SetFrequency.adoc)
-       * [audio.SetParam](library/audio.SetParam.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
