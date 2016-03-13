@@ -74,7 +74,6 @@
        * [audio.LoadPatch](library/audio.LoadPatch.adoc)
        * [audio.SetSample](library/audio.SetSample.adoc)
        * [audio.SetEnvelope](library/audio.SetEnvelope.adoc)
-       * [audio.StartEnvelope](library/audio.StartEnvelope.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
