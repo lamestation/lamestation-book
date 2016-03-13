@@ -19,7 +19,7 @@ def print_figure(x, y, name):
     fig = plt.gcf()
     fig.set_size_inches(6.0, 1.5)
     
-    fig.savefig(name, bbox_inches='tight', dpi=96)
+    fig.savefig(name, bbox_inches='tight', dpi=72)
 
 
 def print_sample(filename, name):
@@ -46,7 +46,7 @@ def print_sample(filename, name):
     fig = plt.gcf()
     fig.set_size_inches(6.0, 1.5)
     
-    fig.savefig(name, bbox_inches='tight', dpi=96)
+    fig.savefig(name, bbox_inches='tight', dpi=72)
 
 
 sample = 512.0
