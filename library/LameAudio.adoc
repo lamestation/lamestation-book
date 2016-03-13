@@ -19,53 +19,75 @@ Demos for this object can be found in the `/demos/audio/` folder of the SDK.
 - `audio.SetParam` - Manually set a parameter of the audio channel.
 - `audio.SetADSR` - Set all parameters of the ADSR envelope shape.
 - `audio.SetWaveform` - Set the waveform of the given audio channel.
-- `audio.SetVolume` - Set the volume of the target note.
 - `audio.SetSample` - Load a new sample.
-- `audio.LoadPatch` - Load a complete patch configuration from memory to any desired channels.
+- `audio.LoadPatch` - Load a complete patch configuration to any channel(s).
 
 *Keyboard Mode Commands*
 
-- `audio.PlaySound` - Play the specified note on the specified audio channel.
+- `audio.PlaySound` - Play a sound on the specified channel.
 - `audio.StopSound` - Stop sound on the specified channel.
 
 *Manual Mode Commands*
 
+- `audio.SetVolume` - Set the volume of the target note.
 - `audio.SetNote` - Set the note of the given audio channel.
 - `audio.SetFrequency` - Set the frequency increment of the specified audio channel.
 - `audio.StartEnvelope` - Trigger the channel envelope to start.
 - `audio.StopEnvelope` - Trigger the channel envelope to stop.
 
+== Constants
+
+- *Waveform* - `_SQUARE`, `_SAW`, `_TRIANGLE`, `_SINE`, `_NOISE`, `_SAMPLE`
+- *Channel parameter* - `_ATK`, `_DEC`, `_SUS`, `_REL`, `_WAV`, `_CONTROL`
+
 == About
 
-LameAudio provides a number of commands for shaping the sounds it makes.
+Before LameAudio can be used, `audio.Start` must be called once and only once at the start of a program. LameAudio is designed so that only one synthesizer is ever running, and any object may call it.
 
+Each channel has its own parameters that affect the sound it makes. `audio.SetParam` can control any parameter in the _Channel parameter_ constant list. You can change all parameters at once with the `audio.LoadPatch` command, which is good if you change instruments often.
 
-Each channel has an envelope setting. If the envelope is turned on, the channel will play like a keyboard and the Sound commands will work.
+Each channel has a waveform and an envelope.
 
-=== Waveforms
+image:audio_flow.png[]
 
-==== Square Wave (0)
+=== Waveform
 
-image::0_square.png[]
+The waveform generator is what actually creates the sound. Call `audio.SetFrequency` to play any frequency, or call `audio.SetNote` to play specific notes like on a piano.
 
-==== Sawtooth Wave (1)
+Call `audio.SetWaveform` to load one of the following waveforms.
 
-image:1_saw.png[]
+.Waveforms
+|===
+| *Value* | *Name*   | *Waveform*
+| 0       | Square   | image:0_square.png[]
+| 1       | Sawtooth | image:1_saw.png[]
+| 2       | Triangle | image:2_triangle.png[]
+| 3       | Sine     | image:3_sine.png[]
+| 4       | Noise    | image:4_noise.png[]
+| 5       | Sample   | image:5_sample.png[]
+|===
 
-==== Triangle (2)
+The _Sample_ waveform is a 512B block of audio data, enough for one cycle. Call `audio.SetSample` with the address of a sample to load it. Only one sample can be used at a time.
 
-image:2_triangle.png[]
+A collection of ready-made samples can be found in the `/media/samples/` folder of the SDK.
 
-==== Sine (3)
+=== Envelope
 
-image:3_sine.png[]
+The envelope controls the volume of the sound over time, allowing you to create sounds that hit sharply like bells, or have a long hold time like a wind instrument. You can control how it sounds with the ADSR parameters of the envelope.
 
-==== Noise (4)
+_ADSR_ stands for _Attack, Decay, Sustain, and Release_. You can configure ADSR settings with `audio.SetADSR`.
 
-image:4_noise.png[]
+image:adsr.png[]
 
-==== Sample (5)
+- *Attack* (`0-127`) - The time from silence to full volume.
+- *Decay* (`0-127`) - The time from the max value to...
+- *Sustain* (`0-127`) - The volume at which the note is held while pressed.
+- *Release* (`0-127`) - The time from sustain to silence.
 
-image:5_sample.png[]
+The envelope can be toggled with `audio.SetEnvelope`.
 
-A collection of ready-made samples can be found in the `media/samples/` folder of the SDK.
+- If enabled, you can play and stop notes with the `audio.PlaySound` and `audio.StopSound` commands.
+
+- If disabled, you can control channel volume manually using `audio.SetVolume`, which is useful for creating sound effects. You can also manually start and stop the envelope with `audio.StartEnvelope` and `audio.StopEnvelope`.
+
+To silence all audio, use the `audio.StopAllSound` command.
