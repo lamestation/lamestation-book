@@ -69,7 +69,6 @@
        * [audio.SetFrequency](library/audio.SetFrequency.adoc)
        * [audio.SetParam](library/audio.SetParam.adoc)
        * [audio.SetADSR](library/audio.SetADSR.adoc)
-       * [audio.SetWaveform](library/audio.SetWaveform.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
