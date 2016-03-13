@@ -75,7 +75,6 @@
        * [audio.SetSample](library/audio.SetSample.adoc)
        * [audio.SetEnvelope](library/audio.SetEnvelope.adoc)
        * [audio.StartEnvelope](library/audio.StartEnvelope.adoc)
-       * [audio.StopEnvelope](library/audio.StopEnvelope.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
