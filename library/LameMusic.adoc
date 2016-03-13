@@ -63,7 +63,7 @@ byte    42, $82, $82, $83
 
 === Sequence Data
 
-The sequence defines how the patterns are arranged in time and across channels. Any one of the commands can be used at any time.
+The sequence defines how the patterns are arranged in time and across channels. There should be one command, as many times as you want.
 
 - *Pattern* (`<ch1>`, `<ch2>`, `<ch3>`, `<ch4>`) - Set next pattern to pattern 1-127 for all four channels. Pattern 0 plays nothing.
 - *End song* (`$80`) - End the song.
