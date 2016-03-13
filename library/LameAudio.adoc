@@ -46,6 +46,14 @@ Before LameAudio can be used, `audio.Start` must be called once and only once at
 
 Each channel has its own parameters that affect the sound it makes. `audio.SetParam` can control any parameter in the _Channel parameter_ constant list. You can change all parameters at once with the `audio.LoadPatch` command, which is good if you change instruments often.
 
+This is what a patch looks like.
+
+----
+DAT
+    patch
+    byte  $F, 127, 10, 100, 10, audio#_SAW
+----
+
 Each channel has a waveform and an envelope.
 
 image:audio_flow.png[]
