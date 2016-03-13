@@ -34,7 +34,7 @@ You can use the `music.Play` command to play a song once, or `music.Loop` to pla
 
 Once you're tired of listening to music, call `music.Stop` to end the song. Playing the song again will start over from the beginning.
 
-== Song Format (Advanced)
+== Song Format
 
 [NOTE]
 Software to create LameMusic song objects is planned; for now, songs must be created by hand.
@@ -65,11 +65,11 @@ byte    42, $82, $82, $83
 
 The sequence defines how the patterns are arranged in time and across channels. Any one of the commands can be used at any time.
 
-- *Pattern* (`0-127`) - Set patterns to play on all four channels. Passing zero plays nothing.
-- *End song* (`$80`) - End the song. Naturally, this should be at the end.
-- *ADSRW* (`$A0`) - Change the sound of channel(s).
-- *Tempo* (`$B0`) - Change the tempo of the song.
-- *Transpose* (`$C0`) - Transpose the channel up or down number of notes.
+- *Pattern* (`<ch1>`, `<ch2>`, `<ch3>`, `<ch4>`) - Set next pattern to pattern 1-127 for all four channels. Pattern 0 plays nothing.
+- *End song* (`$80`) - End the song.
+- *ADSRW* (`$A0`, `<a>`, `<d>`, `<s>`, `<r>`, `<w>`) - Change the sound of channel(s).
+- *Tempo* (`$B0`, `0-255`) - Change the tempo of the song.
+- *Transpose* (`$C0`, `-128-127`) - Transpose the channel up or down number of notes.
 
 .Example pattern section
 ----
