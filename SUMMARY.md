@@ -61,7 +61,6 @@
        * [map.TestMoveY](library/map.TestMoveY.adoc)
        * [map.TestPoint](library/map.TestPoint.adoc)
    * [LameAudio](library/LameAudio.adoc)
-       * [audio.Start](library/audio.Start.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
