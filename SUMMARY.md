@@ -72,7 +72,6 @@
        * [audio.SetWaveform](library/audio.SetWaveform.adoc)
        * [audio.SetVolume](library/audio.SetVolume.adoc)
        * [audio.LoadPatch](library/audio.LoadPatch.adoc)
-       * [audio.SetSample](library/audio.SetSample.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
