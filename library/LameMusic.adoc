@@ -87,9 +87,8 @@ For LameMusic to access the song object, some extra code is needed. This code pr
 .Song interface code
 ----
 DAT
-song_data
-word    @pattern_data, @sequence_data
-
+    song_data
+    word    @pattern_data, @sequence_data
 PUB Addr
     result.word[1] := @@0
     result.word{0} := @song_data
