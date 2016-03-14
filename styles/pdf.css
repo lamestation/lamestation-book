@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   color: #007fff;
   font-variant: small-caps;
-  border-bottom: 2px solid #bbb;
+  border-bottom: 1px solid #bbb;
 }
 
 h2 {
@@ -99,7 +99,7 @@ kbd {
 
 
 /* Admonition support, UGH */
-.admonitionblock {
+.book .book-body .page-wrapper .page-inner section.normal div.admonitionblock {
     box-sizing: border-box;
     display: block;
     margin-bottom: 20px;
@@ -108,28 +108,26 @@ kbd {
     border: 0px;
 }
 
-.admonitionblock .title {
+.book .book-body .page-wrapper .page-inner section.normal div.admonitionblock .title {
     font-weight: bold;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td p {
-    margin: 0px;
-}
-
-.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table th, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table th, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr,
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table,
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock tbody {
     border: 0px;
-    vertical-align: middle;
     margin: 0px;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.icon {
-    max-width: 100px;
-}
-
-.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.content {
-    width: 100%;
-}
-
-.book .book-body .page-wrapper .page-inner section.normal table td, .book .book-body .page-wrapper .page-inner section.normal table th {
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td .icon{
+  border: 0px;
   border-right: 2px solid #777;
+  max-width: 100px;
+  vertical-align: middle;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td .content{
+  border: 0px;
+  width: 100%;
+  vertical-align: middle;
 }
