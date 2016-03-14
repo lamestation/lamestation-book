@@ -11,6 +11,7 @@
 p {
   font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
 }
 
 pre, code {
@@ -26,3 +27,14 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
   font-family: Impact, Charcoal, sans-serif;
 }
+
+div.listingblock {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+  
+caption.title {
+  color: #333;
+}
+  
