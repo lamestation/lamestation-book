@@ -32,10 +32,10 @@ h1 {
   color: #007fff;
   font-variant: small-caps;
   border-bottom: 1px solid #bbb;
+  margin-bottom: 2in;
 }
 
 h2 {
-  page-break-after: always;
   color: #555;
 }
 
