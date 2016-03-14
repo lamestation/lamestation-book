@@ -276,16 +276,7 @@ does nothing, so make sure you call it. At the beginning of your loop is a good 
         ctrl.Update
 ----
 
-Now you can get the values for any of the keys, that is: 
-
-- link:ctrl.A.adoc[ctrl.A]
-- link:ctrl.B.adoc[ctrl.B]
-- link:ctrl.Up.adoc[ctrl.Up]
-- link:ctrl.Right.adoc[ctrl.Right]
-- link:ctrl.Down.adoc[ctrl.Down]
-- link:ctrl.Left.adoc[ctrl.Left]
-
-However, before you'll be able to see anything interesting happen, you need a way to test _if_ a button has been pressed.
+Now you can see if any of the buttons have been pressed. However, before you'll be able to see anything interesting happen, you need a way to test _if_ a button has been pressed.
 
 You may have guessed that the keyword `IF` does just that. It allows you to only run code if a condition is true. Then, you can use the `ELSE` to run code if it is false.
 
