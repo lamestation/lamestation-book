@@ -29,10 +29,6 @@ LameMap has collision support built in.
 
 === Tilemaps
 
-Each tilemap consists of two parts: the 
+Each game map requires a tile map, and an optional collision map.
 
 == Map Format
-
-----
-map_<filename>.spin
-----
