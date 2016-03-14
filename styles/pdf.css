@@ -55,7 +55,7 @@ pre, .listingblock .content pre, .literalblock .content pre {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  line-height: 1em;
+  line-height: 1;
 }
   
 caption.title, div.title {
