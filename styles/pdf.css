@@ -53,7 +53,7 @@ div.listingblock {
   border-radius: 5px;
 }
   
-caption.title {
+caption.title, div.title {
   color: #333;
 }
   
