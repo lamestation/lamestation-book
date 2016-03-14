@@ -105,7 +105,6 @@ kbd {
     margin-bottom: 20px;
     padding: 5px;
     background: transparent;
-    border: 0px;
 }
 
 .admonitionblock .title {
@@ -117,8 +116,9 @@ kbd {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table th, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
-    
+    border: 0px;
     vertical-align: middle;
+    margin: 0px;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.icon {
