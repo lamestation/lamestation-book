@@ -47,8 +47,8 @@ h5 {
   color: #999;
 }
 
-pre, .listingblock .content pre {
-  font-size: 10px;
+pre, .listingblock .content pre, .listingblock .content pre {
+  font-size: 14px;
   font-family: "Courier New", Courier, monospace;
   background-color: transparent;
   padding: 5px;
@@ -93,6 +93,7 @@ kbd {
     margin-bottom: 20px;
     padding: 5px;
     background: transparent;
+    border: 0px;
 }
 
 .admonitionblock .title {
@@ -104,7 +105,7 @@ kbd {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table th, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
-    border: 0px;
+    
     vertical-align: middle;
 }
 
