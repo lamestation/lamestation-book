@@ -65,6 +65,5 @@
    * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
-* [Hardware Reference](hardware.adoc)
 * [Spin Quick Reference](spin.adoc)
 
