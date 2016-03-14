@@ -55,9 +55,6 @@ h5 {
 pre, .listingblock .content pre, .literalblock .content pre {
   font-size: 14px;
   font-family: "DejaVu Sans Mono", "Courier New", Courier, monospace;
-  background-color: transparent;
-  
-  padding: 0px;
 /*  
   margin-left: 0.5in;
   padding: 5px;
