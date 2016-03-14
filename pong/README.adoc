@@ -130,6 +130,9 @@ That's a pretty terrible ball sprite. For fun, try to make it less terrible.
 
 === Moving the Ball
 
+Okay, we have the ball on the screen. But how do we get it to do something? In a pong game, the ball should go back and forth on the screen.
+
+In programming, everything has to be done step-by-step.
 
 
 == Adding the Paddle
