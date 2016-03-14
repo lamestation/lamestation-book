@@ -25,9 +25,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  page-break-before: always;
   page-break-after: always;
   color: #007fff;
   text-transform: uppercase;
+}
+
+h1:after {
+  width:100%;
+  height:1px;
+  background: #bbb;
+  content: "";
 }
 
 h2 {
