@@ -47,7 +47,7 @@ h5 {
   color: #999;
 }
 
-pre, .listingblock .content pre, .listingblock .content pre {
+pre, .listingblock .content pre, .literalblock .content pre {
   font-size: 14px;
   font-family: "Courier New", Courier, monospace;
   background-color: transparent;
