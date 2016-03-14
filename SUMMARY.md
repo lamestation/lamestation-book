@@ -67,5 +67,4 @@
    * [LameFunctions](library/LameFunctions.adoc)
 * [Hardware Reference](hardware.adoc)
 * [Spin Quick Reference](spin.adoc)
-* [Glossary](glossary.adoc)
 
