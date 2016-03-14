@@ -14,8 +14,13 @@ p {
   text-align: justify;
 }
 
-pre, code {
-  font-size: 8px;
+code  {
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+pre, .listingblock .content pre {
+  font-size: 10px;
   font-family: "Courier New", Courier, monospace;
 }
 
