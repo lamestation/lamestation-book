@@ -63,3 +63,64 @@ caption.title, div.title {
   color: #333;
 }
   
+  
+  
+
+
+
+
+
+
+kbd {
+    display: inline-block;
+    color: rgb(0,0,0,0.8);
+    font-size: 0.75em;
+    line-height: 1.4;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 0.1em #fff inset;
+    margin: -0.15em 0.15em 0 0.15em;
+    padding: 0.2em 0.6em 0.2em 0.5em;
+    vertical-align: middle;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Admonition support, UGH */
+.admonitionblock {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    background: transparent;
+}
+
+.admonitionblock .title {
+    font-weight: bold;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td p {
+    margin: 0px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table th, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
+    border: 0px;
+    vertical-align: middle;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.icon {
+    max-width: 100px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.content {
+    width: 100%;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.note table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.tip  table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.warning table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.caution  table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.important table td.icon
+{
+    border-right: 2px solid #777;
+}
