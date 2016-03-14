@@ -33,16 +33,16 @@ h1 {
 
 h2 {
   page-break-after: always;
-  color: #333;
+  color: #555;
 }
 
 h3 {
-  color: #555;
+  color: #777;
   font-variant: small-caps;
 }
 
 h4 {
-  color: #777;
+  color: #888;
 }
 
 h5 {
