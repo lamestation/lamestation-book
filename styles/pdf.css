@@ -76,7 +76,7 @@ caption.title, div.title {
   
   
 /* table */
-.book .book-body .page-wrapper .page-inner section.normal blockquote, .book .book-body .page-wrapper .page-inner section.normal dl, .book .book-body .page-wrapper .page-inner section.normal ol, .book .book-body .page-wrapper .page-inner section.normal p, .book .book-body .page-wrapper .page-inner section.normal table, .book .book-body .page-wrapper .page-inner section.normal ul {
+p.tableblock {
   margin-bottom: 0;
 }
 
