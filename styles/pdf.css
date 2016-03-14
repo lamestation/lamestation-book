@@ -75,37 +75,40 @@ caption.title, div.title {
   
   
   
+/* table */
+.book .book-body .page-wrapper .page-inner section.normal blockquote, .book .book-body .page-wrapper .page-inner section.normal dl, .book .book-body .page-wrapper .page-inner section.normal ol, .book .book-body .page-wrapper .page-inner section.normal p, .book .book-body .page-wrapper .page-inner section.normal table, .book .book-body .page-wrapper .page-inner section.normal ul {
+  margin-bottom: 0;
+}
 
 
-
-
-
+/* extras */
 
 kbd {
-    display: inline-block;
-    color: rgb(0,0,0,0.8);
-    font-size: 0.75em;
-    background-color: #f7f7f7;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin: 0em;
-    padding: 0.1em 0.3em 0.1em 0.3em;
-    vertical-align: middle;
-    white-space: nowrap;
-    box-sizing: border-box;
+  display: inline-block;
+  color: rgb(0,0,0,0.8);
+  font-size: 0.75em;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0em;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 
 
 
-/* Admonition support, UGH */
+/* Admonitions */
+
 .book .book-body .page-wrapper .page-inner section.normal div.admonitionblock {
-    box-sizing: border-box;
-    display: block;
-    margin-bottom: 20px;
-    padding: 5px;
-    background: transparent;
-    border: 0px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 20px;
+  padding: 5px;
+  background: transparent;
+  border: 0px;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal div.admonitionblock .title {
