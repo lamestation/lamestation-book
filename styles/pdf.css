@@ -15,7 +15,7 @@ blockquote, dl, ol, p, table, ul {
   margin-bottom: 0.5em;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal code  {
+code {
   font-size: 1em;
   font-family: "Courier New", Courier, monospace;
 }
