@@ -1,2 +1,246 @@
 = Hello Pong
 
+You can use the
+
+== Setting the clock
+
+This first bit of code tells the LameStation how fast it should run. It looks strange, but you'll never need to change it, so we don't need to know why it works yet. Every game should have this code once at the top.
+
+----
+CON
+    _clkmode = xtal1 + pll16x
+    _xinfreq = 5_000_000
+----
+
+[IMPORTANT]
+====
+Without these settings, your game won't work right. See for yourself! Try leaving it out and see what happens.
+====
+
+== Adding the ball
+
+To make a pong game, the first thing we'll need is a ball, and for that, we need graphics. Start by including the LameStation graphics libraries, and setting them up in your first function.
+
+----
+OBJ
+    lcd : "LameLCD" 
+    gfx : "LameGFX"
+    
+PUB Main
+    lcd.Start(gfx.Start)
+----
+
+Set up the main function with the graphics. The first function in your game is called first, so make sure to create any new ones after this.
+
+You can try running the program now, but you'll quickly find nothing on the screen. We still haven't told LameGFX to actually draw anything.
+
+Now let's add a sprite for the pong ball in a DAT block.
+
+----
+DAT
+ball
+word    0
+word    8, 8
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+----
+
+.LameStation Images
+****
+Some more information:
+
+- The first word is zero because we're not using it yet.
+- The next two words are the width and height of the sprite in pixels.
+- The remaining words are the raw image data, arranged right to left, top to bottom.
+
+What in the blazes? This is what image data looks like. It's really just a bunch of numbers in a grid that represent colors. For the LameStation, every two bits is one pixel.
+
+|===
+| *Number* | *Bits* | *Color*
+| 0 | 00 | Black
+| 1 | 01 | White
+| 2 | 10 | Transparent
+| 3 | 11 | Grey
+|===
+
+Transparent means the color is never shown when the image is drawn on top of another image.
+****
+
+Anyway, we have our image. In the main function, use `gfx.Sprite` to draw the sprite. It's parameters are:
+
+- *source* - The address of the image. In this case, it's `@ball`.
+- *x*, *y* - Where to position the sprite on the screen, relative to the top-left. Let's just put the ball somewhere for now.
+- *frame* - Sprites can have multiple frames for animation, but ours doesn't, so we'll just put `0`.
+
+----
+gfx.Sprite(@ball, 10, 10, 0)
+----
+
+We're not done yet. If we tried to run the code now, we still wouldn't see anything. After our drawing command, we have to tell LameLCD that we're done preparing the next screen and its time to draw it. For that, we use `lcd.DrawScreen`.
+
+----
+lcd.DrawScreen
+----
+
+Okay, you should now have code that looks like this.
+
+----
+CON
+    _clkmode = xtal1 + pll16x
+    _xinfreq = 5_000_000
+    
+OBJ
+    lcd : "LameLCD" 
+    gfx : "LameGFX"
+    
+PUB Main
+    lcd.Start(gfx.Start)
+    gfx.Sprite(@ball, 10, 10, 0)
+    lcd.DrawScreen
+
+DAT
+
+ball
+word    0
+word    8, 8
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+----
+
+Now run your code and you should see this:
+
+image:pic002.png[]
+
+.Going Further
+****
+That's a pretty terrible ball sprite. For fun, try to make it less terrible.
+****
+
+=== Moving the Ball
+
+
+
+== Adding the Paddle
+
+Add this in your DAT section.
+
+----
+paddle
+word    0
+word    8, 16
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+----
+
+
+
+
+- Making the ball bounce
+- Adding a ball
+- Adding a paddle
+- Controlling your paddle
+- Adding a computer opponent
+- Adding a title screen
+- Add win and lose screens
+- Keeping score
+- Adding some little sounds
+
+
+
+
+
+
+
+
+
+----
+CON
+    _clkmode        = xtal1 + pll16x
+    _xinfreq        = 5_000_000
+
+OBJ
+    lcd     : "LameLCD" 
+    gfx     : "LameGFX"
+    ctrl    : "LameControl"
+    fnt     : "gfx_font8x8"
+VAR
+
+PUB Main 
+PUB InitGame
+PUB TitleScreen
+PUB YouLose
+PUB YouWin
+PUB ResetGame
+PUB GameLoop
+    
+    ctrl.Update
+    gfx.ClearScreen(0)
+    
+    ' game logic goes here
+    
+    lcd.DrawScreen
+
+PUB ControlPlayer
+PUB ControlOpponent
+PUB ControlBall
+
+DAT
+
+ball
+word    0
+word    8, 8
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+
+paddle
+word    0
+word    8, 16
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+word    %%11111111
+----
