@@ -18,7 +18,7 @@ pre, code {
 
 h1 {
   page-break-before: always;
-  page-break-after: avoid;
+  page-break-after: always;
 }
 
 h2, h3, h4, h5 {
