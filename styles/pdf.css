@@ -15,7 +15,7 @@ p {
 }
 
 pre, code {
-  font-size: 10px;
+  font-size: 8px;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -30,6 +30,7 @@ h1 {
 }
 
 h2 {
+  page-break-after: always;
   color: #333;
 }
 
