@@ -2,20 +2,37 @@
 
 image:ParallaxScrolling.png[]
 
-LameMap is an extension to
-link:LameGFX.adoc[LameGFX] for tile-based game maps. It is
-built on the underlying `gfx.Map` command, but
-provides additional informational functionality for managing map data
-and testing for map-based collision.
+LameMap is an extension to link:LameGFX.adoc[LameGFX] for tile-based game maps. It is
+built on the underlying `gfx.Map` command, but provides additional informational functionality for managing map data and testing for map-based collision.
 
 == Commands
 
-- `map.Load` - Load a map into LameMap for drawing to the screen.
+- `map.Load` - Load a map into LameMap.
 - `map.Draw` - Draw the current map to the screen.
 - `map.DrawRectangle` - Draw the current map to a portion of the screen.
 - `map.Width` - Return the width of the currently loaded map in tiles.
 - `map.Height` - Return the height of the currently loaded map in tiles.
+- `map.TestPoint` - Test whether tile on a map is collidable.
 - `map.TestCollision` - Test if the region has collided with a map tile.
 - `map.TestMoveX` - Apply horizontal movement to an object's position and test if it will collide.
 - `map.TestMoveY` - Apply vertical movement to an object's position and test if it will collide.
-- `map.TestPoint` - Test whether tile on a map is collidable.
+
+== About
+
+LameGFX must be started before LameMap can be used. Call `map.Load` to load a map. Only one map can be loaded at a time.
+
+There are two ways to draw a map to the screen: `map.Draw` draws the map to the whole screen, while `map.DrawRectangle` draws it to a region with the corners (x1, y1) and (x2, y2). Both require an `offset_x` and `offset_y` that determine which portion of the map to show.
+
+You can get the number of horizontal and vertical tiles in your map with `map.Width` and `map.Height`.
+
+LameMap has collision support built in.
+
+=== Tilemaps
+
+Each tilemap consists of two parts: the 
+
+== Map Format
+
+----
+map_<filename>.spin
+----
