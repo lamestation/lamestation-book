@@ -73,13 +73,13 @@ h5 {
 }
 
 pre, .listingblock .content pre, .literalblock .content pre {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "DejaVu Sans Mono", "Courier New", Courier, monospace;
   background-color: transparent;
   
   padding: 0px;
-  margin-left: 0.5in;
 /*  
+  margin-left: 0.5in;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
