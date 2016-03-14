@@ -48,7 +48,7 @@ h5 {
   color: #999;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal pre {
+pre, .listingblock .content pre, .literalblock .content pre {
   font-size: 18px;
   font-family: "Courier New", Courier, monospace;
   background-color: transparent;
