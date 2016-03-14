@@ -48,14 +48,13 @@ h5 {
   color: #999;
 }
 
-pre, .listingblock .content pre, .literalblock .content pre {
+.book .book-body .page-wrapper .page-inner section.normal pre {
   font-size: 18px;
   font-family: "Courier New", Courier, monospace;
   background-color: transparent;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  
 }
   
 caption.title, div.title {
