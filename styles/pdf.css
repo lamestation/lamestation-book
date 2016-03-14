@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   color: #007fff;
-  text-transform: uppercase;
+  font-variant: small-caps;
   border-bottom: 2px solid #bbb;
   margin-bottom: 2in;
 }
