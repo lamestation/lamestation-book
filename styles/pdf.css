@@ -105,6 +105,7 @@ kbd {
     margin-bottom: 20px;
     padding: 5px;
     background: transparent;
+    border: 0px;
 }
 
 .admonitionblock .title {
@@ -129,7 +130,6 @@ kbd {
     width: 100%;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.note table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.tip  table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.warning table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.caution  table td.icon, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock.important table td.icon
-{
-    border-right: 2px solid #777;
+.book .book-body .page-wrapper .page-inner section.normal table td, .book .book-body .page-wrapper .page-inner section.normal table th {
+  border-right: 2px solid #777;
 }
