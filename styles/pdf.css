@@ -24,11 +24,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.book .book-body .page-wrapper .page-inner section.normal h1 {
+  margin-bottom: 2in;
+}
+
 h1 {
   color: #007fff;
   font-variant: small-caps;
   border-bottom: 2px solid #bbb;
-  margin-bottom: 2in;
 }
 
 h2 {
@@ -55,7 +58,7 @@ pre, .listingblock .content pre, .literalblock .content pre {
   background-color: transparent;
   
   padding: 0px;
-  margin-left: 1in;
+  margin-left: 0.5in;
 /*  
   padding: 5px;
   border: 1px solid #ccc;
