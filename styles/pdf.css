@@ -15,11 +15,6 @@ blockquote, dl, ol, p, table, ul {
   margin-bottom: 0.5em;
 }
 
-code {
-  font-size: 1em;
-  font-family: "Courier New", Courier, monospace;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -51,12 +46,17 @@ h5 {
 
 pre, .listingblock .content pre, .literalblock .content pre {
   font-size: 18px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "DejaVu Sans Mono", "Courier New", Courier, monospace;
   background-color: transparent;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   line-height: 1;
+}
+
+code {
+  font-size: 1em;
+  font-family: "DejaVu Sans Mono", "Courier New", Courier, monospace;
 }
   
 caption.title, div.title {
