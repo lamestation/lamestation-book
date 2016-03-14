@@ -1,9 +1,26 @@
 /* CSS for pdf */
 
+@page :left {
+  margin-left: 3cm;
+}
+
+@page :right {
+  margin-left: 4cm;
+}
+
 p {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 pre, code {
-  font-size: 12px;
+  font-size: 10px;
+}
+
+h1 {
+  page-break-before: always;
+  page-break-after: avoid;
+}
+
+h2, h3, h4, h5 {
+  page-break-after: avoid;
 }
