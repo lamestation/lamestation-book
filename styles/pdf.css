@@ -19,13 +19,31 @@ pre, code {
   font-family: "Courier New", Courier, monospace;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
   page-break-after: always;
+  color: #007fff;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #555;
   font-variant: small-caps;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Impact, Charcoal, sans-serif;
+h4 {
+  color: #777;
+}
+
+h5 {
+  color: #999;
 }
 
 div.listingblock {
