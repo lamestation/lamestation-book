@@ -1,4 +1,4 @@
-#### Setting Up The Screen
+== Setting Up The Screen
 
 ` [ lcd.Start ](lcd.Start_15400977.adoc) ` requires one value to be passed to
 it: the address of a drawing surface it will copy from. This address is
