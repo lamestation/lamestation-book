@@ -32,10 +32,15 @@ mapsize := map.Width * map.Height
 
 LameMap has collision support built in. `map.TestPoint` returns if a tile has collision enabled. You can test whether or not collision has occurred with `map.TestCollision`, passing the rectangle of the object.
 
-Knowing whether a collision has happened is often not enough, as you might need to keep the playing inside a known region. `map.TestMoveX` and `map.TestMoveY` allow you to test if a collision has occurred horizontally or vertically. If it has, it will return a correction factor to add to the object's position to remove it from the collision. In this way, you can build walls that your players can't escape from.
-
 [NOTE]
 Only valid map regions are tested for collisions; positions that are off the map area will always return 0.
+
+Knowing whether a collision has happened is often not enough, as you might need to keep the playing inside a known region. `map.TestMoveX` and `map.TestMoveY` allow you to test if a collision has occurred horizontally or vertically. If it has, it will return a correction factor to add to the object's position to remove it from the collision. In this way, you can build walls that your players can't escape from.
+
+[IMPORTANT]
+If the distance between an object's old and new location is large enough, LameMap may fail to detect collision entirely.
+
+
 
 == Map Format
 
