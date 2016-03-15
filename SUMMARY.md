@@ -51,7 +51,6 @@
        * [txt.Str](library/txt.Str.adoc)
        * [txt.Box](library/txt.Box.adoc)
    * [LameMap](library/LameMap.adoc)
-       * [map.Draw](library/map.Draw.adoc)
        * [map.DrawRectangle](library/map.DrawRectangle.adoc)
        * [map.Width](library/map.Width.adoc)
        * [map.Height](library/map.Height.adoc)
