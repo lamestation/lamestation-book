@@ -6,6 +6,8 @@ LameControl allows you to use the LameStation's joystick and buttons.
 ctrl : "LameControl"
 ----
 
+Demos for this object can be found in the `/demos/basics/` folder of the SDK.
+
 == Commands
 
 - `ctrl.Start` - Start the LameControl library.
