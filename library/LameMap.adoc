@@ -38,9 +38,8 @@ Only valid map regions are tested for collisions; positions that are off the map
 Knowing whether a collision has happened is often not enough, as you might need to keep the playing inside a known region. `map.TestMoveX` and `map.TestMoveY` allow you to test if a collision has occurred horizontally or vertically. If it has, it will return a correction factor to add to the object's position to remove it from the collision. In this way, you can build walls that your players can't escape from.
 
 [IMPORTANT]
-If the distance between an object's old and new location is large enough, LameMap may fail to detect collision entirely.
-
-
+The `TestMove-` functions only check for collisions once at the new location. If the distance is large enough, they may miss potential collisions (e.g. halfway
+between the old and new locations).
 
 == Map Format
 
