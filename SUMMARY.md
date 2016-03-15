@@ -51,7 +51,6 @@
        * [txt.Str](library/txt.Str.adoc)
        * [txt.Box](library/txt.Box.adoc)
    * [LameMap](library/LameMap.adoc)
-       * [map.TestPoint](library/map.TestPoint.adoc)
    * [LameAudio](library/LameAudio.adoc)
    * [LameMusic](library/LameMusic.adoc)
    * [LameSerial](library/LameSerial.adoc)
