@@ -1,21 +1,3 @@
 {
-    "title": "Game Programming With The LameStation",
-    "author": "Brett Weir",
-    "plugins": [],
-    "pluginsConfig": {
-        "autocover": {
-            "font": {
-                "size": "48px",
-                "family": "Arial",
-                "color": "#007FFF"
-            },
-            "size": {
-                "w": 1800,
-                "h": 2360
-            },
-            "background": {
-                "color": "#FFF"
-            }
-        }
-    }
+    "plugins": []
 }
