@@ -57,5 +57,5 @@
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
 * [Spin Quick Reference](spin.adoc)
-* Snake
+* [Snake](snake/README.adoc)
 
