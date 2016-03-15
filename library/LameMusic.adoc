@@ -6,7 +6,7 @@ LameMusic is a sequencer for LameAudio that allows your games to play arranged m
 music : "LameMusic"
 ----
 
-Demos for this object can be found in the `demos/music/` folder of the SDK.
+Demos for this object can be found in the `/demos/music/` folder of the SDK.
 
 == Commands
 
