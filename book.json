@@ -5,7 +5,7 @@
     "pluginsConfig": {
         "autocover": {
             "font": {
-                "size": 48px,
+                "size": 48,
                 "family": "Arial",
                 "color": "#007FFF"
             },
