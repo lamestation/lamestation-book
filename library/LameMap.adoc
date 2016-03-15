@@ -2,8 +2,7 @@
 
 image:ParallaxScrolling.png[]
 
-LameMap is an extension to link:LameGFX.adoc[LameGFX] for tile-based game maps. It is
-built on the underlying `gfx.Map` command, but provides additional informational functionality for managing map data and testing for map-based collision.
+LameMap is a tile engine for LameGFX. It provides functions to display and interact with tile-based game maps.
 
 == Commands
 
@@ -21,14 +20,62 @@ built on the underlying `gfx.Map` command, but provides additional informational
 
 LameGFX must be started before LameMap can be used. Call `map.Load` to load a map. Only one map can be loaded at a time.
 
-There are two ways to draw a map to the screen: `map.Draw` draws the map to the whole screen, while `map.DrawRectangle` draws it to a region with the corners (x1, y1) and (x2, y2). Both require an `offset_x` and `offset_y` that determine which portion of the map to show.
+There are two ways to draw a map to the screen: `map.Draw` draws the map to the whole screen, while `map.DrawRectangle` limits the map to a region with the corners (x1, y1) and (x2, y2). Both use an `offset_x` and `offset_y` that determine which portion of the map to show.
+
+image::drawmap.png[title='The red rectangle is the offset, while the blue rectangle is the size of the visible map portion.']
 
 You can get the number of horizontal and vertical tiles in your map with `map.Width` and `map.Height`.
 
-LameMap has collision support built in.
+----
+mapsize := map.Width * map.Height
+----
 
-=== Tilemaps
+LameMap has collision support built in. `map.TestPoint` returns if a tile has collision enabled. You can test whether or not collision has occurred with `map.TestCollision`, passing the rectangle of the object.
 
-Each game map requires a tile map, and an optional collision map.
+Knowing whether a collision has happened is often not enough, as you might need to keep the playing inside a known region. `map.TestMoveX` and `map.TestMoveY` allow you to test if a collision has occurred horizontally or vertically. If it has, it will return a correction factor to add to the object's position to remove it from the collision. In this way, you can build walls that your players can't escape from.
 
 == Map Format
+
+Game maps consist of three parts: a tile map, a level map, and an optional collision map.
+
+- A *tile map* is a 2D array of sprites intended for creating maps. They are carefully organized so that they can be indexed one-by-one.
++
+image:islandfun_tiles.png[]
+- A *level map* references the tile map to build a level.
++
+image:islandfun_demo.png[]
+- A *collision map* mirrors the tile map and provides information about which tiles can be walked on and which ones can't. A black square cannot be walked on, while a white one can.
++
+image:islandfun_collision.png[]
+
+=== Level Map Data
+
+Map data is raw data describing what an area looks like and how the player can interact with it.
+
+- *width*, *height* (`0-65535`) - The width and height of the image in tiles.
+- *tile* - The array of tiles that make up this level, placed left-to-right, top-to-bottom.
+----
+DAT
+map_data
+
+word    <width>, <height>
+
+byte    <tile>, [<tile>]...
+----
+
+Each tile in a map is one byte, with 1 bit used for collision, and the other 7 used for the tile number footnote:[Collision data is stored in the level to save space and allow for hidden passageways.].
+
+image:tilebyte.png[]
+
+Tile 0 is used as a _null_ tile, so the maximum usable tilemap size is 126 tiles.
+
+The collision bit stores whether a tile will register a collision when touched. All collision functions return 0 unless this bit is set.
+
+==== Interface
+
+The address of the map data can be passed directly to `map.Load`, unless stored in another object. If so, the following function is used as an interface.
+
+----
+PUB Addr
+    return @map_data
+----
