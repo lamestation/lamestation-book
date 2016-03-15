@@ -32,7 +32,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   color: #007fff;
-  font-variant: small-caps;
   border-bottom: 1px solid #bbb;
   margin-bottom: 2in;
 }
@@ -43,7 +42,6 @@ h2 {
 
 h3 {
   color: #777;
-  font-variant: small-caps;
 }
 
 h4 {
