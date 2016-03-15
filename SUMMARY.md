@@ -51,7 +51,6 @@
        * [txt.Str](library/txt.Str.adoc)
        * [txt.Box](library/txt.Box.adoc)
    * [LameMap](library/LameMap.adoc)
-       * [map.TestCollision](library/map.TestCollision.adoc)
        * [map.TestMoveX](library/map.TestMoveX.adoc)
        * [map.TestMoveY](library/map.TestMoveY.adoc)
        * [map.TestPoint](library/map.TestPoint.adoc)
