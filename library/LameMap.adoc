@@ -38,15 +38,15 @@ Knowing whether a collision has happened is often not enough, as you might need 
 
 Game maps consist of three parts: a tile map, a level map, and an optional collision map.
 
-- A *tile map* is a 2D array of sprites intended for creating maps. They are carefully organized so that they can be indexed one-by-one.
+- A *tile map* is a 2D array of sprites intended for creating maps. They are carefully organized so that they can be indexed one-by-one. On LameStation, a tile map is just an ordinary sprite with frames.
 +
 image:islandfun_tiles.png[]
-- A *level map* references the tile map to build a level.
-+
-image:islandfun_demo.png[]
 - A *collision map* mirrors the tile map and provides information about which tiles can be walked on and which ones can't. A black square cannot be walked on, while a white one can.
 +
 image:islandfun_collision.png[]
+- A *level map* combines the data in the tile map and collision map to build a space that can be navigated as part of the gameplay.
++
+image:islandfun_demo.png[]
 
 === Level Map Data
 
@@ -70,8 +70,6 @@ image:tilebyte.png[]
 Tile 0 is used as a _null_ tile, so the maximum usable tilemap size is 126 tiles.
 
 The collision bit stores whether a tile will register a collision when touched. All collision functions return 0 unless this bit is set.
-
-==== Interface
 
 The address of the map data can be passed directly to `map.Load`, unless stored in another object. If so, the following function is used as an interface.
 
