@@ -27,12 +27,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal h1 {
+  margin: 0px;
   margin-bottom: 2in;
 }
 
 h1 {
   color: #007fff;
   border-bottom: 1px solid #bbb;
+  margin: 0px;
   margin-bottom: 2in;
 }
 
