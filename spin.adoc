@@ -1,5 +1,9 @@
 = Spin Quick Reference
 
+== Terms
+
+- Expression - Any combination of symbols that can represent a value.
+
 == Blocks
 
 A feature unique to Spin is the use of _blocks_. Objects can contain six kinds of blocks: `CON`, `VAR`, `PUB`, `PRI`, `OBJ`, and `DAT`. Each block has its own syntax and allowed keywords, like mini-languages in their own right.
@@ -14,14 +18,27 @@ External objects are declared in an `OBJ` block, and given a unique alias.
 
 ----
 OBJ
-    str : "string"
+    ser : "LameSerial"
 ----
 
 Multiple copies of an object can be used.
 
 ----
-    str : "
+    ser1 : "LameSerial"
+    ser2 : "LameSerial"
+----
 
+Or an array of objects
+
+----
+    ser[4] : "LameSerial"
+----
+
+These can be accessed with brackets.
+
+----
+PUB Foo
+    ser[4].Char("b")
 ----
 
 == Comments
@@ -46,43 +63,27 @@ To span multiple lines, use curly braces (`{`,`}`).
 
 == Operators
 
-=== Arithmetic Operators
-
-The `=` operator assigns values to constants.
+The `=` operator sets the value of a constant.
 
 ----
 VALUE = 10
 ----
 
-The `:=` operator assigns values to variables.
+The `:=` operator sets the value of a variable.
 
 ----
 x := 5
 ----
 
+=== Arithmetic Operators
+
 You can use basic arithmetic operations. 
 
 ----
-x := y + z      ' addition
-x := y - z      ' subtraction
-x := y * z      ' multiplication
-x := y / z      ' division
-----
-
-You can also group expressions using parentheses.
-
-----
-x := (y + 4) - (z + 3)
-x := ((y + 4) + 4)
-----
-
-==== Advanced Arithmetic Operators
-
-Decrement (`--`) subtracts one from a value, while increment (`++`) adds one.
-
-----
-x++
-x--
+x := y + z      ' add
+x := y - z      ' subtract
+x := y * z      ' multiply
+x := y / z      ' divide
 ----
 
 Modulo (`//`) finds the remainder after division.
@@ -91,19 +92,59 @@ Modulo (`//`) finds the remainder after division.
 x := y // z
 ----
 
-=== Boolean Operators
+You can group expressions using parentheses.
 
-Equal `==`, `===`
-Not equal `<>`
-Less Than <
-Greater Than >
-Equal or Less =<
-Equal or Greater =>
+----
+x := (y + 4) - (z + 3)
+x := ((y + 4) + 4)
+----
 
-`AND`, `OR`, and `NOT`
+Decrement (`--`) subtracts one from a value, while increment (`++`) adds one.
 
+----
+x++
+x--
+----
 
+=== Relational Operators
 
+A _relational operator_ tests the relationship between two values. Expressions that use them return a non-zero number if true, or zero if false.
+
+You can test if two values are equal with `==`, or _not_ equal with `<>`.
+
+----
+x == y
+x <> y
+----
+
+You can also test inequality.
+
+----
+x < y       ' x is less than y
+x > y       ' x is greater than y
+x =< y      ' x is equal to or less than y
+x => y      ' x is equal to or greater than y
+----
+
+=== Logical Operators
+
+Logical operators, or *boolean operators* allow you to create more specific tests in your application.
+
+`AND`:: When both expressions are true, return true.
++
+----
+x and y
+----
+`OR`:: When either of the expressions are true, return true.
++
+----
+x or y
+----
+`NOT`:: Negate the result of an expression. I.e. if the expression is true, return false; if false, return true.
++
+----
+x and not y
+----
 
 == Constants
 
