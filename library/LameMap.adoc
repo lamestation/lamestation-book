@@ -22,6 +22,10 @@ Demos for this object can be found in the `/demos/maps/` folder of the SDK.
 - `map.TestMoveX` - Apply horizontal movement to an object's position and test if it will collide.
 - `map.TestMoveY` - Apply vertical movement to an object's position and test if it will collide.
 
+== Constants
+
+- `TILEMASK`, `COLLIDEMASK`
+
 == About
 
 LameGFX must be started before LameMap can be used. Call `map.Load` to load a map. Only one map can be loaded at a time.
