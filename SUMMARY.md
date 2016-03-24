@@ -46,7 +46,6 @@
        * [gfx.SetClipRectangle](library/gfx.SetClipRectangle.adoc)
        * [gfx.WaitToDraw](library/gfx.WaitToDraw.adoc)
    * [LameText](library/LameText.adoc)
-       * [txt.Load](library/txt.Load.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
    * [LameMusic](library/LameMusic.adoc)
