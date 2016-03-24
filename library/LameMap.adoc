@@ -4,6 +4,10 @@ image:ParallaxScrolling.png[]
 
 LameMap is a tile engine for LameGFX. It provides functions to display and interact with tile-based game maps.
 
+----
+map : "LameMap"
+----
+
 Demos for this object can be found in the `/demos/maps/` folder of the SDK.
 
 == Commands
