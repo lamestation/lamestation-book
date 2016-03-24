@@ -17,7 +17,7 @@ CON
     _xinfreq = 5_000_000
 ----
 
-- We need three libraries for this project: LameGFX and LameLCD for graphics, and LameControl for user input.
+- The `OBJ` block adds three libraries needed for this project: LameGFX and LameLCD for graphics, and LameControl for user input.
 +
 ----
 OBJ
@@ -26,34 +26,46 @@ OBJ
     ctrl : "LameControl"
 ----
 
-- A `Main` function that sets up libraries and provides a basic game skeleton.
+- The `Main` function that sets up libraries and provides a basic game skeleton.
 +
 ----
 PUB Main
     lcd.Start(gfx.Start)
     ctrl.Start
     
-    ' add your startup code here
-    
-    repeat
-    
-        ' add code for your main loop here
+    ' add your code here
 ----
+
+[IMPORTANT]
+====
+As you add to this program, the `Main` function should always be _first_! Otherwise, your program won't run.
+====
 
 You will find there's certain code you use in almost every LameStation game, which makes these templates pretty useful.
 
+Okay, now that that's out of the way, let's make the LameStation do something.
+
+View the complete example at `/tutorials/Snake/SettingUp.spin`.
 
 == Humble beginnings
 
-Since snake is just a dot, that's all we need.
+Okay, so here's a lofty goal: let's make the LameStation draw something. There isn't much to it.
+
+. Add graphics for drawing
+. Use graphics to draw screen image
+. Send image to actual screen
+
+=== Add graphics for drawing
+
+So here's how that's done. Since snake is just a dot, that's all we need.
 
 ----
 DAT
-dot_gfx
-word    0
-word    2, 2
-word    %%11
-word    %%11
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%11
+    word    %%11
 ----
 
 [WARNING]
@@ -62,19 +74,50 @@ Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
 
 ----
 DAT
-dot_gfx
-word    0
-word    2, 2
-word    %%22222211
-word    %%22222211
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%22222211
+    word    %%22222211
 ----
 
 This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
-
-Moving the dot on the screen
-Clearing the screen
-
 ====
+
+Okay, so the first thing we need to take a look at is our game loop.
+
+=== Use graphics to draw screen image
+
+Drawing is done with the `gfx.Sprite` command. It has four arguments, which control how it will behave.
+
+.gfx.Sprite
+****
+> ----
+> gfx.Sprite(source, x, y, frame)
+> ----
+
+- *source* - the graphics to draw
+- *x*, *y* - the position of the graphics (top-left corner)
+- *frame* - the number of frames
+****
+
+So the source should be the address of the graphics we made before. 
+
+The screen is 128x64 pixels, so you have to draw the dot between (0,0) and (128,64) for it to be visible. Other than that, we don't really care where it shows up yet.
+
+We're not using the frame parameter yet, so just set it to zero.
+
+----
+    gfx.Sprite(@dot_gfx, 25, 25, 0)
+----
+
+`lcd.DrawScreen` draws to the screen.
+
+----
+    lcd.DrawScreen
+----
+
+View the complete example at `/tutorials/Snake/HumbleBeginnings.spin`.
 
 == A new direction
 
@@ -285,11 +328,11 @@ Pointlessly wandering around the screen is fun and everything, but I think it'll
 Let's make the food a different color, so it'll be easier to spot. These graphics are just as exciting as the snake's.
 
 ----
-food_gfx
-word    0
-word    2, 2
-word    %%22222233
-word    %%22222233
+    food_gfx
+    word    0
+    word    2, 2
+    word    %%22222233
+    word    %%22222233
 ----
 
 Then we gotta keep track of the food's position on the screen ("foody", lol).
@@ -516,17 +559,17 @@ PUB Main
 
 DAT
 
-dot_gfx
-word    0
-word    2, 2
-word    %%22222211
-word    %%22222211
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%22222211
+    word    %%22222211
 
-food_gfx
-word    0
-word    2, 2
-word    %%22222233
-word    %%22222233
+    food_gfx
+    word    0
+    word    2, 2
+    word    %%22222233
+    word    %%22222233
 ----
 
 == Going further
