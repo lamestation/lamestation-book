@@ -47,7 +47,6 @@
        * [gfx.WaitToDraw](library/gfx.WaitToDraw.adoc)
    * [LameText](library/LameText.adoc)
        * [txt.Load](library/txt.Load.adoc)
-       * [txt.Char](library/txt.Char.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
    * [LameMusic](library/LameMusic.adoc)
