@@ -13,10 +13,11 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 == Commands
 
 - `gfx.Start` - Initialize the LameGFX drawing library.
-- `gfx.ClearScreen` - Fill the screen with a repeating word of color data specified by color.
-- `gfx.Blit` - Copy a screen-sized (128x64) image to the screen.
-- `gfx.Sprite` - Draw an image of any size to the screen.
-- `gfx.Map` - Draw a tile-based level map at the specified coordinates.
+- `gfx.Clear` - Clear the screen to black.
+- `gfx.ClearScreen` - Fill the screen with a repeating word of color data specified by `color`.
+- `gfx.Blit` - Draw a screen-sized (128x64) image to (0,0).
+- `gfx.Sprite` - Draw an image of any size.
+- `gfx.Map` - Draw a tile-based level map.
 - `gfx.InvertColor` - Invert black and white pixels sprite drawing.
 - `gfx.SetClipRectangle` - Change the portion of the screen that will be drawn to by LameGFX.
 - `gfx.WaitToDraw` - Wait until the last drawing operation has completed before continuing.
