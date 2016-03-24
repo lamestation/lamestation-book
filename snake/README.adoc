@@ -7,21 +7,28 @@ To begin this tutorial, we'll start with the LameStation Basic template. In Prop
 
 image:newfromtemplate.png[]
 
-This includes some nice things alreadyset
-
 This template comes with several goodies already set up.
 
-- The `CON` block includes code that tells the LameStation to run at full speed. You won't ever need to change this as long as you're using LameStation, 
-
+- The `CON` block tells the LameStation to run at full speed. 
++
+----
 CON
     _clkmode = xtal1 + pll16x
     _xinfreq = 5_000_000
+----
 
+- We need three libraries for this project: LameGFX and LameLCD for graphics, and LameControl for user input.
++
+----
 OBJ
     lcd  : "LameLCD"
     gfx  : "LameGFX"
     ctrl : "LameControl"
+----
 
+- A `Main` function that sets up libraries and provides a basic game skeleton.
++
+----
 PUB Main
     lcd.Start(gfx.Start)
     ctrl.Start
@@ -31,27 +38,9 @@ PUB Main
     repeat
     
         ' add code for your main loop here
-
-Templates are useful because you will find there's certain code you use in almost every LameStation game.
-
-Every LameStation game needs to start with this code. It tells the system how fast to run.
-
-----
-CON
-    _clkmode = xtal1 + pll16x
-    _xinfreq = 5_000_000
 ----
 
-For this tutorial, we'll need to add LameLCD, LameGFX, and LameControl.
-
-----
-OBJ
-    lcd  : "LameLCD"
-    gfx  : "LameGFX"
-    ctrl : "LameControl"
-    
-PUB Main
-----
+You will find there's certain code you use in almost every LameStation game, which makes these templates pretty useful.
 
 
 == Humble beginnings
@@ -81,11 +70,15 @@ word    %%22222211
 ----
 
 This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
+
+Moving the dot on the screen
+Clearing the screen
+
 ====
 
 == A new direction
 
-The snake clearly has a direction associated with it, so we need a way of keeping track of that direction.
+The snake has a direction associated with it, so we need a way of keeping track of that direction.
 
 A simple way to do that is by assigning a number to each direction. Because we're sane human beings, let's come up with a scheme that's easy to remember. Clock-wise is easy enough.
 
@@ -103,10 +96,10 @@ We can even create constants so that we don't have to remember them.
 
 ----
 CON
-    UP = 0
+    UP    = 0
     RIGHT = 1
-    DOWN = 2
-    LEFT = 3
+    DOWN  = 2
+    LEFT  = 3
 ----
 
 Whatever helps you remember...
@@ -114,23 +107,35 @@ Whatever helps you remember...
 ----
 CON
     NORTH = 0
-    EAST = 1
+    EAST  = 1
     SOUTH = 2
-    WEST = 3
+    WEST  = 3
 ----
 
-Then we track that number in a variable. There are only four directions, so byte-sized is plenty large.
+Track that number in a variable. There are only four directions, so byte-sized is plenty large.
 
 ----
 VAR    
     byte    snakedir
 ----
 
-And bingo! Now we can change the snake's direction just by changing the snakedir variable.
+Now we want to change the snake's direction with `snakedir`.
+
+First, add code that will set `snakedir`.
 
 ----
-        ctrl.Update
-        
+        if ctrl.Up
+            snakedir := 0
+        elseif ctrl.Right
+            snakedir := 1
+        elseif ctrl.Down
+            snakedir := 2
+        elseif ctrl.Left
+            snakedir := 3
+----
+
+
+----
         if snakedir == 0 or snakedir == 2
             if ctrl.Left
                 snakedir := 3
