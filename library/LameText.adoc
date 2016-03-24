@@ -2,6 +2,10 @@
 
 LameText provides text-drawing functionality for LameStation games.
 
+----
+txt : "LameText"
+----
+
 Demos for this object can be found in the `/demos/text/` folder of the SDK.
 
 == Commands
