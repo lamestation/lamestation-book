@@ -24,7 +24,7 @@ Demos for this object can be found in the `/demos/maps/` folder of the SDK.
 
 == Constants
 
-- `TILEMASK`, `COLLIDEMASK`
+- `TILEMASK`, `COLLIDEMASK` - Bitmasks for accessing tile and collision data in level maps.
 
 == About
 
