@@ -2,7 +2,7 @@
 
 image:Blit.png[]
 
-LameGFX provides a hyper-speed drawing engine for LameStation graphics.
+LameGFX provides a hyper-speed drawing engine for LameStation graphics. It is the foundation of all other LameStation graphics.
 
 ----
 gfx : "LameGFX"
@@ -28,3 +28,15 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 - `SCREEN_W`, `SCREEN_H` - the width and height of the screen.
 
 == About
+
+Call `gfx.Start` to start LameGFX. It should only be started once at the beginning of your program, before all drawing operations.
+
+Clear the screen to black with `gfx.Clear`, or fill to any color with `gfx.Fill`.
+
+Call `gfx.Sprite` to draw images to the screen. If an image is exactly 128x64 pixels, use `gfx.Blit` for much faster drawing.
+
+Use `gfx.Map` to draw level maps directly, or you can use LameMap for more functionality.
+
+`gfx.InvertColor` changes all black pixels to white, and vice versa. This is useful as a cool effect or reusing graphics.
+
+Sometimes you may need to wait until a drawing operations has completed before continuing
