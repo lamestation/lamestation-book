@@ -20,7 +20,7 @@ Demos for this object can be found in the `/demos/text/` folder of the SDK.
 
 == Constants
 
-- NL, LF (10, 13) - Newline characters.
+- `NL`, `LF` - Newline characters (10, 13).
 
 == About
 
