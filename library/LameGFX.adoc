@@ -22,4 +22,10 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 - `gfx.SetClipRectangle` - Change the portion of the screen that will be drawn to by LameGFX.
 - `gfx.WaitToDraw` - Wait until the last drawing operation has completed before continuing.
 
+== Constants
+
+- `BLACK`, `GRAY`, `WHITE`, `TRANSPARENT`
+- `SCREEN_W`, `SCREEN_H`
+- `TILEMASK`, `COLLIDEMASK`
+
 == About
