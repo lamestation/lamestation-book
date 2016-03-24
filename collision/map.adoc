@@ -63,7 +63,7 @@ Let's add the same set up from the previous example.
 
 ----
     repeat
-        gfx.ClearScreen(0)
+        gfx.Clear
 
         ctrl.Update
         if ctrl.Left

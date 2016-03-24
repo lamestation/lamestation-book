@@ -170,7 +170,7 @@ input. Stick this in a loop and we have a wacky paint program!
 
 Okay, fun is over. So just how do we clean up all of this mess?
 
-The [ gfx.ClearScreen ](gfx.ClearScreen_15401080.adoc) command is here to save
+The [ gfx.Fill ](gfx.Fill_15401080.adoc) command is here to save
 the day! Word-sized value, etc.
 
 #######  MovingSpriteClear.spin
@@ -193,7 +193,7 @@ the day! Word-sized value, etc.
         lcd.Start(gfx.Start)
         
         repeat
-            gfx.ClearScreen (0)
+            gfx.Clear
             gfx.Sprite(sprite.Gfx, x, 24, 0)
             lcd.DrawScreen
             x++
@@ -216,7 +216,7 @@ the day! Word-sized value, etc.
         lcd.Start(gfx.Start)
         
         repeat
-            gfx.ClearScreen (0)
+            gfx.Clear
             gfx.Sprite(sprite.Gfx, x, 24, 0)
             lcd.DrawScreen
             x += 3
@@ -239,7 +239,7 @@ the day! Word-sized value, etc.
         lcd.Start(gfx.Start)
         
         repeat
-            gfx.ClearScreen (0)
+            gfx.Clear
             gfx.Sprite(sprite.Gfx, x / 4, 24, 0)
             lcd.DrawScreen
             x += 1

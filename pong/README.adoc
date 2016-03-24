@@ -203,7 +203,7 @@ PUB ResetGame
 PUB GameLoop
     
     ctrl.Update
-    gfx.ClearScreen(0)
+    gfx.Clear
     
     ' game logic goes here
     

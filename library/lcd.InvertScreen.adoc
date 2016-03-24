@@ -31,7 +31,7 @@ This method has an immediate effect on the output.
     
         lcd.Start(gfx.Start)                    ' init screen and graphics
       
-        gfx.ClearScreen(gfx#BLACK)              ' clear screen
+        gfx.Fill(gfx#BLACK)              ' clear screen
         gfx.Sprite(@gfx_rpgtowncrop, 0, 0, 0)   ' draw full screen sprite
     
         lcd.WaitForverticalSync                 ' |

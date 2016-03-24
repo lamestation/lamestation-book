@@ -1,4 +1,4 @@
-#### gfx.ClearScreen
+#### gfx.Fill
 
 Fill the screen with a repeating word of color data specified by ` color ` .
 
@@ -34,19 +34,19 @@ Any word-size value may be used, however.
     PUB Main
         lcd.Start(gfx.Start)
      
-        gfx.ClearScreen(gfx#BLACK)
+        gfx.Fill(gfx#BLACK)
         lcd.DrawScreen
         fn.Sleep(1000)
         
-        gfx.ClearScreen(gfx#WHITE)
+        gfx.Fill(gfx#WHITE)
         lcd.DrawScreen
         fn.Sleep(1000)
      
-        gfx.ClearScreen(gfx#GRAY)
+        gfx.Fill(gfx#GRAY)
         lcd.DrawScreen
         fn.Sleep(1000)
     
-        gfx.ClearScreen($1367)
+        gfx.Fill($1367)
         lcd.DrawScreen
         
         repeat

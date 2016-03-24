@@ -25,7 +25,7 @@ explain what they all mean later.
 
     
     
-        gfx.ClearScreen(0)
+        gfx.Clear
         gfx.Sprite(ball.Addr, 10, 10, 0)
         lcd.DrawScreen
     
@@ -89,7 +89,7 @@ like this for your code.
     PUB Main
         lcd.Start(gfx.Start)
         
-    	gfx.ClearScreen(0)
+    	gfx.Clear
         gfx.Sprite(ball.Addr, 10, 10, 0)
         lcd.DrawScreen
     

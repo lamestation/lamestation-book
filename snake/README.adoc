@@ -511,7 +511,7 @@ PUB Main
     snakecount := 1
 
     repeat        
-        gfx.ClearScreen(0)
+        gfx.Clear
         ctrl.Update
         
         if snakedir == 0 or snakedir == 2

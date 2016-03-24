@@ -85,16 +85,14 @@ still there.
 
 ![](attachments/13762655/16089162.png)
 
-Enter the ` ClearScreen ` function. This paints the screen in the specified
+Enter the `Clear` function. This paints the screen in the specified
 fill colour so that you're starting with a blank canvas with every frame, not
-one that's already been drawn on. Let's add ` gfx.ClearScreen ` (0) just after
-` ctrl.Update ` , before any other drawing happens.
+one that's already been drawn on. Let's add `gfx.Fill` just after
+`ctrl.Update` , before any other drawing happens.
 
-    
-    
         repeat
             ctrl.Update
-            gfx.ClearScreen(0)
+            gfx.Clear
 
 Now you can see that the drawing no longer leaves a trail. Instead, we have a
 ball that we can cleanly control, but that still isn't pong, so let's keep
@@ -125,7 +123,7 @@ going.
         
         repeat
             ctrl.Update
-            gfx.ClearScreen(0)
+            gfx.Clear
             if ctrl.Right
             	x++
             if ctrl.Left
