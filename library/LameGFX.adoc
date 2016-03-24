@@ -24,8 +24,7 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 
 == Constants
 
-- `BLACK`, `GRAY`, `WHITE`, `TRANSPARENT`
-- `SCREEN_W`, `SCREEN_H`
-- `TILEMASK`, `COLLIDEMASK`
+- `BLACK`, `GRAY`, `WHITE`, `TRANSPARENT` - predefined colors for filling the screen with `gfx.Fill`.
+- `SCREEN_W`, `SCREEN_H` - the width and height of the screen.
 
 == About
