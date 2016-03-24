@@ -111,11 +111,23 @@ We're not using the frame parameter yet, so just set it to zero.
     gfx.Sprite(@dot_gfx, 25, 25, 0)
 ----
 
-`lcd.DrawScreen` draws to the screen.
+If you try running it now, you still won't see anything. `lcd.DrawScreen` draws to the screen.
 
 ----
     lcd.DrawScreen
 ----
+
+[WARNING]
+.`dot_gfx` does not equal `@dot_gfx`.
+====
+
+'@' is the address operator, and it changes the meaning of a variable or label.
+
+- `dot_gfx` is the value at `dot_gfx`.
+- `@dot_gfx` is the address of `dot_gfx`, or where it is in memory.
+
+See for yourself. Try removing the '@' symbol from your code and see what happens.
+====
 
 View the complete example at `/tutorials/Snake/HumbleBeginnings.spin`.
 
