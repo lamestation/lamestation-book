@@ -1,5 +1,9 @@
 = LameText
 
+LameText provides text-drawing functionality for LameStation games.
+
+Demos for this object can be found in the `/demos/text/` folder of the SDK.
+
 == Commands
 
 * link:txt.Load.adoc[txt.Load] - Load a font for drawing text.
