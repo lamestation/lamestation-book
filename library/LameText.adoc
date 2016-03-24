@@ -5,8 +5,31 @@ LameText provides text-drawing functionality for LameStation games.
 Demos for this object can be found in the `/demos/text/` folder of the SDK.
 
 == Commands
+    
+- `txt.Load` - Load a font into LameText.
+- `txt.Char` - Draw a character at position (x,y).
+- `txt.Str` - Draw a string at position (x,y).
+- `txt.Box` - Draw text a position (x,y) with a width `w` and height `h`.
+- `txt.Dec` - Draw a decimal number at position (x,y).
+- `txt.Bin` - Draw a binary number at position (x,y).
+- `txt.Hex` - Draw a hexadecimal number with `digits` digits at position (x,y).
 
-* link:txt.Load.adoc[txt.Load] - Load a font for drawing text.
-* link:txt.Char.adoc[txt.Char] - Draws a single character onto the screen at position (x, y).
-* link:txt.Str.adoc[txt.Str] - Draw a single-line string to the screen.
-* link:txt.Box.adoc[txt.Box] - Draw a string to the screen.
+== Constants
+
+- NL, LF (10, 13) - Newline characters.
+
+== About
+
+LameGFX must be started before LameText can be used.
+
+Begin by loading a font into LameText with `txt.Load`, passing the font address, first character, and character width and height. Only one font can be loaded at a time, but fonts can be switched at any time. Changing the width and height of the font changes the spacing of letters.
+
+Now you can use any of the text-drawing commands, keeping in mind that they won't be visible until `lcd.DrawScreen` is called.
+
+== Font Format
+
+LameStation fonts are regular LameGFX sprites, but organized according to the http://www.asciitable.com/[ASCII table].
+
+image:font6x8_normal.png[]
+
+You can find a collection of ready-to-use fonts in `/media/fonts/`.
