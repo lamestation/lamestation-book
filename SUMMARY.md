@@ -48,7 +48,6 @@
    * [LameText](library/LameText.adoc)
        * [txt.Load](library/txt.Load.adoc)
        * [txt.Char](library/txt.Char.adoc)
-       * [txt.Str](library/txt.Str.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
    * [LameMusic](library/LameMusic.adoc)
