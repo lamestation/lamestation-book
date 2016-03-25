@@ -42,7 +42,6 @@
        * [gfx.Blit](library/gfx.Blit.adoc)
        * [gfx.Sprite](library/gfx.Sprite.adoc)
        * [gfx.Map](library/gfx.Map.adoc)
-       * [gfx.InvertColor](library/gfx.InvertColor.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
