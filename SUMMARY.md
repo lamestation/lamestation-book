@@ -39,7 +39,6 @@
    * [LameGFX](library/LameGFX.adoc)
        * [gfx.Start](library/gfx.Start.adoc)
        * [gfx.ClearScreen](library/gfx.ClearScreen.adoc)
-       * [gfx.Blit](library/gfx.Blit.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
