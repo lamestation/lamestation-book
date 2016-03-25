@@ -44,7 +44,6 @@
        * [gfx.Map](library/gfx.Map.adoc)
        * [gfx.InvertColor](library/gfx.InvertColor.adoc)
        * [gfx.SetClipRectangle](library/gfx.SetClipRectangle.adoc)
-       * [gfx.WaitToDraw](library/gfx.WaitToDraw.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
