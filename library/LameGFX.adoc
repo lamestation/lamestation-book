@@ -55,6 +55,9 @@ LameGFX supports clipping, which allows you to limit the part of the screen that
 
 Call `gfx.SetClipRectangle` to set the clipping region, which is a rectangle from (0,0) to (128,64) by default. It will remain that size until you reset it to its normal size.
 
+[NOTE]
+The second point must be to the right and down relative to the first, otherwise the clip rectangle will be of size (0,0), or not drawable.
+
 ==== Direct Drawing
 
 You can draw to the LameGFX buffer directly. First, you must enable access. This is done by grabbing its address during setup.
