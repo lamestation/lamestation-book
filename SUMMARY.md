@@ -37,7 +37,6 @@
        * [lcd.SetFrameLimit](library/lcd.SetFrameLimit.adoc)
        * [lcd.WaitForVerticalSync](library/lcd.WaitForVerticalSync.adoc)
    * [LameGFX](library/LameGFX.adoc)
-       * [gfx.Start](library/gfx.Start.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
