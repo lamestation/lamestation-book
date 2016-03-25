@@ -24,6 +24,7 @@
    * [Movement](collision/movement.adoc)
 * [Audio](audio/README.adoc)
 * [Music](music/README.adoc)
+* [Snake](snake/README.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
@@ -45,5 +46,4 @@
    * [LameControl](library/LameControl.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
 * [Spin Quick Reference](spin.adoc)
-* [Snake](snake/README.adoc)
 
