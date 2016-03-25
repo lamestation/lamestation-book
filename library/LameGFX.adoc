@@ -77,3 +77,35 @@ LameGFX will wait until the previous drawing command is finished before starting
 
 == Sprite Format
 
+=== Sprite Data
+
+Map data is raw data describing what an area looks like and how the player can interact with it.
+
+- *frameboost* - T
+- *width*, *height* (`0-65535`) - The width and height of the image in tiles.
+- *tile* - The array of tiles that make up this level, placed left-to-right, top-to-bottom.
+----
+DAT
+map_data
+
+word    <width>, <height>
+
+byte    <tile>, [<tile>]...
+----
+
+Each tile in a map is one byte, with 1 bit used for collision, and the other 7 used for the tile number footnote:[Collision data is stored in the level to save space and allow for hidden passageways.].
+
+image:tilebyte.png[]
+
+Tile 0 is used as a _null_ tile, so the maximum usable tilemap size is 126 tiles.
+
+The collision bit stores whether a tile will register a collision when touched. All collision functions return 0 unless this bit is set.
+
+The address of the map data can be passed directly to `map.Load`, unless stored in another object. If so, the following function is used as an interface.
+
+----
+PUB Addr
+    return @map_data
+----
+
+=== Sprite Data
