@@ -32,7 +32,12 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 
 == About
 
-Call `gfx.Start` to start LameGFX. It should only be started once at the beginning of your program, before all drawing operations.
+Call `gfx.Start` to start LameGFX. It should only be started once at the beginning of your program, before all drawing operations, and should be connected to LameLCD right away.
+
+----
+PUB
+    lcd.Start(gfx.Start)
+----
 
 Clear the screen to black with `gfx.Clear`, or fill to any color with `gfx.Fill`.
 
