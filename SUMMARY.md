@@ -43,7 +43,6 @@
        * [gfx.Sprite](library/gfx.Sprite.adoc)
        * [gfx.Map](library/gfx.Map.adoc)
        * [gfx.InvertColor](library/gfx.InvertColor.adoc)
-       * [gfx.SetClipRectangle](library/gfx.SetClipRectangle.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
