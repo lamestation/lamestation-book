@@ -19,6 +19,9 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 - `gfx.Sprite` - Draw an image of any size to (x,y).
 - `gfx.Map` - Draw a tile-based level map.
 - `gfx.InvertColor` - Invert black and white pixels sprite drawing.
+
+*Advanced Commands*
+
 - `gfx.SetClipRectangle` - Change the portion of the screen that will be drawn to by LameGFX.
 - `gfx.WaitToDraw` - Wait until the last drawing operation has completed before continuing.
 
@@ -39,4 +42,28 @@ Use `gfx.Map` to draw level maps directly, or you can use LameMap for more funct
 
 `gfx.InvertColor` changes all black pixels to white, and vice versa. This is useful as a cool effect or reusing graphics.
 
-Sometimes you may need to wait until a drawing operations has completed before continuing
+=== Advanced Usage
+
+==== Clipping
+
+LameGFX supports clipping, which allows you to limit the part of the screen that functions will draw to. This is useful if, for example, you want to show half of an image, or a progress bar that can fill up.
+
+Call `gfx.SetClipRectangle` to set the clipping region, which is a rectangle from (0,0) to (128,64) by default. It will remain that size until you reset it to its normal size.
+
+==== Direct Drawing
+
+You can draw to the LameGFX buffer directly. First, you must enable access. This is done by grabbing its address during setup.
+
+----
+VAR
+    word    buffer
+PUB
+    lcd.Start(buffer := gfx.Start)
+----
+
+You can now access the 2048-byte block of memory pointed to by `buffer`.
+
+LameGFX will wait until the previous drawing command is finished before starting a new one. However, advanced users may want to create their own drawing functions. If so, use `gfx.WaitToDraw` to ensure your function plays well with LameGFX.
+
+== Sprite Format
+
