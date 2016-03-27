@@ -101,11 +101,11 @@ Tile 0 is used as a _null_ tile, so the maximum usable tilemap size is 126 tiles
 
 The collision bit stores whether a tile will register a collision when touched. All collision functions return 0 unless this bit is set.
 
-The address of the map data can be passed directly to `map.Load`, unless stored in another object. If so, the following function is used as an interface.
+=== Sprite Interface
+
+The address of image data can be passed directly to `gfx.Sprite` and `gfx.Blit`, unless stored in another object. If so, use this interface:
 
 ----
 PUB Addr
-    return @map_data
+    return @gfx_data
 ----
-
-=== Sprite Data
