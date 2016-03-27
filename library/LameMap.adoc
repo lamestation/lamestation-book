@@ -82,7 +82,7 @@ word    <width>, <height>
 byte    <tile>, [<tile>]...
 ----
 
-Each tile in a map is one byte, with 1 bit used for collision, and the other 7 used for the tile number footnote:[Collision data is stored in the level to save space and allow for hidden passageways.].
+Each tile in a map is one byte, with 1 bit used for collision, and the other 7 used for the tile number. Collision data is stored in the level to save space and so collision can be customized for the map.
 
 image:tilebyte.png[]
 
