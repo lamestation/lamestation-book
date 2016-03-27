@@ -51,19 +51,21 @@ Knowing whether a collision has happened is often not enough, as you might need 
 The `TestMove-` functions only check for collisions once at the new location. If the distance is large enough, they may miss potential collisions (e.g. halfway
 between the old and new locations).
 
-== Map Format
+== Map Components
 
 Game maps consist of three parts: a tile map, a level map, and an optional collision map.
 
-- A *tile map* is a 2D array of sprites intended for creating maps. They are carefully organized so that they can be indexed one-by-one. On LameStation, a tile map is just an ordinary sprite with frames.
+- A *tile map* is a 2D array of sprites intended for creating maps, organized so that they can be indexed by a level map. On LameStation, the tile map format is just an ordinary sprite with frames.
 +
 image:islandfun_tiles.png[]
-- A *collision map* mirrors the tile map and provides information about which tiles can be walked on and which ones can't. A black square cannot be walked on, while a white one can.
+- A *collision map* mirrors the tile map and determines which tiles can be walked on and which ones can't. On LameStation, a collision map is an image of black and white squares, the same size as the tile map. A black square cannot be walked on, and a white one can.
 +
 image:islandfun_collision.png[]
-- A *level map* combines the data in the tile map and collision map to build a space that can be navigated as part of the gameplay.
+- A *level map* combines the data in the tile map and collision map to build a space that can be navigated as part of the gameplay. The level map format is described in the next section.
 +
 image:islandfun_demo.png[]
+
+== Level Map Format
 
 === Level Map Data
 
@@ -87,6 +89,8 @@ image:tilebyte.png[]
 Tile 0 is used as a _null_ tile, so the maximum usable tilemap size is 126 tiles.
 
 The collision bit stores whether a tile will register a collision when touched. All collision functions return 0 unless this bit is set.
+
+=== Level Map Interface
 
 The address of the map data can be passed directly to `map.Load`, unless stored in another object. If so, the following function is used as an interface.
 
