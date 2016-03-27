@@ -32,7 +32,6 @@
    * [Adding A Ball](pong/ball.adoc)
 * [Library Reference](library/README.adoc)
    * [LameLCD](library/LameLCD.adoc)
-       * [lcd.Start](library/lcd.Start.adoc)
    * [LameGFX](library/LameGFX.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
