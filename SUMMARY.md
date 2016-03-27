@@ -33,7 +33,6 @@
 * [Library Reference](library/README.adoc)
    * [LameLCD](library/LameLCD.adoc)
        * [lcd.Start](library/lcd.Start.adoc)
-       * [lcd.DrawScreen](library/lcd.DrawScreen.adoc)
    * [LameGFX](library/LameGFX.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
