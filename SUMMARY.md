@@ -35,7 +35,6 @@
        * [lcd.Start](library/lcd.Start.adoc)
        * [lcd.DrawScreen](library/lcd.DrawScreen.adoc)
        * [lcd.InvertScreen](library/lcd.InvertScreen.adoc)
-       * [lcd.SetFrameLimit](library/lcd.SetFrameLimit.adoc)
    * [LameGFX](library/LameGFX.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
