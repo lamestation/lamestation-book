@@ -2,6 +2,12 @@
 
 LameLCD is a 128x64 pixel, three-color display driver for the LameStation.
 
+----
+lcd : "LameLCD"
+----
+
+Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
+
 == Commands
 
 - `lcd.Start` - Initialize the LameLCD library.
@@ -10,4 +16,29 @@ LameLCD is a 128x64 pixel, three-color display driver for the LameStation.
 - `lcd.SetFrameLimit` - Set an upper limit to the number of times the screen will be redrawn a second.
 - `lcd.WaitForVerticalSync` - Wait until the start of the next LCD frame before continuing.
 
+== Constants
 
+- `SCREEN_W`, `SCREEN_H` - LameStation screen width and height in pixels (128, 64).
+- `QUARTERSPEED`, `HALFSPEED`, `FULLSPEED` - Frame rate speed.
+
+== About
+
+Call `lcd.Start` once at the beginning of your program to use LameLCD, giving the drawing surface returned when LameGFX is started as the argument. Due to this, its recommended to start LameLCD and LameGFX at the same time, like so:
+
+----
+lcd.Start(gfx.Start)
+----
+
+The screen will not update on its own. Call `lcd.DrawScreen` to send the graphics buffer to the screen.
+
+All colors on the screen can be inverted with the `lcd.InvertScreen` command, which is a nice visual effect.
+
+`lcd.DrawScreen` can be called at any time to copy the drawing buffer to the display buffer. This is likely to happen when LameLCD is already updating the physical screen, which will cause the screen to flicker.
+
+To prevent flickering, call `lcd.WaitForVerticalSync` before calling `lcd.DrawScreen` to ensure LameLCD is not busy when `lcd.DrawScreen` is called. Enable `lcd.SetFrameLimit` to have LameLCD do this automatically, at one of three speeds. Frame rate limiting is disabled by default.
+
+=== Advanced Usage
+
+==== Direct Access
+
+LameLCD is usually started with LameGFX. However, it can also be started with a custom buffer if the size and alignment match (2048 bytes, long-aligned).
