@@ -2,7 +2,7 @@
 
 image:Blit.png[]
 
-LameGFX provides a hyper-speed drawing engine for LameStation graphics. It is the foundation of all other LameStation graphics.
+LameGFX is the LameStation graphics engine. It provides a drawing surface and basic drawing functions.
 
 ----
 gfx : "LameGFX"
@@ -98,7 +98,7 @@ word    <data>, [<data>]...
 
 Each pixel is two bits, so there are 8 pixels per word. Image data should be organized left-to-right, top-to-bottom, with `frameboost / 2` words for each frame.
 
-LameStation colors can have four possible values.
+LameGFX supports 3 visible colors and one transparent color that is never drawn.
 
 |===
 | *Color* | *Number* | *Bits*
@@ -108,20 +108,7 @@ LameStation colors can have four possible values.
 | Gray        | 3 | `11`
 |===
 
-The transparent colors of an image are never drawn by LameGFX, so images can be shapes other than rectangles.
-
-----
-word    16
-word    8, 8
-word    %%00000000
-word    %%00000000
-word    %%00011000
-word    %%00111100
-word    %%00111100
-word    %%00011000
-word    %%00000000
-word    %%00000000
-----
+Sprites can contain multiple images, or frames, so that they can be animated by your program. The first frame is frame 0.
 
 === Sprite Interface
 
@@ -132,6 +119,6 @@ PUB Addr
     return @gfx_data
 ----
 
-== Creating Images
+== Creating Sprite Objects
 
-LSImage or the command-line `img2dat` can be used to create LameStation images, or they can be written by hand.
+LSImage or the command-line `img2dat` can be used to convert images into sprite objects, or they can be written by hand.
