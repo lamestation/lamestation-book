@@ -28,9 +28,9 @@ Demos for this object can be found in the `/demos/basics/` folder of the SDK.
 
 == About
 
-image::control_layout.png[title="LameStation Control Layout"]
-
 The LameStation has six hardware controls for user input.
+
+image::control_layout.png[]
 
 Before you can use them, you must call `ctrl.Start` once at the beginning of your program. This tells the Propeller to listen to the controls.
 
