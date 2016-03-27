@@ -77,29 +77,51 @@ LameGFX will wait until the previous drawing command is finished before starting
 
 == Sprite Format
 
+LameGFX has its own format for sprites.
+
 === Sprite Data
 
-Map data is raw data describing what an area looks like and how the player can interact with it.
+Each sprite has the same structure.
 
-- *frameboost* - T
-- *width*, *height* (`0-65535`) - The width and height of the image in tiles.
-- *tile* - The array of tiles that make up this level, placed left-to-right, top-to-bottom.
+- *frameboost* - The size of a frame in bytes, or `width * height / 4`.
+- *width*, *height* (`0-65535`) - The width and height of each frame in pixels.
+- *data...* - Image data.
 ----
 DAT
-map_data
+gfx_data
 
+word    <frameboost>
 word    <width>, <height>
 
-byte    <tile>, [<tile>]...
+word    <data>, [<data>]...
 ----
 
-Each tile in a map is one byte, with 1 bit used for collision, and the other 7 used for the tile number footnote:[Collision data is stored in the level to save space and allow for hidden passageways.].
+Each pixel is two bits, so there are 8 pixels per word. Image data should be organized left-to-right, top-to-bottom, with `frameboost / 2` words for each frame.
 
-image:tilebyte.png[]
+LameStation colors can have four possible values.
 
-Tile 0 is used as a _null_ tile, so the maximum usable tilemap size is 126 tiles.
+|===
+| *Color* | *Number* | *Bits*
+| Black       | 0 | `00`
+| White       | 1 | `01`
+| Transparent | 2 | `10`
+| Gray        | 3 | `11`
+|===
 
-The collision bit stores whether a tile will register a collision when touched. All collision functions return 0 unless this bit is set.
+The transparent colors of an image are never drawn by LameGFX, so images can be shapes other than rectangles.
+
+----
+word    16
+word    8, 8
+word    %%00000000
+word    %%00000000
+word    %%00011000
+word    %%00111100
+word    %%00111100
+word    %%00011000
+word    %%00000000
+word    %%00000000
+----
 
 === Sprite Interface
 
@@ -109,3 +131,7 @@ The address of image data can be passed directly to `gfx.Sprite` and `gfx.Blit`,
 PUB Addr
     return @gfx_data
 ----
+
+== Creating Images
+
+LSImage or the command-line `img2dat` can be used to create LameStation images, or they can be written by hand.
