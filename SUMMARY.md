@@ -36,7 +36,6 @@
        * [lcd.DrawScreen](library/lcd.DrawScreen.adoc)
        * [lcd.InvertScreen](library/lcd.InvertScreen.adoc)
        * [lcd.SetFrameLimit](library/lcd.SetFrameLimit.adoc)
-       * [lcd.WaitForVerticalSync](library/lcd.WaitForVerticalSync.adoc)
    * [LameGFX](library/LameGFX.adoc)
    * [LameText](library/LameText.adoc)
    * [LameMap](library/LameMap.adoc)
