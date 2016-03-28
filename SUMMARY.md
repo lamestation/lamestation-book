@@ -14,7 +14,6 @@
    * [Sprite Objects](graphics/Sprite-Objects.adoc)
    * [Moving Sprites](graphics/Moving-Sprites.adoc)
 * [Maps](maps/README.adoc)
-   * [Making Maps With Tiled](maps/tiled.adoc)
 * [Collision](collision/README.adoc)
    * [Box Collision](collision/box.adoc)
    * [Map Collision](collision/map.adoc)
