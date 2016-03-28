@@ -13,7 +13,6 @@
    * [Large Images](graphics/Large-Images.adoc)
    * [Sprite Objects](graphics/Sprite-Objects.adoc)
    * [Moving Sprites](graphics/Moving-Sprites.adoc)
-* [Maps](maps/README.adoc)
 * [Collision](collision/README.adoc)
    * [Box Collision](collision/box.adoc)
    * [Map Collision](collision/map.adoc)
