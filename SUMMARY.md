@@ -23,7 +23,6 @@
    * [Map Collision](collision/map.adoc)
    * [Movement](collision/movement.adoc)
 * [Audio](audio/README.adoc)
-* [Music](music/README.adoc)
 * [Snake](snake/README.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
