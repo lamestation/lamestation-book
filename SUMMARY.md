@@ -13,7 +13,6 @@
    * [Large Images](graphics/Large-Images.adoc)
    * [Sprite Objects](graphics/Sprite-Objects.adoc)
    * [Moving Sprites](graphics/Moving-Sprites.adoc)
-   * [More Fun with ClearScreen](graphics/More-Fun-with-ClearScreen.adoc)
 * [Maps](maps/README.adoc)
    * [Making Maps With Tiled](maps/tiled.adoc)
 * [Collision](collision/README.adoc)
