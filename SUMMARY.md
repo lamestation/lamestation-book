@@ -14,7 +14,6 @@
    * [Sprite Objects](graphics/Sprite-Objects.adoc)
    * [Moving Sprites](graphics/Moving-Sprites.adoc)
    * [More Fun with ClearScreen](graphics/More-Fun-with-ClearScreen.adoc)
-   * [The Loop](graphics/The-Loop.adoc)
 * [Maps](maps/README.adoc)
    * [Making Maps With Tiled](maps/tiled.adoc)
 * [Collision](collision/README.adoc)
