@@ -1,6 +1,8 @@
 = LameMusic
 
-LameMusic is a sequencer for LameAudio that allows your games to play arranged music.
+image:jukebox.png[]
+
+LameMusic is a sequencer for LameAudio that allows your games to play music.
 
 ----
 music : "LameMusic"
