@@ -4,7 +4,6 @@
 * [Getting Started](getting-started.adoc)
 * [Basics](basics/README.adoc)
 * [Graphics](graphics/README.adoc)
-   * [LameGFX and LameLCD](graphics/LameGFX-and-LameLCD.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
    * [Boxes](graphics/boxes.adoc)
