@@ -1,4 +1,4 @@
-= LameFunctions
+== LameFunctions
 
 LameFunctions holds a few functions that don't really fit anywhere else.
 
@@ -6,18 +6,18 @@ LameFunctions holds a few functions that don't really fit anywhere else.
 fn : "LameFunctions"
 ----
 
-== Commands
+=== Commands
 
 - `fn.Sleep` - Wait the specified number of milliseconds before continuing.
 - `fn.TestBoxCollision` - Test if two rectangular regions of the screen overlap.
 
-== About
+=== About
 
-=== fn.Sleep(milliseconds)
+==== fn.Sleep(milliseconds)
 
 Sometimes you need a time delay in your program, and calling `repeat 20000` just isn't good enough. `fn.Sleep` lets you pause for a specified time with millisecond accuracy.
 
-=== fn.TestBoxCollision(x1, y1, w1, h1, x2, y2, w2, h2)
+==== fn.TestBoxCollision(x1, y1, w1, h1, x2, y2, w2, h2)
 
 Test if two rectangles on the screen overlap. If you want two objects the screen to interact with each other, you might need this.
 
