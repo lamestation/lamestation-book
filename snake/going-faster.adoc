@@ -1,2 +1,25 @@
-= Going Faster
+== Going Faster
 
+----
+        if snakedir == 3
+            if snakex[0] > 0
+                snakex[0] += SNAKE_SPEED
+                
+        if snakedir == 1
+            if snakex[0] < constant(128-2)
+                snakex[0] += SNAKE_SPEED
+
+        if snakedir == 0
+            if snakey[0] > 0
+                snakey[0] -= SNAKE_SPEED
+                
+        if snakedir == 2
+            if snakey[0] < constant(64-2)
+                snakey[0] += SNAKE_SPEED
+----
+
+Aww, man, but now it goes way fast at the beginning and slow at the end. Let's slow down the frame rate so that it plays at the same speed throughout.
+
+----
+    lcd.SetFrameLimit (lcd#HALFSPEED)
+----
