@@ -1,4 +1,4 @@
-= LameSerial
+== LameSerial
 
 LameSerial allows you to write code to communicate with your computer.
 
@@ -6,7 +6,7 @@ LameSerial allows you to write code to communicate with your computer.
 ser : "LameSerial"
 ----
 
-== Commands
+=== Commands
 
 - `serial.Start` - Start serial communication with the default pins, mode and baud rate.
 - `serial.StartRxTx` - Start serial communication with the designated pins, mode and baud rate.
