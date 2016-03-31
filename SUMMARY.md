@@ -22,7 +22,7 @@
    * [A New Direction](snake/new-direction.adoc)
    * [Moving Forward](snake/moving-forward.adoc)
    * [Leading The March](snake/leading-the-march.adoc)
-   * A Goal To Strive For
+   * [A Goal To Strive For](snake/a-goal-to-strive-for.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
