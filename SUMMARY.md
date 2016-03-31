@@ -21,7 +21,7 @@
    * [Humble Beginnings](snake/humble-beginnings.adoc)
    * [A New Direction](snake/new-direction.adoc)
    * [Moving Forward](snake/moving-forward.adoc)
-   * Leading The March
+   * [Leading The March](snake/leading-the-march.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
