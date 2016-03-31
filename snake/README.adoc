@@ -3,14 +3,14 @@
 image:completedgame.png[]
 
 *Task:* Create a Snake game +
-*Purpose:* Learn the basics concepts of game development. +
-*Difficulty:* Beginner
+*Difficulty:* Beginner +
+*Purpose:* Make a game from start to finish. +
 
 *Concepts:* +
 - Directional movement +
 - Random number generation +
 - Cartesian coordinates +
-- Using arrays, variables +
+- Arrays, variables +
 
 *Requirements:* +
 - LameGFX +
