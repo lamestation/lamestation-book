@@ -1,2 +1,82 @@
-= A Goal To Strive For
+== A Goal To Strive For
 
+// THIS SECTION TEACHES RANDOM NUMBER GENERATION
+
+Pointlessly wandering around the screen is fun and everything, but I think it'll be more interesting to actually have something to do. I was thinking let's give the snake a food pellet or something to chase after, yeah?
+
+Let's make the food a different color, so it'll be easier to spot. These graphics are just as exciting as the snake's.
+
+----
+    food_gfx
+    word    0
+    word    2, 2
+    word    %%22222233
+    word    %%22222233
+----
+
+Then we gotta keep track of the food's position on the screen ("foody", lol).
+
+----
+    byte    foodx
+    byte    foody
+----
+
+Now, every time we get the food pellet, it has to reappear in a new location. For that, we need the _random_ operator! Setting it up may not make sense at first, but it's pretty simple. First, we need a variable.
+
+----
+    byte    random
+----
+
+First, we need to initialize it with a starting value. The system clock works perfectly for this.
+
+----
+    random := cnt
+----
+
+After that, we can grab random values from the `random` variable using the `?` operator. Use the following code to test it out.
+
+----
+if ctrl.B
+    foodx := random?
+    foody := random?
+----
+
+Problem. It seems to only work part of the time; sometimes dot, sometimes no dot. That's because `random?` is a byte, and can return random values between 0 and 255, so we need to limit its range. Modulo is perfect for this.
+
+----
+    foodx := random? // 128
+    foody := random? // 64
+----
+
+It still only works half the time! This is because `random` is a byte, and for arithmetic, if it holds a value greater than 127, it's actually a negative number, so it won't ever appear on the screen. We can sidestep this problem with the _absolute value_ (`||`) operator. It forces the number to be positive, so our range will appear on the screen.
+
+----
+    foodx := ||random? // 128
+    foody := ||random? // 64
+----
+
+There's still one problem though. Our snake is positioned every two pixels, but the food can be anywhere. Let's fix that.
+
+----
+    foodx := ||random? // 64 * 2
+    foody := ||random? // 32 * 2
+----
+
+Perfect! Now let's add a test so that this code is only called when the snake finally grabs it.
+
+----
+if foodx == snakex[0] and foody == snakey[0]
+----
+
+Now our entire foody system should be complete.
+
+----
+        if foodx == snakex[0] and foody == snakey[0]
+            foodx := ||random? // 64 * 2
+            foody := ||random? // 32 * 2
+
+            if snakecount < constant(MAX_SNAKE-1)
+                snakecount++
+
+        gfx.Sprite(@food_gfx, foodx, foody, 0) 
+----
