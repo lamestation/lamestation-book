@@ -1,38 +1,6 @@
 = Snake
 :experimental:
 
-
-
-
-
-
-
-== Going faster
-
-----
-        if snakedir == 3
-            if snakex[0] > 0
-                snakex[0] += SNAKE_SPEED
-                
-        if snakedir == 1
-            if snakex[0] < constant(128-2)
-                snakex[0] += SNAKE_SPEED
-
-        if snakedir == 0
-            if snakey[0] > 0
-                snakey[0] -= SNAKE_SPEED
-                
-        if snakedir == 2
-            if snakey[0] < constant(64-2)
-                snakey[0] += SNAKE_SPEED
-----
-
-Aww, man, but now it goes way fast at the beginning and slow at the end. Let's slow down the frame rate so that it plays at the same speed throughout.
-
-----
-    lcd.SetFrameLimit (lcd#HALFSPEED)
-----
-
 == The danger zone
 
 So far, the snake is free to come and go as it pleases, criss-crossing over itself like nobody's business. Well, it's time to put a stop to that. Let's show this snake that there are consequences to dilly-dallying.
