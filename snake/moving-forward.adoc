@@ -120,7 +120,7 @@ Putting it all together.
 
 And now you have a spiffy pet dot with a fancy enclosed box to play in.
 
-.Question!
+.Feeling Adventurous?
 ****
-In some versions of Snake, traveling into an edge will teleport you to the other side. How could you do that here?
+In some versions of Snake, traveling towards an edge will teleport you to the other side instead of stopping you. See if you can make this on your own.
 ****
