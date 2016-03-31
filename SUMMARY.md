@@ -20,7 +20,7 @@
    * [Setting Up](snake/settingup.adoc)
    * [Humble Beginnings](snake/humble-beginnings.adoc)
    * [A New Direction](snake/new-direction.adoc)
-   * Moving Forward
+   * [Moving Forward](snake/moving-forward.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
