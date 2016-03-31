@@ -27,53 +27,90 @@ If you want it elsewhere, you have to set it to equal another point using `:=`. 
     gfx.Sprite(@dot_gfx, snakex, snakey, 0)
 ----
 
-That puts the dot squarely in the center. Cool.
+That puts the dot squarely in the center. Cool, but sitting in one place is boring. So let's move it around!
+
+We'll use LameControl to access the joystick. The `IF` keyword allows us to test if an expression is true, and if so, run some code. The code to run should be immediately after the `IF` and indented.
+
+None of the functions will return anything until `ctrl.Update` is called, so make sure to call it first.
 
 ----
-        if snakedir == 3
+    ctrl.Update
+    
+    if ctrl.Left
+        snakex--
+    if ctrl.Right
+        snakex++
+    if ctrl.Up
+        snakey--
+    if ctrl.Down
+        snakey++
+----
+
+=== Feeling Loopy
+
+Awesome. We should be ready to go, right? Wrong!
+
+There's one thing missing. You see, the most you'll ever be able to move the dot is by one pixel. That's because our code is only run once. If you really want to see it move, you need a _loop_, or code that will run over and over again. Spin has the `repeat` command for this.
+
+----
+repeat
+    foo(bar)
+----
+
+To put your code inside a `repeat`, just put it after and indent it, and it'll loop forever! Don't just put the controls though. You need the drawing code too, like this.
+
+----
+    repeat
+        ctrl.Update
+        
+        if ctrl.Left
             snakex--
-                
-        if snakedir == 1
+        if ctrl.Right
             snakex++
-
-        if snakedir == 0
+        if ctrl.Up
             snakey--
-                
-        if snakedir == 2
+        if ctrl.Down
             snakey++
+            
+        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+        lcd.DrawScreen
 ----
+
+You'll notice right away something really wonky. The snake is leaving a giant trail of snake behind it, to the point that this seems more like a paint program.
+
+`gfx.Clear` to the rescue! This command clears the screen to black, and should be called any time you need to _reset_ the screen. In this case, the beginning of the loop.
+
+----
+    repeat
+        gfx.Clear
+----
+
+=== Put A Limit On It
 
 This is cool, except the snake is able to just wander outside of the screen whenever it feels like! Let's show that snake who's boss by keeping it inside the screen.
-----
-        if snakedir == 3
-            if snakex[0] > 0
-                snakex[0]--
-                
-        if snakedir == 1
-            if snakex[0] < constant(128-2)
-                snakex[0]++
 
-        if snakedir == 0
-            if snakey[0] > 0
-                snakey[0]--
-                
-        if snakedir == 2
-            if snakey[0] < constant(64-2)
-                snakey[0]++
-----
+We'll use the `AND` keyword so that we can test two expressions at once. Then we will test that there is enough space for the dot to move before moving there.
 
-[WARNING]
-====
-Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
+We can make sure the snake stays inside the left and top edges of the screen by making sure its position is greater than or equal to zero.
 
 ----
-DAT
-    dot_gfx
-    word    0
-    word    2, 2
-    word    %%22222211
-    word    %%22222211
+        if ctrl.Left and snakex > 0
+            snakex--
+            
+        ' ...
+            
+        if ctrl.Up and snakey > 0
+            snakey--
 ----
 
-This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
-====
+Testing the right and bottom edges is more complicated. Since a image's position is its top-left corner, we must subtract its size from the edge.
+
+----
+        if ctrl.Right and snakex < constant(128-2)
+            snakex++
+
+        ' ...
+            
+        if ctrl.Down and snakey < constant(64-2)
+            snakey++
+----
