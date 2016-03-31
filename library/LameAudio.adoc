@@ -1,4 +1,4 @@
-= LameAudio
+== LameAudio
 
 LameAudio is a 4-channel synthesizer for the LameStation.
 
@@ -8,7 +8,7 @@ audio : "LameAudio"
 
 Demos for this object can be found in the `/demos/audio/` folder of the SDK.
 
-== Commands
+=== Commands
 
 - `audio.Start` - Initialize the LameAudio synthesizer.
 - `audio.SetEnvelope` - Toggle the ADSR envelope generator on the given audio channel.
@@ -35,12 +35,12 @@ Demos for this object can be found in the `/demos/audio/` folder of the SDK.
 - `audio.StartEnvelope` - Trigger the channel envelope to start.
 - `audio.StopEnvelope` - Trigger the channel envelope to stop.
 
-== Constants
+=== Constants
 
 - *Waveform* - `_SQUARE`, `_SAW`, `_TRIANGLE`, `_SINE`, `_NOISE`, `_SAMPLE`
 - *Channel parameter* - `_ATK`, `_DEC`, `_SUS`, `_REL`, `_WAV`, `_CONTROL`
 
-== About
+=== About
 
 Before LameAudio can be used, `audio.Start` must be called once and only once at the start of a program. LameAudio is designed so that only one synthesizer is ever running, and any object may call it.
 
@@ -58,7 +58,7 @@ Each channel has a waveform and an envelope.
 
 image:audio_flow.png[]
 
-=== Waveform
+==== Waveform
 
 The waveform generator is what actually creates the sound. Call `audio.SetFrequency` to play any frequency, or call `audio.SetNote` to play specific notes like on a piano.
 
@@ -79,7 +79,7 @@ The _Sample_ waveform is a 512B block of audio data, enough for one cycle. Call 
 
 A collection of ready-made samples can be found in the `/media/samples/` folder of the SDK.
 
-=== Envelope
+==== Envelope
 
 The envelope controls the volume of the sound over time, allowing you to create sounds that hit sharply like bells, or have a long hold time like a wind instrument. You can control how it sounds with the ADSR parameters of the envelope.
 
