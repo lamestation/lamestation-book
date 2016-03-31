@@ -17,6 +17,7 @@
    * [Map Collision](collision/map.adoc)
    * [Movement](collision/movement.adoc)
 * [Snake](snake/README.adoc)
+   * Setting Up
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
