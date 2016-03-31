@@ -1,34 +1,6 @@
 = Snake
 :experimental:
 
-== The danger zone
-
-So far, the snake is free to come and go as it pleases, criss-crossing over itself like nobody's business. Well, it's time to put a stop to that. Let's show this snake that there are consequences to dilly-dallying.
-
-The change is simple enough. We want the snake to die if it crosses over itself. This can be accomplished by checking each pixel of the snake to see if it overlaps with the head.
-
-----
-            if snakex[i] == snakex[0] and snakey[i] == snakey[0]
-                snakecount := 1
-----
-
-We just need to add it into the loop we've already created that moves the entire snake every frame.
-
-----
-        repeat i from snakecount to 1
-            if snakex[i] == snakex[0] and snakey[i] == snakey[0]
-                snakecount := 1
-                snakex[0] := 64
-                snakey[0] := 32
-                snakedir := 1
-
-            snakex[i] := snakex[i-1]
-            snakey[i] := snakey[i-1]
-            gfx.Sprite(@dot_gfx, snakex[i], snakey[i], 0)
-----
-
-Done. Now your snake will suffer an untimely fate for its carelessness. But we should tie up all its loose ends before it starts a new game.
-
 == The Completed Game
 
 ----
