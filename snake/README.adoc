@@ -1,4 +1,4 @@
-= Mission: Snake
+= Snake
 
 image:completedgame.png[]
 
