@@ -1,4 +1,5 @@
 == Setting Up
+:experimental:
 
 To begin this tutorial, we'll start with the LameStation Basic template. In PropellerIDE, you can create a new project from a template with kbd:[Ctrl+Shift+T].
 
