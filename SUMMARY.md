@@ -25,6 +25,7 @@
    * [A Goal To Strive For](snake/a-goal-to-strive-for.adoc)
    * [Going Faster](snake/going-faster.adoc)
    * [The Danger Zone](snake/danger-zone.adoc)
+   * The Completed Game
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
