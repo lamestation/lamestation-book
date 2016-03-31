@@ -1,6 +1,6 @@
 == Moving Forward
 
-A dot is now on the screen, but that's quite unsatisfying
+A dot is now on the screen, but that's quite unsatisfying.
 
 We want to move the pixel around on the screen, but in order to do that, we have to keep track of its location somehow. To do that, we can use variables for its horizontal (`snakex`) and vertical (`snakey`) positions.
 
