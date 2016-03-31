@@ -124,3 +124,5 @@ And now you have a spiffy pet dot with a fancy enclosed box to play in.
 ****
 In some versions of Snake, traveling towards an edge will teleport you to the other side instead of stopping you. See if you can make this on your own.
 ****
+
+View the complete example at `/tutorials/Snake/MovingForward.spin`.
