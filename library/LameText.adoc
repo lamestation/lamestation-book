@@ -1,4 +1,4 @@
-= LameText
+== LameText
 
 LameText provides text-drawing functionality for LameStation games.
 
@@ -8,7 +8,7 @@ txt : "LameText"
 
 Demos for this object can be found in the `/demos/text/` folder of the SDK.
 
-== Commands
+=== Commands
     
 - `txt.Load` - Load a font into LameText.
 - `txt.Char` - Draw a character at position (x,y).
@@ -18,11 +18,11 @@ Demos for this object can be found in the `/demos/text/` folder of the SDK.
 - `txt.Bin` - Draw a binary number at position (x,y).
 - `txt.Hex` - Draw a hexadecimal number with `digits` digits at position (x,y).
 
-== Constants
+=== Constants
 
 - `NL`, `LF` - Newline characters (10, 13).
 
-== About
+=== About
 
 LameGFX must be started before LameText can be used.
 
@@ -30,7 +30,7 @@ Begin by loading a font into LameText with `txt.Load`, passing the font address,
 
 Now you can use any of the text-drawing commands, keeping in mind that they won't be visible until `lcd.DrawScreen` is called.
 
-== Font Format
+=== Font Format
 
 LameStation fonts are regular LameGFX sprites, but organized according to the http://www.asciitable.com/[ASCII table].
 
