@@ -1,5 +1,23 @@
 == Moving Forward
 
+
+[WARNING]
+====
+Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
+
+----
+DAT
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%22222211
+    word    %%22222211
+----
+
+This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
+====
+
+
 ----
 VAR    
     byte    snakedir    
