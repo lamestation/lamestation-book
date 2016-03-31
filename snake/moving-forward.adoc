@@ -1,2 +1,43 @@
-= Moving Forward
+== Moving Forward
+
+----
+VAR    
+    byte    snakedir    
+    byte    snakex
+    byte    snakey
+----
+
+
+----
+        if snakedir == 3
+            snakex--
+                
+        if snakedir == 1
+            snakex++
+
+        if snakedir == 0
+            snakey--
+                
+        if snakedir == 2
+            snakey++
+----
+
+This is cool, except the snake is able to just wander outside of the screen whenever it feels like! Let's show that snake who's boss by keeping it inside the screen.
+----
+        if snakedir == 3
+            if snakex[0] > 0
+                snakex[0]--
+                
+        if snakedir == 1
+            if snakex[0] < constant(128-2)
+                snakex[0]++
+
+        if snakedir == 0
+            if snakey[0] > 0
+                snakey[0]--
+                
+        if snakedir == 2
+            if snakey[0] < constant(64-2)
+                snakey[0]++
+----
 
