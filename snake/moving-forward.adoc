@@ -19,8 +19,7 @@ This is because there's no such thing as a graphic 2 pixels wide on the LameStat
 
 
 ----
-VAR    
-    byte    snakedir    
+VAR
     byte    snakex
     byte    snakey
 ----
