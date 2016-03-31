@@ -23,7 +23,7 @@
    * [Moving Forward](snake/moving-forward.adoc)
    * [Leading The March](snake/leading-the-march.adoc)
    * [A Goal To Strive For](snake/a-goal-to-strive-for.adoc)
-   * Going Faster
+   * [Going Faster](snake/going-faster.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
