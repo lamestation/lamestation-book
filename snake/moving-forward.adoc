@@ -85,9 +85,9 @@ You'll notice right away something really wonky. The snake is leaving a giant tr
         gfx.Clear
 ----
 
-=== Put A Limit On It
+=== Put A Lid On It
 
-This is cool, except the snake is able to just wander outside of the screen whenever it feels like! Let's show that snake who's boss by keeping it inside the screen.
+This is cool, except the snake is able to just wander outside of the screen whenever it feels like. Let's show that snake who's boss by keeping it inside the screen.
 
 We'll use the `AND` keyword so that we can test two expressions at once. Then we will test that there is enough space for the dot to move before moving there.
 
@@ -96,11 +96,6 @@ We can make sure the snake stays inside the left and top edges of the screen by 
 ----
         if ctrl.Left and snakex > 0
             snakex--
-            
-        ' ...
-            
-        if ctrl.Up and snakey > 0
-            snakey--
 ----
 
 Testing the right and bottom edges is more complicated. Since a image's position is its top-left corner, we must subtract its size from the edge.
@@ -108,9 +103,24 @@ Testing the right and bottom edges is more complicated. Since a image's position
 ----
         if ctrl.Right and snakex < constant(128-2)
             snakex++
+----
 
-        ' ...
-            
+Putting it all together.
+
+----
+        if ctrl.Left and snakex > 0
+            snakex--
+        if ctrl.Right and snakex < constant(128-2)
+            snakex++
+        if ctrl.Up and snakey > 0
+            snakey--
         if ctrl.Down and snakey < constant(64-2)
             snakey++
 ----
+
+And now you have a fancy enclosed box for your pet snake to play in.
+
+.Question!
+****
+In some versions of Snake, traveling into an edge will teleport you to the other side. How could you do that here?
+****
