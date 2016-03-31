@@ -1,6 +1,6 @@
 {
     "plugins": []
     "variables": {
-        "edition": "teacher"
+        "edition": true
     }
 }
