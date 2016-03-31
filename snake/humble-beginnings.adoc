@@ -1,6 +1,8 @@
 == Humble beginnings
 
-Okay, so here's a lofty goal: let's make the LameStation draw something. There isn't much to it.
+Okay, now that that's out of the way, let's make the LameStation do something.
+
+Here's a lofty goal: let's make the LameStation draw something. There isn't much to it.
 
 . Add graphics for drawing
 . Use graphics to draw screen image
@@ -18,22 +20,6 @@ DAT
     word    %%11
     word    %%11
 ----
-
-[WARNING]
-====
-Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
-
-----
-DAT
-    dot_gfx
-    word    0
-    word    2, 2
-    word    %%22222211
-    word    %%22222211
-----
-
-This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
-====
 
 Okay, so the first thing we need to take a look at is our game loop.
 
@@ -61,6 +47,8 @@ We're not using the frame parameter yet, so just set it to zero.
 ----
     gfx.Sprite(@dot_gfx, 25, 25, 0)
 ----
+
+=== Send the image to the screen
 
 If you try running it now, you still won't see anything. `lcd.DrawScreen` draws to the screen.
 
