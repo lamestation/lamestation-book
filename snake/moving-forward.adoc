@@ -78,7 +78,7 @@ To put your code inside a `repeat`, just put it after and indent it, and it'll l
 
 You'll notice right away something really wonky. The snake is leaving a giant trail of snake behind it, to the point that this seems more like a paint program.
 
-`gfx.Clear` to the rescue! This command clears the screen to black, and should be called any time you need to _reset_ the screen. In this case, the beginning of the loop.
+`gfx.Clear` to the rescue! This command clears the screen to black, and should be called any time you need to _reset_ the screen. Usually the best place for it is the beginning of the loop.
 
 ----
     repeat
@@ -118,7 +118,7 @@ Putting it all together.
             snakey++
 ----
 
-And now you have a fancy enclosed box for your pet snake to play in.
+And now you have a spiffy pet dot with a fancy enclosed box to play in.
 
 .Question!
 ****
