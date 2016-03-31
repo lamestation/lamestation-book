@@ -21,8 +21,6 @@ DAT
     word    %%11
 ----
 
-Okay, so the first thing we need to take a look at is our game loop.
-
 === Use graphics to draw screen image
 
 Drawing is done with the `gfx.Sprite` command. It has four arguments, which control how it will behave.
