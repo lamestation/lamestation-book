@@ -99,3 +99,30 @@ The envelope can be toggled with `audio.SetEnvelope`.
 - If disabled, you can control channel volume manually using `audio.SetVolume`, which is useful for creating sound effects. You can also manually start and stop the envelope with `audio.StartEnvelope` and `audio.StopEnvelope`.
 
 To silence all audio, use the `audio.StopAllSound` command.
+
+=== Sample Format
+
+LameStation songs consist of two main sections: pattern and sequence data.
+
+==== Sample Data
+
+A LameAudio sample is a 512-byte sequence of arbitrary data. It can be anything you want as long as its 512 bytes.
+
+.Example pattern section
+----
+DAT
+wav_data
+
+byte    <512 bytes...>
+----
+
+Since it's possible to use any address in memory, the running system can also create samples on the fly.
+
+==== Sample Interface
+
+The address of sample data can be passed directly to `audio.SetSample`, unless stored in another object. If so, use this interface:
+
+----
+PUB Addr
+    return @wav_data
+----
