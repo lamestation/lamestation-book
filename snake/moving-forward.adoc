@@ -1,22 +1,8 @@
 == Moving Forward
 
+A dot is now on the screen, but that's quite unsatisfying
 
-[WARNING]
-====
-Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
-
-----
-DAT
-    dot_gfx
-    word    0
-    word    2, 2
-    word    %%22222211
-    word    %%22222211
-----
-
-This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
-====
-
+We want to move the pixel around on the screen, but in order to do that, we have to keep track of its location somehow. To do that, we can use variables for its horizontal (`snakex`) and vertical (`snakey`) positions.
 
 ----
 VAR
@@ -24,6 +10,24 @@ VAR
     byte    snakey
 ----
 
+Change our `Sprite` function from before to use the variables for position instead of numbers.
+
+----
+    gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+----
+
+Run it. The dot should now be in the top-left. This is because variables are set to zero when you first turn on the system.
+
+If you want it elsewhere, you have to set it to equal another point using `:=`. The LameStation screen is 128 pixels by 64, so let's set it to (32,32).
+
+----
+    snakex := 32
+    snakey := 32
+    
+    gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+----
+
+That puts the dot squarely in the center. Cool.
 
 ----
         if snakedir == 3
@@ -58,3 +62,18 @@ This is cool, except the snake is able to just wander outside of the screen when
                 snakey[0]++
 ----
 
+[WARNING]
+====
+Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
+
+----
+DAT
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%22222211
+    word    %%22222211
+----
+
+This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
+====
