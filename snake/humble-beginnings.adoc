@@ -50,7 +50,7 @@ We're not using the frame parameter yet, so just set it to zero.
 
 === Send the image to the screen
 
-If you try running it now, you still won't see anything. `lcd.DrawScreen` draws to the screen.
+If you try running it now, you still won't see anything. You need `lcd.DrawScreen` to actually draw to the screen.
 
 ----
     lcd.DrawScreen
@@ -67,5 +67,7 @@ If you try running it now, you still won't see anything. `lcd.DrawScreen` draws 
 
 See for yourself. Try removing the '@' symbol from your code and see what happens.
 ====
+
+At this point, you should have a very exciting dot on the screen.
 
 View the complete example at `/tutorials/Snake/HumbleBeginnings.spin`.
