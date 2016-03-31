@@ -18,7 +18,7 @@
    * [Movement](collision/movement.adoc)
 * [Snake](snake/README.adoc)
    * [Setting Up](snake/settingup.adoc)
-   * Humble Beginnings
+   * [Humble Beginnings](snake/humble-beginnings.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
