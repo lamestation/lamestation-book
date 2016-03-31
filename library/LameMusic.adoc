@@ -1,4 +1,4 @@
-= LameMusic
+== LameMusic
 
 image:jukebox.png[]
 
@@ -10,7 +10,7 @@ music : "LameMusic"
 
 Demos for this object can be found in the `/demos/music/` folder of the SDK.
 
-== Commands
+=== Commands
 
 - `music.Start` - Start the LameMusic song player core.
 - `music.Load` - Load a song to play.
@@ -19,7 +19,7 @@ Demos for this object can be found in the `/demos/music/` folder of the SDK.
 - `music.IsPlaying` - Return whether a song is currently playing.
 - `music.Stop` - Stop the currently playing song.
 
-== About
+=== About
 
 [IMPORTANT]
 LameAudio must be started before LameMusic.
@@ -36,14 +36,14 @@ You can use the `music.Play` command to play a song once, or `music.Loop` to pla
 
 Once you're tired of listening to music, call `music.Stop` to end the song. Playing the song again will start over from the beginning.
 
-== Song Format
+=== Song Format
 
 [NOTE]
 Software to create LameMusic song objects is planned; for now, songs must be created by hand.
 
 LameStation songs consist of two main sections: pattern and sequence data.
 
-=== Pattern Data
+==== Pattern Data
 
 Patterns contain melodies, riffs, harmonies and any musical parts that fit in a measure.
 
@@ -63,7 +63,7 @@ byte    42,  44,  46,  49
 byte    42, $82, $82, $83
 ----
 
-=== Sequence Data
+==== Sequence Data
 
 The sequence defines how the patterns are arranged in time and across channels. There should be one command, as many times as you want.
 
@@ -82,7 +82,7 @@ byte    1, 0, 0, 0
 byte    $80
 ----
 
-=== Song Interface
+==== Song Interface
 
 For LameMusic to access the song object, some extra code is needed. This code provides an address which LameMusic reads to figure out where the song data is.
 
