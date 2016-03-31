@@ -41,6 +41,4 @@ As you add to this program, the `Main` function should always be _first_! Otherw
 
 You will find there's certain code you use in almost every LameStation game, which makes these templates pretty useful.
 
-Okay, now that that's out of the way, let's make the LameStation do something.
-
 View the complete example at `/tutorials/Snake/SettingUp.spin`.
