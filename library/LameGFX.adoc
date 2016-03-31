@@ -1,4 +1,4 @@
-= LameGFX
+== LameGFX
 
 image:Blit.png[]
 
@@ -10,7 +10,7 @@ gfx : "LameGFX"
 
 Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 
-== Commands
+=== Commands
 
 - `gfx.Start` - Initialize the LameGFX drawing library.
 - `gfx.Clear` - Clear the screen to black.
@@ -25,12 +25,12 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 - `gfx.SetClipRectangle` - Change the portion of the screen that will be drawn to by LameGFX.
 - `gfx.WaitToDraw` - Wait until the last drawing operation has completed before continuing.
 
-== Constants
+=== Constants
 
 - `BLACK`, `GRAY`, `WHITE`, `TRANSPARENT` - predefined colors for filling the screen with `gfx.Fill`.
 - `SCREEN_W`, `SCREEN_H` - the width and height of the screen.
 
-== About
+=== About
 
 Call `gfx.Start` to start LameGFX. It should only be started once at the beginning of your program, before all drawing operations, and should be connected to LameLCD right away.
 
@@ -47,9 +47,9 @@ Use `gfx.Map` to draw level maps directly, or you can use LameMap for more funct
 
 `gfx.InvertColor` changes all black pixels to white, and vice versa. This is useful as a cool effect or reusing graphics.
 
-=== Advanced Usage
+==== Advanced Usage
 
-==== Clipping
+===== Clipping
 
 LameGFX supports clipping, which allows you to limit the part of the screen that functions will draw to. This is useful if, for example, you want to show half of an image, or a progress bar that can fill up.
 
@@ -60,7 +60,7 @@ The first point is inclusive, while the second is exclusive. That means that a r
 [NOTE]
 The second point must be to the right and down relative to the first, otherwise the clip rectangle will be of size (0,0), or not drawable.
 
-==== Direct Drawing
+===== Direct Drawing
 
 You can draw to the LameGFX buffer directly. First, you must enable access. This is done by grabbing its address during setup.
 
@@ -75,11 +75,11 @@ You can now access the 2048-byte block of memory pointed to by `buffer`.
 
 LameGFX will wait until the previous drawing command is finished before starting a new one. However, advanced users may want to create their own drawing functions. If so, use `gfx.WaitToDraw` to ensure your function plays well with LameGFX.
 
-== Sprite Format
+=== Sprite Format
 
 LameGFX has its own format for sprites.
 
-=== Sprite Data
+==== Sprite Data
 
 Each sprite has the same structure.
 
@@ -110,7 +110,7 @@ LameGFX supports 3 visible colors and one transparent color that is never drawn.
 
 Sprites can contain multiple images, or frames, so that they can be animated by your program. The first frame is frame 0.
 
-=== Sprite Interface
+==== Sprite Interface
 
 The address of image data can be passed directly to `gfx.Sprite` and `gfx.Blit`, unless stored in another object. If so, use this interface:
 
@@ -119,6 +119,6 @@ PUB Addr
     return @gfx_data
 ----
 
-== Creating Sprite Objects
+=== Creating Sprite Objects
 
 LSImage or the command-line `img2dat` can be used to convert images into sprite objects, or they can be written by hand.
