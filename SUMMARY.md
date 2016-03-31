@@ -38,8 +38,8 @@
    * [LameMap](library/LameMap.adoc)
    * [LameAudio](library/LameAudio.adoc)
    * [LameMusic](library/LameMusic.adoc)
-   * [LameSerial](library/LameSerial.adoc)
    * [LameControl](library/LameControl.adoc)
+   * [LameSerial](library/LameSerial.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
 * [Spin Quick Reference](spin.adoc)
 
