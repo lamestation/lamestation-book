@@ -1,33 +1,54 @@
 == Leading The March
 
-Two bytes for x and y clearly won't be enough. We have a whole army of pixels that make up this snake, so we're going to need arrays to hold them. We'll want to define one, but first, let's add a constant for the maximum number of snakes. This is important, because without it, it's chaos trying to remember how many are allowed throughout your program.
+In Snake, for every frame, the snake moves forward one pixel, with each pixel following after it.
 
 ----
-    MAX_SNAKE = 256
+■ ■ ■ ■ ■           ' frame 1
+
+  ■ ■ ■ ■ ■         ' frame 2
+
+    ■ ■ ■ ■ ■       ' frame 3
 ----
 
-Now let's trick out the snake variables.
+So how do we emulate that? We basically need to do everything we've done up to this point, times however long the snake is. Two bytes for x and y clearly won't be enough. We're going to need arrays.
+
+We'll want to define one, but first, let's add a constant for the maximum number of snakes. This is important, because without it, it's chaos trying to remember how many are allowed throughout your program.
+
+First, decide how long the snake can be. We need to know how big to make the arrays. 256 seems pretty big, but on a 128x64 screen, there are *8192 pixels*!
 
 ----
+CON
+    MAX_LENGTH = 256
+----
+
+We turn our `snakex` and `snakey` variables into arrays.
+
+----
+VAR
     byte    snakex[MAX_SNAKE]
     byte    snakey[MAX_SNAKE]
 ----
 
-Oh, and one more thing. We need to keep track of how many snake dots there are on the screen.
+Since the snake starts small and grows, we also need to keep track of how many snake dots there are on the screen at any time.
 
 ----
     byte    snakecount
 ----
 
-In snake, every frame, the snake moves forward one pixel, like this.
+We're going to add a variable called `i`. This one is just used for our `repeat` loop.
 
 ----
-o o o o o
-  o o o o o
-    o o o o o
+    byte    i
 ----
 
-So how do we emulate that?
+----
+            repeat i from snakecount to 1
+                snakex[i] := snakex[i-1]
+                snakey[i] := snakey[i-1]
+                gfx.Sprite(@dot_gfx, snakex[i], snakey[i], 0) 
+----
+
+
 
 We add this code to test 
 
@@ -50,9 +71,9 @@ repeat i from snakecount to 1
 works
 
 ----
-o o o o o
+■ ■ ■ ■ ■
  \ \ \ \ \
-  o o o o o
+  ■ ■ ■ ■ ■
 ----
 
 Going further
@@ -61,20 +82,9 @@ Going further
 How could we make this game more efficient? Is it necessary?
 
 ----
-o o o o o
+■ ■ ■ ■ ■
   | | | |
-  o o o o o
+  ■ ■ ■ ■ ■
 ----
 
 ****
-
-----
-    byte    i
-----
-
-----
-            repeat i from snakecount to 1
-                snakex[i] := snakex[i-1]
-                snakey[i] := snakey[i-1]
-                gfx.Sprite(@dot_gfx, snakex[i], snakey[i], 0) 
-----
