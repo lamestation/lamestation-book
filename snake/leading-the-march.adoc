@@ -29,10 +29,30 @@ VAR
     byte    snakey[MAX_SNAKE]
 ----
 
-Since the snake starts small and grows, we also need to keep track of how many snake dots there are on the screen at any time.
+Remember a couple sections ago, when we set the starting position of the snake?
+
+----
+    snakex := 32
+    snakey := 32
+----
+
+We need to update that since that position is now the first pixel of many.
+
+----
+    snakex[0] := 32
+    snakey[0] := 32
+----
+
+Since the snake starts small and grows, we also need to keep track of how many snake dots there are on the screen at any time. So we'll create `snakecount`. Byte-sized is fine, since `MAX_LENGTH` is 256.
 
 ----
     byte    snakecount
+----
+
+Since we start with 1 pixel, we'll set `snakecount` to 1 at startup.
+
+----
+    snakecount := 1
 ----
 
 We're going to add a variable called `i`. This one is just used for our `repeat` loop.
