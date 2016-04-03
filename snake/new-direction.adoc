@@ -80,4 +80,10 @@ We'll add code to prevent that.
 
 This code lets you go up/down if you're heading left/right, and vice versa, but you can't do U-turns. It's a small change, but an important part of what makes snake difficult.
 
+One final change. Since there is more room horizontally than vertically, we'll make life slightly easier by changing the starting direction to right. This will give the player more time to react before hitting a wall.
+
+----
+    snakedir := 1
+----
+
 View the complete example at `/tutorials/Snake/ANewDirection.spin`.
