@@ -1,20 +1,12 @@
 == A New Direction
 
-The snake has a direction associated with it, so we need a way of keeping track of that direction.
+The snake is always moving in one direction, and we need to remember which direction that is.
 
-A simple way to do that is by assigning a number to each direction. Because we're sane human beings, let's come up with a scheme that's easy to remember. Clock-wise is easy enough.
+An easy way to do that is by assigning a number to each direction. Because we're sane human beings, let's come up with a scheme that's easy to remember. Let's use a compass as a reference, and assign 0 to North, 1 to East, 2 to South, and 3 to West.
 
-image:clock.png[]
+image:compass.png[]
 
-|===
-| Direction | Number | Clock Position
-| Up | 0 | 12:00
-| Right | 1 | 3:00
-| Down | 2 | 6:00
-| Left | 3 | 9:00
-|===
-
-We can even create constants so that we don't have to remember them.
+We can then create constants to make working with direction easier.
 
 ----
 CON
@@ -24,89 +16,66 @@ CON
     LEFT  = 3
 ----
 
-Whatever helps you remember...
-
-----
-CON
-    NORTH = 0
-    EAST  = 1
-    SOUTH = 2
-    WEST  = 3
-----
-
-Track that number in a variable. There are only four directions, so byte-sized is plenty large.
+Now we gotta track that number in a variable. There are only four directions, so byte-sized is plenty large.
 
 ----
 VAR    
     byte    snakedir
 ----
 
-Now we want to change the snake's direction with `snakedir`.
-
-First, add code that will set `snakedir`.
+Let's experiment with using direction. In the last exercise, we directly controlled the snake with LameControl.
 
 ----
-        if ctrl.Up
-            snakedir := 0
-        elseif ctrl.Right
-            snakedir := 1
-        elseif ctrl.Down
-            snakedir := 2
-        elseif ctrl.Left
-            snakedir := 3
-----
-
-
-----
-        if snakedir == 0 or snakedir == 2
-            if ctrl.Left
-                snakedir := 3
-            elseif ctrl.Right
-                snakedir := 1
-
-        elseif snakedir == 1 or snakedir == 3
-            if ctrl.Up
-                snakedir := 0
-            elseif ctrl.Down
-                snakedir := 2
-----
-
-
-
-
-
-
-
-
-----
-        if snakedir == 3
+        if ctrl.Left and snakex > 0
             snakex--
-                
-        if snakedir == 1
+        if ctrl.Right and snakex < constant(128-2)
             snakex++
-
-        if snakedir == 0
+        if ctrl.Up and snakey > 0
             snakey--
-                
-        if snakedir == 2
+        if ctrl.Down and snakey < constant(64-2)
             snakey++
 ----
 
-This is cool, except the snake is able to just wander outside of the screen whenever it feels like! Let's show that snake who's boss by keeping it inside the screen.
-----
-        if snakedir == 3
-            if snakex[0] > 0
-                snakex[0]--
-                
-        if snakedir == 1
-            if snakex[0] < constant(128-2)
-                snakex[0]++
+We're going to change that code a lot. We will control only the _direction_ with LameControl, and then have the movement code look at `snakedir` only to decide how the snake should move.
 
-        if snakedir == 0
-            if snakey[0] > 0
-                snakey[0]--
-                
-        if snakedir == 2
-            if snakey[0] < constant(64-2)
-                snakey[0]++
 ----
+        if ctrl.Up
+            snakedir := UP
+        if ctrl.Right
+            snakedir := RIGHT
+        if ctrl.Down
+            snakedir := DOWN
+        if ctrl.Left
+            snakedir := LEFT
+            
+        if snakedir == LEFT and snakex > 0
+            snakex--
+        if snakedir == RIGHT and snakex < constant(128-2)
+            snakex++
+        if snakedir == UP and snakey > 0
+            snakey--
+        if snakedir == DOWN and snakey < constant(64-2)
+            snakey++
+----
+
+The first thing you'll notice is that now the dot seems to have a mind of its own! This is because we programmed it to move if it has a direction, and it always does.
+
+All in all, the snake is looking pretty good... for a single dot. There's one more thing we need to add to really move like a snake. You'll notice that if you are moving in one direction, you can go in the exact opposite direction, which the snake shouldn't be able to do.
+
+We'll add code to prevent that.
+
+----
+        if snakedir == LEFT or snakedir == RIGHT
+            if ctrl.Up
+                snakedir := UP
+            if ctrl.Down
+                snakedir := DOWN
+                
+        elseif snakedir == DOWN or snakedir == UP
+            if ctrl.Left
+                snakedir := LEFT
+            if ctrl.Right
+                snakedir := RIGHT
+----
+
+This code lets you go up/down if you're heading left/right, and vice versa, but you can't do U-turns. It's a small change, but an important part of what makes snake difficult.
