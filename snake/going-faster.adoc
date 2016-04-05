@@ -1,5 +1,7 @@
 == Going Faster
 
+image:fastfastfast.png[alt=""]
+
 During the last exercise, you found that as the length of your snake increased, your game actually slowed down. _A lot_.
 
 This may seem surprising, considering that you've probably seen LameStation games where _a lot more_ is happening on the screen and it seems to be running just fine.
