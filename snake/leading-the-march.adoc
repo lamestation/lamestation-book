@@ -1,6 +1,8 @@
 == Leading The March
 :experimental:
 
+image:leadingthemarch.png[]
+
 In Snake, for every frame, the snake moves forward one pixel, with each pixel following after it.
 
 ----
