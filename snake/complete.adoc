@@ -1,6 +1,8 @@
 == Going Further
 
-We have now completed the game! You can play the officially finished version at `/tutorials/Snake/Snake.spin`.
+We have now completed the game!
+
+You can play the officially finished version at `/tutorials/Snake/Snake.spin`.
 
 There's clearly a lot more that could be done. You could add:
 
