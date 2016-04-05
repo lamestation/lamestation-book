@@ -159,3 +159,7 @@ You can put it anywhere in the loop, but I choose to group it with all the other
 Now your snake is bigger and stronger than ever before!
 
 View the complete example at `/tutorials/Snake/LeadingTheMarch.spin`.
+
+=== Think about this!
+
+. I mentioned that you could make the tail longer at startup, so that it wouldn't just start as a dot. How would you do that?
