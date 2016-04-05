@@ -25,7 +25,7 @@
    * [Going Faster](snake/going-faster.adoc)
    * [A Goal To Strive For](snake/a-goal-to-strive-for.adoc)
    * [Don't Tread On Me](snake/dont-tread-on-me.adoc)
-   * [The Completed Game](snake/complete.adoc)
+   * [Going Further](snake/complete.adoc)
 * [Hello Pong](pong/README.adoc)
    * [Setting Up The Screen](pong/screen.adoc)
    * [Adding A Paddle](pong/paddle.adoc)
