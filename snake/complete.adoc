@@ -12,4 +12,4 @@ There's clearly a lot more that could be done. You could add:
 - Powerups
 - Levels
 
-There's all kinds of stuff you can do.
+There's all kinds of stuff you can do. How would you extend it?
