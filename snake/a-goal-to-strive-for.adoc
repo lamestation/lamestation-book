@@ -87,7 +87,7 @@ To do that, we will replace the `ctrl.A` and `ctrl.B` tests with a test that is 
         if foodx == snakex[0] and foody == snakey[0]
 ----
 
-Then we combine them into one. Now our entire foody system should be complete (lol, foody).
+Then we combine them into one.
 
 ----
         if foodx == snakex[0] and foody == snakey[0]
@@ -97,6 +97,8 @@ Then we combine them into one. Now our entire foody system should be complete (l
             foodx := ||random? // 64 * 2
             foody := ||random? // 32 * 2
 ----
+
+Now our entire foody system should be complete (lol, foody).
 
 === Think about this!
 
