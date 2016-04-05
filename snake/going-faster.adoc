@@ -34,6 +34,8 @@ x /= y    ===>    x := x / y
 ----
 ====
 
+Here's what your movement code should look like now.
+
 ----
         if snakedir == LEFT and snakex[0] > 0
             snakex[0] -= SPEED
@@ -45,10 +47,22 @@ x /= y    ===>    x := x / y
             snakey[0] += SPEED
 ----
 
-Aww, man, but now it goes way fast at the beginning and slow at the end. Let's slow down the frame rate so that it plays at the same speed throughout.
+Ahh! Now it goes way, way fast at the beginning! I can hardly even see it. Now what we'll do is set the frame rate, intentionally limiting the speed of the game so that the speed is more consistent throughout the game.
+
+LameLCD has a command just for this: `lcd.SetFrameLimit`. It comes in three speeds.
+
+- `FULLSPEED` (~35 frames/second): Like you're watching TV!
+- `HALFSPEED` (~18 frames/second): Starting to look choppy.
+- `QUARTERSPEED` (~9fps frames/second): Pretty freaking slow.
+
+You can try different values to see how they look; which one you use really depends on your game.
+
+I'm going to go with `HALFSPEED`. This command can be called multiple times, but it makes sense to call it at the beginning of your program.
 
 ----
-    lcd.SetFrameLimit (lcd#HALFSPEED)
+    PUB Main
+    lcd.Start(gfx.Start)
+    lcd.SetFrameLimit (lcd#QUARTERSPEED)
 ----
 
-View the complete example at `/tutorials/Snake/LeadingTheMarch.spin`.
+View the complete example at `/tutorials/Snake/GoingFaster.spin`.
