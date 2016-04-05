@@ -153,3 +153,7 @@ You can put it anywhere in the loop, but I choose to group it with all the other
 
         if snakedir == LEFT or snakedir == RIGHT
 ----
+
+Now your snake is bigger and stronger than ever before!
+
+View the complete example at `/tutorials/Snake/LeadingTheMarch.spin`.
