@@ -36,3 +36,9 @@ We just need to add it into the loop we've already created that moves the entire
 Done. Now your snake will suffer an untimely fate for its carelessness.
 
 View the complete example at `/tutorials/Snake/DontTreadOnMe.spin`.
+
+=== Think about this!
+
+. We wrote code so that the snake dies when it overlaps itself, but why does it die when it reaches the edge of the screen?
+
+// that's because when it can't go any further, it stays put, so the next pixel will come and overlap it on the next frame. This snake essentially has to keep moving or will die.
