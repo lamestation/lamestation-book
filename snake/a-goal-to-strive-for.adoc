@@ -98,6 +98,13 @@ Then we combine them into one.
             foody := ||random? // 32 * 2
 ----
 
+Remember to initialize the food position at startup too! Otherwise it will always start in the top-left corner of the screen.
+
+----
+    foodx := ||random? // 64 * 2
+    foody := ||random? // 32 * 2
+----
+
 Now our entire foody system should be complete (lol, foody).
 
 View the complete example at `/tutorials/Snake/AGoalToStriveFor.spin`.
