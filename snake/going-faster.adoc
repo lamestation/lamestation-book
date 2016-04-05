@@ -1,21 +1,48 @@
 == Going Faster
 
-----
-        if snakedir == 3
-            if snakex[0] > 0
-                snakex[0] += SNAKE_SPEED
-                
-        if snakedir == 1
-            if snakex[0] < constant(128-2)
-                snakex[0] += SNAKE_SPEED
+During the last exercise, you found that as the length of your snake increased, your game actually slowed down. _A lot_.
 
-        if snakedir == 0
-            if snakey[0] > 0
-                snakey[0] -= SNAKE_SPEED
-                
-        if snakedir == 2
-            if snakey[0] < constant(64-2)
-                snakey[0] += SNAKE_SPEED
+This may seem surprising, considering that you've probably seen LameStation games where _a lot more_ is happening on the screen and it seems to be running just fine.
+
+This is because the way we have implemented it is not very efficient.
+
+. LameGFX is designed for drawing full images, so it's not so good at drawing individual pixels.
+. Every time the snake moves by one point, it has to move every single point, one at a time, which takes a long time.
+. The snake is moving one pixel at a time, when its dot is actually 2x2 pixels.
+
+There isn't much we can do about the first reason, other than write a new object for that kind of drawing (that would take a long time!). We'll save the second issue for a rainy day.
+
+For now, let's deal with the third problem, because it's the easiest. If each snake dot is 2x2 pixels, then why not make the snake move two pixels at a time? Otherwise, each image is pointless overlapping the last one which is unnecessary.
+
+As it would happen, there isn't much to do to make this happen. First, we create a constant, just to make our lives easier.
+
+----
+CON
+    SPEED = 2
+----
+
+Now we need to replace every instance of `++` and `--` with `+= SPEED` and `-= SPEED`.
+
+.New Operators: `+=`, `-=`, ...
+====
+These are shorter ways of writing certain operations that make your code easier to read.
+----
+x += y    ===>    x := x + y
+x -= y    ===>    x := x - y
+x *= y    ===>    x := x * y
+x /= y    ===>    x := x / y
+----
+====
+
+----
+        if snakedir == LEFT and snakex[0] > 0
+            snakex[0] -= SPEED
+        if snakedir == RIGHT and snakex[0] < constant(128-2)
+            snakex[0] += SPEED
+        if snakedir == UP and snakey[0] > 0
+            snakey[0] -= SPEED
+        if snakedir == DOWN and snakey[0] < constant(64-2)
+            snakey[0] += SPEED
 ----
 
 Aww, man, but now it goes way fast at the beginning and slow at the end. Let's slow down the frame rate so that it plays at the same speed throughout.
@@ -23,3 +50,5 @@ Aww, man, but now it goes way fast at the beginning and slow at the end. Let's s
 ----
     lcd.SetFrameLimit (lcd#HALFSPEED)
 ----
+
+View the complete example at `/tutorials/Snake/LeadingTheMarch.spin`.
