@@ -2,6 +2,12 @@
 
 Attempting to download an empty file to the LameStation will generate an error from PropellerIDE.
 
+////
+- *There must be at least one PUB block*
+- *PUB blocks must be uniquely named within a file*
+- *The first PUB block in your program is the starting point for your program*
+- *I call my first function Main to prevent confusion; there is no other reason*
+////
 .An empty file.
 ----
 
@@ -31,7 +37,7 @@ PUB Third
 
 All Spin programs _must_ include a `PUB` block.
 
-Spin is ** not ** case-sensitive.
+Spin is *not* case-sensitive.
     
     PUB Main
 
@@ -40,3 +46,21 @@ is the same as
     pub main
 
 Remember that!
+
+
+View the complete example at `/tutorials/Basics/HelloNothing.spin`.
+
+=== Bonus Round: Function Names!
+
+Function names can contain letters, numbers, and underscores. However, the first character cannot be a number (_that's good; otherwise, they'd start looking like passwords_).
+
+*Good:*
+
+- `hello_chicken`
+- `bacon123`
+- `_supertime`
+
+*Bad:*
+
+- `123attack`
+- `extreme#@$**`
