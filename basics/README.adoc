@@ -1,6 +1,23 @@
 = Basics
 :experimental:
 
+= Snake
+
+*Task:* Learn the basics of the Spin language +
+*Difficulty:* Ultra Beginner +
+*Purpose:* Make a game from start to finish. +
+
+*Concepts:* +
+- Functions +
+- Blocks +
+- Logic +
+- Interactivity +
+
+*Requirements:* +
+- LameControl
+
+*Situation:*
+
 In this chapter, you'll be introduced to the Spin programming language.
 
 A computer is programmed by giving it instructions, one after the other, 
