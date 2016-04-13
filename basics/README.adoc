@@ -11,48 +11,7 @@ In PropellerIDE, simply press kbd:[F10] and in a few moments, the LameStation wi
 
 The examples in this section can be found in the `demos/basics/` folder of the LameStation SDK.
 
-==  Hello Nothing
 
-Attempting to download an empty file to the LameStation will generate an error from PropellerIDE.
-
-.An empty file.
-----
-
-----
-
-so here we see the bare minimum that constitutes a Spin program.
-
-.HelloNothing.spin
-----
-PUB Main
-
-----
-
-Well, that was easy!
-
-This is called a `PUB` block, which is short for _public function_ . Functions are areas where you write code that can _do stuff_. If your code is a sentence, a function is the verb, the action. You can put as many `PUB` blocks as you want into a file, but when you run your code, the Propeller will start by running the first public function that appears in the file. From that function, you can call other functions.
-
-----
-PUB Main
-    Third
-
-PUB Another
-
-PUB Third
-    Another
-----
-
-All Spin programs _must_ include a `PUB` block.
-
-Spin is ** not ** case-sensitive.
-    
-    PUB Main
-
-is the same as
-    
-    pub main
-
-Remember that!
 
 ==  Lights On
 
