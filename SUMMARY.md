@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Getting Started](getting-started.adoc)
 * [Basics](basics/README.adoc)
-   * Hello Nothing
+   * [Hello Nothing](basics/hello-nothing.adoc)
 * [Graphics](graphics/README.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
