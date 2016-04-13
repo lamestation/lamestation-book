@@ -1,11 +1,60 @@
 = Getting Started
+:experimental:
+
+To work with the LameStation, we have the LameStation SDK. An SDK, or *software development kit*, is a set of tools that are designed to use with a certain hardware platform; in this case, the LameStation gaming handheld.
+
+- Device-specific libraries
+- Programming tools
+- Content creationg tools
+- Media resources
+
+We need to set up the LameStation SDK before we can do anything.
 
 == Installing the SDK
 
-. First things first. link:https://github.com/lamestation/lamestation-sdk/releases[Download the SDK]!
-. Now,  link:https://lamestation.atlassian.net/wiki/display/IDE/Installing+PropellerIDE[install PropellerIDE] for your platform.
-. Open PropellerIDE and go to "_Edit -> Preferences_".
-. Click the _Languages_ tab, and under _Includes_ in the _Spin_ box, click _Add Path_ and add the location of the unpacked SDK.
-. Hit _OK_!
+. First, download and install the IDE for your platform:
++
+link:http://developer.parallax.com/propelleride/[`developer.parallax.com/propelleride`]
 
-PropellerIDE is now set up for use with the LameStation SDK.
+. Then, download the latest SDK release:
++
+link:https://github.com/lamestation/lamestation-sdk/releases/latest[`www.lamestation.com/sdk`]
+
+. Unpack the SDK to a directory of your choosing.
+
+. Open PropellerIDE and go to "_Edit -> Preferences_".
++
+image:edit_preferences.png[]
+
+. Click the _Languages_ tab, and under _Includes_ in the _Spin_ box, click _Add Path_ and add the location of the unpacked SDK.
++
+image:add_path.png[]
+
+. Hit _OK_!
++
+image:hit_ok.png[]
+
+PropellerIDE should now be set up for use with the LameStation.
+
+== Testing
+
+We can verify that the LameStation is working by loading a game from the `games/` directory.
+
+They follow a simple naming convention. In a folder called `AwesomeGame/`, the main game file is named `AwesomeGame.spin`. We can run _piXel_ by opening `games/piXel/piXel.spin` and pressing kbd:[F10].
+
+If it worked, you should see this screen.
+
+image:title.png[]
+
+If you don't, read on to 
+////
+== Troubleshooting
+
+[qanda]
+====
+It's complaining that ::
+        Answer one.
+Question two::
+        Answer two.
+====
+////
