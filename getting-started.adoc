@@ -26,8 +26,8 @@ link:https://github.com/lamestation/lamestation-sdk/releases/latest[`www.lamesta
 +
 image:edit_preferences.png[]
 
-. Click the _Languages_ tab, and under _Includes_ in the _Spin_ box, click _Add Path_ and add the location of the unpacked SDK.
-+
+. Click the _Languages_ tab, and under _Includes_ in the _Spin_ box, and click _Add Path_ to add the location of the unpacked SDK.
+
 image:add_path.png[]
 
 . Hit _OK_!
@@ -47,14 +47,13 @@ If it worked, you should see this screen.
 image:title.png[]
 
 If you don't, read on to 
-////
+
 == Troubleshooting
 
 [qanda]
 ====
-It's complaining that ::
-        Answer one.
-Question two::
-        Answer two.
+I'm getting lots of _'NOT FOUND'_ messages. What's the deal? image:notfound.png[]::
+Looks like you haven't set up the library path correctly. Make sure you properly added the SDK.
+
+
 ====
-////
