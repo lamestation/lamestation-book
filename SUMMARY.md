@@ -4,6 +4,7 @@
 * [Getting Started](getting-started.adoc)
 * [Basics](basics/README.adoc)
    * [Hello Nothing](basics/hello-nothing.adoc)
+   * Lights On
 * [Graphics](graphics/README.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
