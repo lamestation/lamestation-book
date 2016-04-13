@@ -6,7 +6,7 @@
    * [Hello Nothing](basics/hello-nothing.adoc)
    * [Lights On](basics/lights-on.adoc)
    * [Lights Blinking](basics/lights-blinking.adoc)
-   * I'm Alive!
+   * [I'm Alive!](basics/im-alive.adoc)
 * [Graphics](graphics/README.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
