@@ -7,6 +7,7 @@
    * [Lights On](basics/lights-on.adoc)
    * [Lights Blinking](basics/lights-blinking.adoc)
    * [I'm Alive!](basics/im-alive.adoc)
+   * Take Control
 * [Graphics](graphics/README.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
