@@ -5,7 +5,7 @@
 * [Basics](basics/README.adoc)
    * [Hello Nothing](basics/hello-nothing.adoc)
    * [Lights On](basics/lights-on.adoc)
-   * Lights Blinking
+   * [Lights Blinking](basics/lights-blinking.adoc)
 * [Graphics](graphics/README.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
