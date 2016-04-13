@@ -1,2 +1,57 @@
-= Take Control
+==  Take Control
 
+Now that we've learned how to include objects, let's look a little further into what's inside the LameStation SDK. In this example, we see how to control the LED using the buttons and joystick on the LameStation.
+
+Introducing link:LameControl.adoc[LameControl]! LameControl is a
+small library for getting user input for your application. Setting it up is straight forward; just include it in your application.
+
+----
+OBJ
+    ctrl    : "LameControl"
+----
+
+link:ctrl.Update.adoc[ctrl.Update] saves the current state of all the
+controls, so you can use them. Without using this command, LameControl
+does nothing, so make sure you call it. At the beginning of your loop is a good place for it.
+
+----
+    repeat
+        ctrl.Update
+----
+
+Now you can see if any of the buttons have been pressed. However, before you'll be able to see anything interesting happen, you need a way to test _if_ a button has been pressed.
+
+You may have guessed that the keyword `IF` does just that. It allows you to only run code if a condition is true. Then, you can use the `ELSE` to run code if it is false.
+
+So here's how to test if any button has been pressed. The light turns off if it has, or stays on if it hasn't.
+
+----
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
+----
+
+So let's put it all together and put it to the test.
+
+.TakeControl.spin
+----
+OBJ
+    ctrl : "LameControl"
+    pin  : "LamePinout"
+
+CON
+    LED_PIN = pin#LED
+
+PUB Main
+
+    dira[LED_PIN]~~
+
+    repeat
+        ctrl.Update
+
+        if ctrl.A or ctrl.B or ctrl.Up or ctrl.Down or ctrl.Left or ctrl.Right
+            outa[LED_PIN]~~
+        else
+            outa[LED_PIN]~
+----
