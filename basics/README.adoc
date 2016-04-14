@@ -1,7 +1,7 @@
 = Basics
 :experimental:
 
-*Task:* Make some lights blink +
+*Task:* Make some lights blink. +
 *Difficulty:* Ultra Beginner +
 *Purpose:* Learn the basics of the Spin language. +
 
