@@ -8,7 +8,7 @@ A microcontroller is a computer, like a laptop or desktop, but smaller and less 
 
 Game consoles are insanely complicated. While nothing in life comes easy, that doesn't mean it has to be boring. I made the LameStation so that I could share in the epic educational experience that was developing the thing. Truly, making something yourself is one of the greatest joys in life, and I challenge you to create something all your own with the LameStation. :)
 
-## Hardware Assembly
+## Assembly Instructions
 
 New versions of the LameStation come pre-assembled. If you have an early version that requires assembly, you can find the legacy instructions here:
 
