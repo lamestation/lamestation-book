@@ -10,6 +10,6 @@ Game consoles are insanely complicated. While nothing in life comes easy, that d
 
 ## Assembly Instructions
 
-New versions of the LameStation come pre-assembled. If you have an early version that requires assembly, you can find the legacy instructions here:
+New versions of the LameStation come pre-assembled. If you have an early version that requires assembly, you can find the instructions here:
 
 - [LameStation RC2 Assembly Instructions](https://lamestation.atlassian.net/wiki/display/LAME/Assembly+Instructions)
