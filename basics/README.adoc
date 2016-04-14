@@ -1,11 +1,9 @@
 = Basics
 :experimental:
 
-= Snake
-
-*Task:* Learn the basics of the Spin language +
+*Task:* Make some lights blink +
 *Difficulty:* Ultra Beginner +
-*Purpose:* Make a game from start to finish. +
+*Purpose:* Learn the basics of the Spin language. +
 
 *Concepts:* +
 - Functions +
