@@ -1,6 +1,6 @@
 == Going Faster
 
-image:fastfastfast.png[alt=""]
+image:fastfastfast.png[]
 
 During the last exercise, you found that as the length of your snake increased, your game actually slowed down. _A lot_.
 
