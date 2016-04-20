@@ -4,11 +4,13 @@ In the previous section, we showed you how to set up a basic Spin template, but 
 
 Now that that's out of the way, let's do something. Here's a lofty goal: let's make the LameStation draw something.
 
-There isn't much to it.
+There are three steps to using graphics in a program.
 
-. Add graphics for drawing
-. Use graphics to draw screen image
+. Add graphics data to your program
+. Use  to draw screen image
 . Send image to actual screen
+
+image:graphicssystem.png[]
 
 === Instructions
 
