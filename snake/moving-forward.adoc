@@ -2,6 +2,10 @@
 
 A dot is now on the screen, but that's quite unsatisfying.
 
+=== Instructions
+
+==== Global Positioning
+
 We want to move the pixel around on the screen, but in order to do that, we have to keep track of its location somehow. To do that, we can use variables for its horizontal (`snakex`) and vertical (`snakey`) positions.
 
 ----
@@ -29,7 +33,7 @@ If you want it elsewhere, you have to set it to equal another point using `:=`. 
 
 That puts the dot squarely in the center. Cool, but sitting in one place is boring. So let's move it around!
 
-=== If You Say So
+==== If You Say So
 
 We'll use LameControl to access the joystick. The `IF` keyword allows us to test if an expression is true, and if so, run some code. The code to run should be immediately after the `IF` and indented.
 
@@ -55,7 +59,7 @@ None of the functions will return anything until `ctrl.Update` is called, so mak
         snakey++
 ----
 
-=== Feeling Loopy
+==== Feeling Loopy
 
 Awesome. We should be ready to go, right? Wrong!
 
@@ -96,7 +100,7 @@ image:noclear.png[]
         gfx.Clear
 ----
 
-=== Put A Lid On It
+==== Put A Lid On It
 
 This is cool, except the snake is able to just wander outside of the screen whenever it feels like. Let's show that snake who's boss by keeping it inside the screen.
 
@@ -131,9 +135,23 @@ Putting it all together.
 
 And now you have a spiffy pet dot with a fancy enclosed box to play in.
 
-.Feeling Adventurous?
-****
-In some versions of Snake, traveling towards an edge will teleport you to the other side instead of stopping you. See if you can make this on your own.
-****
-
 View the complete example at `/tutorials/Snake/MovingForward.spin`.
+
+=== Recap
+
+In this section, you learned how to:
+
+- Position graphics on the screen
+- Use `IF` statements for conditional logic
+- Use `REPEAT` to loop through blocks of code
+- Use `gfx.Clear` to clear the screen before drawing
+- Ensure graphics are always visible on the screen
+
+=== Think about this!
+
+
+=== Feeling Adventurous?
+
+. Remember what happened when we forgot to clear the screen? What if we went a little further with that whole paint program idea? Try your hand at making a digital etch-a-sketch.
+
+. In some versions of Snake, traveling towards an edge will teleport you to the other side instead of stopping you. See if you can make this on your own.
