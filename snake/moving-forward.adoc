@@ -29,7 +29,16 @@ If you want it elsewhere, you have to set it to equal another point using `:=`. 
 
 That puts the dot squarely in the center. Cool, but sitting in one place is boring. So let's move it around!
 
+=== If You Say So
+
 We'll use LameControl to access the joystick. The `IF` keyword allows us to test if an expression is true, and if so, run some code. The code to run should be immediately after the `IF` and indented.
+
+----
+if condition
+    ' put code to execute if true here
+else
+    ' put code to execute if false here
+----
 
 None of the functions will return anything until `ctrl.Update` is called, so make sure to call it first.
 
@@ -77,6 +86,8 @@ To put your code inside a `repeat`, just put it after and indent it, and it'll l
 ----
 
 You'll notice right away something really wonky. The snake is leaving a giant trail of snake behind it, to the point that this seems more like a paint program.
+
+image:noclear.png[]
 
 `gfx.Clear` to the rescue! This command clears the screen to black, and should be called any time you need to _reset_ the screen. Usually the best place for it is the beginning of the loop.
 
