@@ -98,6 +98,6 @@ Reset the colors and draw to the screen.
 
 ----
         gfx.InvertColor(False)
-        lcd.DrawScreen
+        lcd.Draw
 ----
 

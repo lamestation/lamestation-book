@@ -11,7 +11,7 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 === Commands
 
 - `lcd.Start` - Initialize the LameLCD library.
-- `lcd.DrawScreen` - Show the contents of the drawing buffer on the screen.
+- `lcd.Draw` - Show the contents of the drawing buffer on the screen.
 - `lcd.InvertScreen` - Invert black and white pixels on the entire screen.
 - `lcd.SetFrameLimit` - Set an upper limit to the number of times the screen will be redrawn a second.
 - `lcd.WaitForVerticalSync` - Wait until the start of the next LCD frame before continuing.
@@ -29,13 +29,13 @@ Call `lcd.Start` once at the beginning of your program to use LameLCD, giving th
 lcd.Start(gfx.Start)
 ----
 
-The screen will not update on its own. Call `lcd.DrawScreen` to send the graphics buffer to the screen.
+The screen will not update on its own. Call `lcd.Draw` to send the graphics buffer to the screen.
 
 All colors on the screen can be inverted with the `lcd.InvertScreen` command, which is a nice visual effect.
 
-`lcd.DrawScreen` can be called at any time to copy the drawing buffer to the display buffer. This is likely to happen when LameLCD is already updating the physical screen, which will cause the screen to flicker.
+`lcd.Draw` can be called at any time to copy the drawing buffer to the display buffer. This is likely to happen when LameLCD is already updating the physical screen, which will cause the screen to flicker.
 
-To prevent flickering, call `lcd.WaitForVerticalSync` before calling `lcd.DrawScreen` to ensure LameLCD is not busy when `lcd.DrawScreen` is called. Enable `lcd.SetFrameLimit` to have LameLCD do this automatically, at one of three speeds. Frame rate limiting is disabled by default.
+To prevent flickering, call `lcd.WaitForVerticalSync` before calling `lcd.Draw` to ensure LameLCD is not busy when `lcd.Draw` is called. Enable `lcd.SetFrameLimit` to have LameLCD do this automatically, at one of three speeds. Frame rate limiting is disabled by default.
 
 ==== Advanced Usage
 

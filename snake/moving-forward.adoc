@@ -92,7 +92,7 @@ To put your code inside a `repeat`, just put it after and indent it, and it'll l
             snakey++
             
         gfx.Sprite(@dot_gfx, snakex, snakey, 0)
-        lcd.DrawScreen
+        lcd.Draw
 ----
 
 You'll notice right away something really wonky. The snake is leaving a giant trail of snake behind it, to the point that this seems more like a paint program.

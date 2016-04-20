@@ -17,15 +17,15 @@ library so you can use the buttons and joystick in your games.
         lcd.Start(gfx.Start)
         ctrl.Start
 
-Then, indent your ` gfx.Sprite ` and ` gfx.DrawScreen ` commands and stick
-them inside a ` repeat ` command. This will cause the drawing commands to
+Then, indent your `gfx.Sprite` and `lcd.Draw` commands and stick
+them inside a `repeat` command. This will cause the drawing commands to
 repeat forever.
 
     
     
         repeat
             gfx.Sprite(ball.Addr, 10, 10, 0)
-            lcd.DrawScreen
+            lcd.Draw
 
 Now, inside VAR block, add some variables to work with. We need these for
 movement, for you and the opponent later on.
@@ -43,7 +43,7 @@ instead of at (10,10).
     
     
             gfx.Sprite(ball.Addr, x, y, 0)
-            lcd.DrawScreen
+            lcd.Draw
     
 
 After the repeat, add the ` ctrl.Update ` command. This will check the value
@@ -56,7 +56,7 @@ to collect user input.
             ctrl.Update
     
             gfx.Sprite(ball.Addr, x, y, 0)
-            lcd.DrawScreen
+            lcd.Draw
 
 But it still doesn't do anything! We need to add in some more to tell the game
 library what to do when the joystick moves.
@@ -134,5 +134,5 @@ going.
             	y++
             
             gfx.Sprite(ball.Addr, x, y, 0)
-            lcd.DrawScreen
+            lcd.Draw
 

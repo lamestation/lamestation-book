@@ -18,7 +18,7 @@ face as an example.
     PUB Main
         lcd.Start(gfx.Start)
         gfx.Sprite(@data, 56, 24, 0)
-        lcd.DrawScreen
+        lcd.Draw
     
     DAT
     
@@ -60,7 +60,7 @@ a really, really long time. ** Not only that, but let's look at it.
     PUB Main
         lcd.Start(gfx.Start)
         gfx.Sprite(@data, 56, 24, 0)
-        lcd.DrawScreen
+        lcd.Draw
     
     DAT
     

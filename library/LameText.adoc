@@ -28,7 +28,7 @@ LameGFX must be started before LameText can be used.
 
 Begin by loading a font into LameText with `txt.Load`, passing the font address, first character, and character width and height. Only one font can be loaded at a time, but fonts can be switched at any time. Changing the width and height of the font changes the spacing of letters.
 
-Now you can use any of the text-drawing commands, keeping in mind that they won't be visible until `lcd.DrawScreen` is called.
+Now you can use any of the text-drawing commands, keeping in mind that they won't be visible until `lcd.Draw` is called.
 
 === Font Format
 

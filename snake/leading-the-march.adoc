@@ -113,7 +113,7 @@ Well, gee, that's just what we want!
 
 There is only one value that isn't set this way, and that's `snakex[0]`. That's okay though, because we already set `snakex[0]` via player direction.
 
-Here's the code that calculates the locations of the snake's tail. We should place this code after drawing the first tail sprite but before `lcd.DrawScreen`.
+Here's the code that calculates the locations of the snake's tail. We should place this code after drawing the first tail sprite but before `lcd.Draw`.
 
 ----
         repeat i from snakecount to 1

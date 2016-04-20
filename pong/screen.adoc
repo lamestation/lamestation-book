@@ -27,7 +27,7 @@ explain what they all mean later.
     
         gfx.Clear
         gfx.Sprite(ball.Addr, 10, 10, 0)
-        lcd.DrawScreen
+        lcd.Draw
     
 
 Let's break these down. The ` [ gfx.Sprite ](gfx.Sprite_15958162.adoc) `
@@ -69,7 +69,7 @@ static image with only one frame, so we set the frame number to 0 (since
 counting starts at 0 on computers).
 
 Just having a sprite draw on the buffer is not enough. We need the second
-command, ` lcd.DrawScreen ` , to copy your working screen to the LCD
+command, ` lcd.Draw ` , to copy your working screen to the LCD
 framebuffer. If you did this correctly, you should have achieved something
 like this for your code.
 
@@ -91,7 +91,7 @@ like this for your code.
         
     	gfx.Clear
         gfx.Sprite(ball.Addr, 10, 10, 0)
-        lcd.DrawScreen
+        lcd.Draw
     
 
 ![](attachments/13762642/16089160.png)

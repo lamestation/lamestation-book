@@ -70,10 +70,10 @@ We're not using the frame parameter yet, so just set it to zero.
 
 ==== Send the image to the screen
 
-If you try running it now, you still won't see anything. You need `lcd.DrawScreen` to actually draw to the screen.
+If you try running it now, you still won't see anything. You need `lcd.Draw` to actually draw to the screen.
 
 ----
-    lcd.DrawScreen
+    lcd.Draw
 ----
 
 [WARNING]

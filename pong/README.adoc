@@ -82,10 +82,10 @@ Anyway, we have our image. In the main function, use `gfx.Sprite` to draw the sp
 gfx.Sprite(@ball, 10, 10, 0)
 ----
 
-We're not done yet. If we tried to run the code now, we still wouldn't see anything. After our drawing command, we have to tell LameLCD that we're done preparing the next screen and its time to draw it. For that, we use `lcd.DrawScreen`.
+We're not done yet. If we tried to run the code now, we still wouldn't see anything. After our drawing command, we have to tell LameLCD that we're done preparing the next screen and its time to draw it. For that, we use `lcd.Draw`.
 
 ----
-lcd.DrawScreen
+lcd.Draw
 ----
 
 Okay, you should now have code that looks like this.
@@ -102,7 +102,7 @@ OBJ
 PUB Main
     lcd.Start(gfx.Start)
     gfx.Sprite(@ball, 10, 10, 0)
-    lcd.DrawScreen
+    lcd.Draw
 
 DAT
 
@@ -207,7 +207,7 @@ PUB GameLoop
     
     ' game logic goes here
     
-    lcd.DrawScreen
+    lcd.Draw
 
 PUB ControlPlayer
 PUB ControlOpponent

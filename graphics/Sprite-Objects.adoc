@@ -312,7 +312,7 @@ When you're done, the main file should look like this.
     PUB Main
         lcd.Start(gfx.Start)
         gfx.Sprite(happy.Gfx, 56, 24, 0)
-        lcd.DrawScreen
+        lcd.Draw
     
 
 And should look exactly as it did before, just with _ ** A LOT ** _ less noise
