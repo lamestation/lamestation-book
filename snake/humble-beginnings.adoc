@@ -1,16 +1,20 @@
 == Humble beginnings
 
-Okay, now that that's out of the way, let's make the LameStation do something.
+In the previous section, we showed you how to set up a basic Spin template, but you still haven't seen it do anything.
 
-Here's a lofty goal: let's make the LameStation draw something. There isn't much to it.
+Now that that's out of the way, let's do something. Here's a lofty goal: let's make the LameStation draw something.
+
+There isn't much to it.
 
 . Add graphics for drawing
 . Use graphics to draw screen image
 . Send image to actual screen
 
-=== Add graphics for drawing
+=== Instructions
 
-So here's how that's done. Since snake is just a dot, that's all we need.
+==== Add graphics for drawing
+
+So here's how we can add graphics. Since snake is just a dot, that's all we need.
 
 ----
 DAT
@@ -20,7 +24,6 @@ DAT
     word    %%11
     word    %%11
 ----
-
 
 [WARNING]
 ====
@@ -38,7 +41,7 @@ DAT
 This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
 ====
 
-=== Use graphics to draw screen image
+==== Use graphics to draw screen image
 
 Drawing is done with the `gfx.Sprite` command. It has four arguments, which control how it will behave.
 
@@ -63,7 +66,7 @@ We're not using the frame parameter yet, so just set it to zero.
     gfx.Sprite(@dot_gfx, 25, 25, 0)
 ----
 
-=== Send the image to the screen
+==== Send the image to the screen
 
 If you try running it now, you still won't see anything. You need `lcd.DrawScreen` to actually draw to the screen.
 
@@ -86,3 +89,23 @@ See for yourself. Try removing the '@' symbol from your code and see what happen
 At this point, you should have a very exciting dot on the screen.
 
 View the complete example at `/tutorials/Snake/HumbleBeginnings.spin`.
+
+=== Recap
+
+In this section, you learned how to:
+
+- Create ultra basic graphics
+- Draw graphics to the screen buffer
+- Update the screen
+
+=== Think about this!
+
+. What happens if you try to draw graphics off the screen?
+
+. You've seen how to draw one. How could you draw more than one to the screen?
+
+=== Feeling Adventurous?
+
+. Instead of passing `@dot_gfx` to `gfx.Sprite`, try just passing zero. What do you see? What do you think it means?
+
+// you're looking at your actual program being printed to the screen
