@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Getting Started](getting-started.adoc)
+* [Getting Started](start/README.adoc)
 * [Basics](basics/README.adoc)
    * [Hello Nothing](basics/hello-nothing.adoc)
    * [Lights On](basics/lights-on.adoc)
@@ -46,5 +46,5 @@
    * [LameControl](library/LameControl.adoc)
    * [LameSerial](library/LameSerial.adoc)
    * [LameFunctions](library/LameFunctions.adoc)
-* [Spin Quick Reference](spin.adoc)
+* [Spin Quick Reference](spin/README.adoc)
 
