@@ -6,7 +6,11 @@ A dot is now on the screen, but that's quite unsatisfying.
 
 ==== Global Positioning
 
-We want to move the pixel around on the screen, but in order to do that, we have to keep track of its location somehow. To do that, we can use variables for its horizontal (`snakex`) and vertical (`snakey`) positions.
+We want to move the pixel around on the screen, but in order to do that, we have to keep track of its location somehow.
+
+// explain cartesian points, add graphic
+
+To do that, we can use variables for its horizontal (`snakex`) and vertical (`snakey`) positions.
 
 ----
 VAR
@@ -35,7 +39,9 @@ That puts the dot squarely in the center. Cool, but sitting in one place is bori
 
 ==== If You Say So
 
-We'll use LameControl to access the joystick. The `IF` keyword allows us to test if an expression is true, and if so, run some code. The code to run should be immediately after the `IF` and indented.
+We'll use LameControl to access the joystick. The LameControl commands return `true` if a button or direction is pressed, or `false`. 
+
+The `IF` keyword allows us to test if an expression is true, and if so, run some code. The code to run should be immediately after the `IF` and indented.
 
 ----
 if condition
@@ -149,6 +155,7 @@ In this section, you learned how to:
 
 === Think about this!
 
+.
 
 === Feeling Adventurous?
 
