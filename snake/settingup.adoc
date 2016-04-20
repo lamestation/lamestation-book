@@ -7,7 +7,7 @@ image:newfromtemplate.png[]
 
 This template comes with several goodies already set up.
 
-- The `CON` block tells the LameStation to run at full speed. 
+- The `CON` block tells the LameStation to run at full speed.
 +
 ----
 CON
@@ -42,3 +42,10 @@ As you add to this program, the `Main` function should always be _first_! Otherw
 You will find there's certain code you use in almost every LameStation game, which makes these templates pretty useful.
 
 View the complete example at `/tutorials/Snake/SettingUp.spin`.
+
+=== Recap
+
+In this section, you learned how to:
+
+- Create Spin files from templates
+- Set up graphics for a LameStation project
