@@ -1,8 +1,8 @@
 == A Goal To Strive For
 
-// THIS SECTION TEACHES RANDOM NUMBER GENERATION
-
 Pointlessly wandering around the screen is fun and everything, but I think it'll be more interesting to actually have something to do. I was thinking let's give the snake a food pellet or something to chase after, yeah?
+
+=== New Graphics
 
 Let's make the food a different color, so it'll be easier to spot. These graphics are just as exciting as the snake's.
 
@@ -20,6 +20,10 @@ Then we gotta keep track of the food's position on the screen ("foody", lol).
     byte    foodx
     byte    foody
 ----
+
+=== Random Food
+
+// THIS SECTION TEACHES RANDOM NUMBER GENERATION
 
 Now, every time we get the food pellet, it has to reappear in a new location. For that, we need the _random_ operator! Setting it up may not make sense at first, but it's pretty simple. First, we need a variable.
 
@@ -64,7 +68,11 @@ There's still one problem though. Our snake is positioned every two pixels, but 
             foody := ||random? // 32 * 2
 ----
 
-Perfect! Now we just have the problem of putting it all together. Right now, you should have code that looks something like this, from this and a previous exercise:
+Perfect! Now we just have the problem of putting it all together.
+
+=== Let's eat!
+
+Right now, you should have code that looks something like this, from this and a previous exercise:
 
 ----
         if ctrl.A
