@@ -20,12 +20,12 @@ So here's how we can add graphics. Since snake is just a dot, that's all we need
 
 [source, python, highlight="2,3"]
 ----
-DAT
+{% raw %}<strong>{% raw %}DAT
     dot_gfx
     word    0
     word    2, 2
     word    %%11
-    word    %%11
+    word    %%11{% raw %}</strong>{% raw %}
 ----
 
 [WARNING]
