@@ -1,4 +1,5 @@
 == Humble beginnings
+:source-highlighter: pygments
 
 In the previous section, we showed you how to set up a basic Spin template, but you still haven't seen it do anything.
 
