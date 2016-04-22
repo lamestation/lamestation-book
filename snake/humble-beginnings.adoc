@@ -24,7 +24,7 @@ DAT
     word    0
     word    2, 2
     word    %%11
-    word    %%11{% raw %}</strong>{% raw %}
+    word    %%11
 ----
 
 [WARNING]
