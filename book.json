@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "code-highlighter"
+        "code-highlighter",
+        "exercises"
     ],
     "pluginsConfig": {}
 }
