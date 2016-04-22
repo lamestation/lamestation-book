@@ -21,10 +21,10 @@ So here's how we can add graphics. Since snake is just a dot, that's all we need
 ----
 DAT
     dot_gfx
-    word    0
-    word    2, 2
-    word    %%11
-    word    %%11
+&&&    word    0
+&&&    word    2, 2
+&&&    word    %%11
+&&&    word    %%11
 ----
 
 [WARNING]
