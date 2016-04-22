@@ -18,7 +18,7 @@ image:graphicssystem.png[]
 
 So here's how we can add graphics. Since snake is just a dot, that's all we need.
 
-[source, python, hl_lines="2,3"]
+[source, python, highlight="2,3"]
 ----
 DAT
     dot_gfx
