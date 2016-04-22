@@ -1,1 +1,132 @@
 /* CSS for website */
+
+/* code blocks */
+
+
+
+
+
+.book .book-body .page-wrapper .page-inner section.normal pre {
+    background: #f0f0f0;
+    color: #333;
+}
+
+
+
+
+/* keyboard shortcuts */
+
+
+
+
+kbd {
+    display: inline-block;
+    color: rgb(0,0,0,0.8);
+    font-size: 0.75em;
+    line-height: 1.4;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 0.1em #fff inset;
+    margin: -0.15em 0.15em 0 0.15em;
+    padding: 0.2em 0.6em 0.2em 0.5em;
+    vertical-align: middle;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Admonition support, UGH */
+
+
+.admonitionblock {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.admonitionblock .title {
+    font-weight: bold;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table {
+    margin: 0px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td p {
+    margin: 0px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
+    background: transparent;
+    border: 0px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table th, .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td {
+    border: 0px;
+    vertical-align: middle;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.icon {
+    width: 150px;
+    max-width: 150px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table td.content {
+    width: 100%;
+}
+
+.note {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.note table td.icon {
+    border-right: 2px solid #67aacb;
+}
+
+.tip {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.tip table td.icon  {
+    border-right: 2px solid #77bb78;
+}
+
+.important {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.important table td.icon {
+    border-right: 2px solid #67aacb;
+}
+
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.warning table td.icon {
+    border-right: 2px solid #c2a470;
+}
+
+.caution {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock.caution table td.icon {
+    border-right: 2px solid #cd807e;
+}

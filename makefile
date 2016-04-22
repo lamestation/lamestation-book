@@ -1,0 +1,2 @@
+all:
+	gitbook build
