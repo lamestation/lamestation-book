@@ -9,6 +9,7 @@ This template comes with several goodies already set up.
 
 - The `CON` block tells the LameStation to run at full speed.
 +
+[source]
 ----
 &&&CON
     _clkmode = xtal1 + pll16x
