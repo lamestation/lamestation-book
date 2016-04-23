@@ -1,6 +1,6 @@
 == Humble beginnings
 
-In the previous section, we showed you how to set up a basic Spin template, but you still haven't seen it do anything.
+Last time, we showed you how to set up a basic Spin template, but you still haven't seen it do anything.
 
 Now that that's out of the way, let's do something. Here's a lofty goal: let's make the LameStation draw something.
 
@@ -114,7 +114,37 @@ See for yourself. Try removing the '@' symbol from your code and see what happen
 
 At this point, you should have a very exciting dot on the screen.
 
-View the complete example at `/tutorials/Snake/HumbleBeginnings.spin`.
+*NEXT TIME: We get a move on and make this dot go somewhere.*
+
+=== The Code
+
+.Snake.spin
+----
+CON
+    _clkmode = xtal1 + pll16x
+    _xinfreq = 5_000_000
+
+OBJ
+    lcd  : "LameLCD"
+    gfx  : "LameGFX"
+    ctrl : "LameControl"
+
+PUB Main
+    lcd.Start(gfx.Start)
+    ctrl.Start
+    
+    gfx.Sprite(@dot_gfx, 25, 25, 0)
+    lcd.Draw
+    
+DAT
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%22222211
+    word    %%22222211
+----
+
+View this example at `/tutorials/Snake/HumbleBeginnings.spin`.
 
 === Recap
 
