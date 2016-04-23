@@ -18,6 +18,7 @@ image:graphicssystem.png[]
 
 So here's how we can add graphics. Since snake is just a dot, that's all we need.
 
+[source]
 ----
 DAT
     dot_gfx

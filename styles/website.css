@@ -2,20 +2,32 @@
 
 /* code blocks */
 
-.code-line-highlight {background-color: #ffff00;}
+.code-line-highlight {
+    font-weight: 900;
+}
 
-
-.book .book-body .page-wrapper .page-inner section.normal pre {
-    background: #f0f0f0;
-    color: #333;
+.listingblock .title {
+    background: #d8ebff;
+    color: #317ecc;
+    padding: 2px 5px;
+    font-weight: bold;
 }
 
 
+.book .book-body .page-wrapper .page-inner section.normal code {
+    font-size: 11pt;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal pre,
+.book .book-body .page-wrapper .page-inner section.normal pre > code {
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.4;
+    font-size: 12pt;
+}
 
 
 /* keyboard shortcuts */
-
-
 
 
 kbd {
@@ -33,8 +45,6 @@ kbd {
     white-space: nowrap;
     box-sizing: border-box;
 }
-
-
 
 
 /* Admonition support, UGH */
@@ -59,6 +69,12 @@ kbd {
 
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td p {
     margin: 0px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td pre,
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td code {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
