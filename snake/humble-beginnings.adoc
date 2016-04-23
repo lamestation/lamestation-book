@@ -16,16 +16,13 @@ image:graphicssystem.png[]
 
 ==== Add graphics for drawing
 
-So here's how we can add graphics. Since snake is just a dot, that's all we need.
+So let's add the graphics. Since snake is just a dot, that's all we need.
 
-[source]
 ----
-DAT
-    dot_gfx
-&&&    word    0
-&&&    word    2, 2
-&&&    word    %%11
-&&&    word    %%11
+word    0
+word    2, 2
+word    %%11
+word    %%11
 ----
 
 [WARNING]
@@ -43,6 +40,25 @@ DAT
 
 This is because there's no such thing as a graphic 2 pixels wide on the LameStation, but LameGFX is filling it with black instead of transparent.
 ====
+
+Okay, let's add the graphics into our file from the last exercise. We're going to add a `DAT` block to put it in. Then give it a unique name so we can reference it, like `dot_gfx`.
+
+[source]
+.Snake.spin
+----
+PUB Main
+    lcd.Start(gfx.Start)
+    ctrl.Start
+    
+    ' add your code here
+
+&&&DAT
+&&&    dot_gfx
+&&&    word    0
+&&&    word    2, 2
+&&&    word    %%11
+&&&    word    %%11
+----
 
 ==== Use graphics to draw screen image
 
