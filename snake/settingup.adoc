@@ -5,7 +5,11 @@ To begin this tutorial, we'll start with the LameStation Basic template. In Prop
 
 image:newfromtemplate.png[]
 
-This template comes with several goodies already set up.
+This sets up some basic code to get a LameStation game running.
+
+image:template.png[]
+
+Let's look at what's inside:
 
 - The `CON` block tells the LameStation to run at full speed.
 +
@@ -35,12 +39,14 @@ PUB Main
     ' add your code here
 ----
 
-[IMPORTANT]
+[TIP]
 ====
-As you add to this program, the `Main` function should always be _first_! Otherwise, your program won't run.
+The first function in your file is where your code will start when run.
 ====
 
-You will find there's certain code you use in almost every LameStation game, which makes these templates pretty useful.
+You will find this code used a lot in almost every game, which is why we're using a template to create it.
+
+Save your file as `Snake.spin`, and be sure to save it in a place where you will remember it.
 
 View the complete example at `/tutorials/Snake/SettingUp.spin`.
 
