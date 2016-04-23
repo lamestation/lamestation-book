@@ -27,10 +27,15 @@ CON
 &&&    RIGHT = 1
 &&&    DOWN  = 2
 &&&    LEFT  = 3
+
+OBJ
+    lcd  : "LameLCD"
 ----
 
 Now we gotta track that number in a variable. There are only four directions, so byte-sized is plenty large. Let's add a variable called `snakedir` to our `VAR` block from before.
 
+[source]
+.Snake.spin
 ----
 VAR
     byte    snakex
@@ -41,6 +46,8 @@ VAR
 
 Now here comes a big change. In the last exercise, we directly controlled the snake with LameControl.
 
+[source]
+.Snake.spin
 ----
         if ctrl.Left and snakex > 0
             snakex--
@@ -54,8 +61,10 @@ Now here comes a big change. In the last exercise, we directly controlled the sn
 
 We're going to change that code a lot. We will control only the _direction_ with LameControl, and then have the movement code look at `snakedir` only to decide how the snake should move.
 
-I know it looks like a lot of code, but it's the same logic repeated 4 times, one for each direction.
+I know it looks like a lot of code, but it's the same logic repeated 4 times, one for each direction. Just try not to make a typo.
 
+[source]
+.Snake.spin
 ----
     repeat
         gfx.Clear
@@ -91,28 +100,45 @@ All in all, the snake is looking pretty good... for a single dot. There's one mo
 
 We'll add code to prevent that.
 
+[source]
+.Snake.spin
 ----
-        if snakedir == LEFT or snakedir == RIGHT
-            if ctrl.Up
-                snakedir := UP
-            if ctrl.Down
-                snakedir := DOWN
+    repeat
+        gfx.Clear
+        ctrl.Update
+        
+&&&        if snakedir == LEFT or snakedir == RIGHT
+&&&            if ctrl.Up
+&&&                snakedir := UP
+&&&            if ctrl.Down
+&&&                snakedir := DOWN
                 
-        elseif snakedir == DOWN or snakedir == UP
-            if ctrl.Left
-                snakedir := LEFT
-            if ctrl.Right
-                snakedir := RIGHT
+&&&        elseif snakedir == DOWN or snakedir == UP
+&&&            if ctrl.Left
+&&&                snakedir := LEFT
+&&&            if ctrl.Right
+&&&                snakedir := RIGHT
+        
+        if snakedir == LEFT and snakex > 0
+            snakex--
 ----
 
-This code lets you go up/down if you're heading left/right, and vice versa, but you can't do U-turns. It's a small change, but an important part of what makes snake difficult.
+This code lets you go up/down if you're heading left/right, and vice versa, but you can't do U-turns. It's a small change, but this a big part of what makes Snake difficult.
 
 ==== Starting Off Right
 
 One final change. Since there is more room horizontally than vertically, we'll make life slightly easier by changing the starting direction to right. This will give the player more time to react before hitting a wall.
 
+[source]
+.Snake.spin
 ----
+    snakex := 32
+    snakey := 32
+    
     snakedir := 1
+    
+    repeat
+        gfx.Clear
 ----
 
 === The Code
@@ -146,6 +172,8 @@ PUB Main
     
     snakex := 32
     snakey := 32
+    
+    snakedir := 1
     
     repeat
         gfx.Clear
