@@ -4,7 +4,12 @@
 
 .code-line-highlight {
     font-weight: 900;
-    color: #7140fe;
+    background: #eeee90;
+    display: inline-block;
+    position: relative;
+    left: -16px;
+    width: calc(100% + 32px);
+    padding: 0 1em;
 }
 
 .listingblock .title {
@@ -16,15 +21,22 @@
 
 .book .book-body .page-wrapper .page-inner section.normal code {
     font-size: 11pt;
-    background: #f0f0f0;
+    background: #e7e7e7;
+    font-weight: bold;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal pre {
+    overflow: hidden;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal pre,
 .book .book-body .page-wrapper .page-inner section.normal pre > code {
-    background: #f0f0f0;
+    font-weight: normal;
+    background: #e7e7e7;
     color: #333;
     line-height: 1.4;
     font-size: 12pt;
+    display: block;
 }
 
 
