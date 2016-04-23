@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-   * How To Read This Book
+   * [How To Read This Book](reading-this-book.adoc)
 * [Getting Started](start/README.adoc)
 * [Basics](basics/README.adoc)
    * [Hello Nothing](basics/hello-nothing.adoc)
