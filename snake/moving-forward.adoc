@@ -80,7 +80,7 @@ None of the functions will return anything until `ctrl.Update` is called, so mak
     snakey := 32
 
 &&&    ctrl.Update
-&&&
+
 &&&    if ctrl.Left
 &&&        snakex--
 &&&    if ctrl.Right
@@ -107,21 +107,26 @@ repeat
 
 To put your code inside a `repeat`, just put it after and indent it, and it'll loop forever! Don't just put the controls though. You need the drawing code too, like this.
 
+[source]
+.Snake.spin
 ----
-    repeat
-        ctrl.Update
-        
-        if ctrl.Left
-            snakex--
-        if ctrl.Right
-            snakex++
-        if ctrl.Up
-            snakey--
-        if ctrl.Down
-            snakey++
-            
-        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
-        lcd.Draw
+    snakex := 32
+    snakey := 32
+
+&&&    repeat
+&&&        ctrl.Update
+
+&&&        if ctrl.Left
+&&&            snakex--
+&&&        if ctrl.Right
+&&&            snakex++
+&&&        if ctrl.Up
+&&&            snakey--
+&&&        if ctrl.Down
+&&&            snakey++
+
+&&&        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+&&&        lcd.Draw
 ----
 
 You'll notice right away something really wonky. The snake is leaving a giant trail of snake behind it, to the point that this seems more like a paint program.
@@ -130,9 +135,18 @@ image:noclear.png[]
 
 `gfx.Clear` to the rescue! This command clears the screen to black, and should be called any time you need to _reset_ the screen. Usually the best place for it is the beginning of the loop.
 
+[source]
+.Snake.spin
 ----
+    snakex := 32
+    snakey := 32
+
     repeat
-        gfx.Clear
+&&&        gfx.Clear
+        ctrl.Update
+
+        if ctrl.Left
+            snakex--
 ----
 
 ==== Put A Lid On It
@@ -157,7 +171,57 @@ Testing the right and bottom edges is more complicated. Since a image's position
 
 Putting it all together.
 
+[source]
+.Snake.spin
 ----
+    repeat
+        ctrl.Update
+
+&&&        if ctrl.Left and snakex > 0
+&&&            snakex--
+&&&        if ctrl.Right and snakex < constant(128-2)
+&&&            snakex++
+&&&        if ctrl.Up and snakey > 0
+&&&            snakey--
+&&&        if ctrl.Down and snakey < constant(64-2)
+&&&            snakey++
+
+        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+        lcd.Draw
+----
+
+And now you have a spiffy pet dot with a fancy enclosed box to play in.
+
+*NEXT TIME: We're taking this dot in a whole new direction. See where it takes us!*
+
+=== The Code
+
+.Snake.spin
+----
+CON
+    _clkmode = xtal1 + pll16x
+    _xinfreq = 5_000_000
+
+OBJ
+    lcd  : "LameLCD"
+    gfx  : "LameGFX"
+    ctrl : "LameControl"
+    
+VAR
+    byte    snakex
+    byte    snakey
+
+PUB Main
+    lcd.Start(gfx.Start)
+    ctrl.Start
+    
+    snakex := 32
+    snakey := 32
+    
+    repeat
+        gfx.Clear
+        ctrl.Update
+        
         if ctrl.Left and snakex > 0
             snakex--
         if ctrl.Right and snakex < constant(128-2)
@@ -166,11 +230,19 @@ Putting it all together.
             snakey--
         if ctrl.Down and snakey < constant(64-2)
             snakey++
+            
+        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+        lcd.Draw
+    
+DAT
+    dot_gfx
+    word    0
+    word    2, 2
+    word    %%22222211
+    word    %%22222211
 ----
 
-And now you have a spiffy pet dot with a fancy enclosed box to play in.
-
-View the complete example at `/tutorials/Snake/MovingForward.spin`.
+View this example at `/tutorials/Snake/MovingForward.spin`.
 
 === Recap
 

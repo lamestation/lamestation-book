@@ -18,7 +18,7 @@
    * [Sprite Objects](graphics/Sprite-Objects.adoc)
    * [Moving Sprites](graphics/Moving-Sprites.adoc)
 * [Snake](snake/README.adoc)
-   * [Setting Up](snake/settingup.adoc)
+   * [Setting Up](snake/setting-up.adoc)
    * [Humble Beginnings](snake/humble-beginnings.adoc)
    * [Moving Forward](snake/moving-forward.adoc)
    * [A New Direction](snake/new-direction.adoc)
