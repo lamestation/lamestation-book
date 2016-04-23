@@ -7,10 +7,9 @@
 }
 
 .listingblock .title {
-    background: #d8ebff;
-    color: #317ecc;
+    color: #999;
     padding: 2px 5px;
-    font-weight: bold;
+    font-style: italic;
 }
 
 
