@@ -46,11 +46,8 @@ Okay, let's add the graphics into our file from the last exercise. We're going t
 [source]
 .Snake.spin
 ----
-PUB Main
     lcd.Start(gfx.Start)
     ctrl.Start
-    
-    ' add your code here
 
 &&&DAT
 &&&    dot_gfx
@@ -66,9 +63,9 @@ Drawing is done with the `gfx.Sprite` command. It has four arguments, which cont
 
 .gfx.Sprite
 ****
-> ----
-> gfx.Sprite(source, x, y, frame)
-> ----
+----
+gfx.Sprite(source, x, y, frame)
+----
 
 - *source* - the graphics to draw
 - *x*, *y* - the position of the graphics (top-left corner)
@@ -82,7 +79,12 @@ The screen is 128x64 pixels, so you have to draw the dot between (0,0) and (128,
 We're not using the frame parameter yet, so just set it to zero.
 
 ----
-    gfx.Sprite(@dot_gfx, 25, 25, 0)
+    lcd.Start(gfx.Start)
+    ctrl.Start
+    
+&&&    gfx.Sprite(@dot_gfx, 25, 25, 0)
+
+DAT
 ----
 
 ==== Send the image to the screen
@@ -90,10 +92,15 @@ We're not using the frame parameter yet, so just set it to zero.
 If you try running it now, you still won't see anything. You need `lcd.Draw` to actually draw to the screen.
 
 ----
-    lcd.Draw
+    ctrl.Start
+    
+    gfx.Sprite(@dot_gfx, 25, 25, 0)
+&&&    lcd.Draw
+
+DAT
 ----
 
-[WARNING]
+[NOTE]
 .`dot_gfx` does not equal `@dot_gfx`.
 ====
 
