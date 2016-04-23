@@ -28,7 +28,7 @@ OBJ
     ctrl : "LameControl"
 ----
 
-- The `Main` function that sets up libraries and provides a basic game skeleton.
+- The `Main` function sets up libraries and provides a basic game skeleton.
 +
 ----
 PUB Main
@@ -37,10 +37,10 @@ PUB Main
     
     ' add your code here
 ----
-
++
 [TIP]
 ====
-The first function in your file is where your code will start when run.
+The first function in your file is where your code will start when run. It doesn't have to be called `Main`, but it does have to be first.
 ====
 
 You will find this code used a lot in almost every game, which is why we're using a template to create it.
