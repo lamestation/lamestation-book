@@ -29,9 +29,8 @@ word    %%11
 ====
 Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
 
+[source]
 ----
-DAT
-    dot_gfx
     word    0
     word    2, 2
     word    %%22222211
@@ -78,6 +77,8 @@ The screen is 128x64 pixels, so you have to draw the dot between (0,0) and (128,
 
 We're not using the frame parameter yet, so just set it to zero.
 
+[source]
+.Snake.spin
 ----
     lcd.Start(gfx.Start)
     ctrl.Start
@@ -91,6 +92,8 @@ DAT
 
 If you try running it now, you still won't see anything. You need `lcd.Draw` to actually draw to the screen.
 
+[source]
+.Snake.spin
 ----
     ctrl.Start
     
