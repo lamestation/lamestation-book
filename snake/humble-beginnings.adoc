@@ -86,6 +86,8 @@ We're not using the frame parameter yet, so just set it to zero.
 &&&    gfx.Sprite(@dot_gfx, 25, 25, 0)
 
 DAT
+    dot_gfx
+    word    0
 ----
 
 ==== Send the image to the screen
@@ -101,6 +103,8 @@ If you try running it now, you still won't see anything. You need `lcd.Draw` to 
 &&&    lcd.Draw
 
 DAT
+    dot_gfx
+    word    0
 ----
 
 [NOTE]
