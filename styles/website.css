@@ -13,7 +13,11 @@
 }
 
 .book .book-body .navigation.navigation-next a {
-    right: 30px;
+    max-height: 200px;
+}
+
+.book .book-body .navigation.navigation-prev a {
+    max-height: 200px;
 }
 
 .listingblock .title {
