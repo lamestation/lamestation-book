@@ -1,2 +1,61 @@
-= How To Read This Book
+== How To Read This Book
+:experimental:
 
+
+=== Formatting
+
+`Monospace text` indicates code snippets and directories.
+
+kbd:[Keyboard+Shortcut] indicates keyboard shortcuts.
+
+=== Organization
+
+This book is broken down into tutorials, which are further broken down into sections.
+
+Each section looks like this.
+
+- Introduction
+- Instructions
+- The Code
+- Recap
+- Think about this!
+- Feeling adventurous?
+
+=== Code
+
+If a filename is specified, the code reference belongs to a file. Otherwise, it is included as an example.
+
+_The code shown is for reference._
+----
+Here is an important example
+----
+
+Highlighted text indicates that the code has changed.
+
+_Filename.spin should be updated with this change._
+[source]
+.Filename.spin
+----
+This code hasn't changed
+
+&&&This code absolutely has changed
+----
+
+Unless otherwise specified, the language used in this book is Spin.
+
+=== Admonitions
+
+[TIP]
+This is a tip, suggesting good practice.
+
+[NOTE]
+Extra information about something we're covering.
+
+[IMPORTANT]
+Pay close attention to this information.
+
+[WARNING]
+Be careful not to make this mistake.
+
+[CAUTION]
+Be EXTRA careful not to make this mistake, as something bad could happen.
