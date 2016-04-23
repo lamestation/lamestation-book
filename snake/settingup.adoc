@@ -47,6 +47,8 @@ You will find this code used a lot in almost every game, which is why we're usin
 
 Save your file as `Snake.spin`, and be sure to save it in a place where you will remember it.
 
+*NEXT TIME: You will see the snake finally come to life... as a dot.*
+
 === The Code
 
 .Snake.spin
