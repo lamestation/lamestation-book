@@ -12,13 +12,11 @@
     padding: 0 1em;
 }
 
-.book .book-body .navigation.navigation-next a {
-    max-height: 200px;
+/*
+a.navigation.navigation-next {
+    right: 0px;
 }
-
-.book .book-body .navigation.navigation-prev a {
-    max-height: 200px;
-}
+*/
 
 .listingblock .title {
     color: #999;
