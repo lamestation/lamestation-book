@@ -12,6 +12,9 @@
     padding: 0 1em;
 }
 
+.book .book-body .navigation.navigation-next a {
+    right: 30px;
+}
 
 .listingblock .title {
     color: #999;
