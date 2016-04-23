@@ -16,6 +16,7 @@
 
 .book .book-body .page-wrapper .page-inner section.normal code {
     font-size: 11pt;
+    background: #f0f0f0;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal pre,
