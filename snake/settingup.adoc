@@ -13,7 +13,6 @@ Let's look at what's inside:
 
 - The `CON` block tells the LameStation to run at full speed.
 +
-[source]
 ----
 CON
     _clkmode = xtal1 + pll16x
