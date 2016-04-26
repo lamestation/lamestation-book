@@ -46,7 +46,7 @@ VAR
 
 Now here comes a big change. In the last exercise, we directly controlled the snake with LameControl.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
         if ctrl.Left and snakex > 0
@@ -63,7 +63,7 @@ We're going to change that code a lot. We will control only the _direction_ with
 
 I know it looks like a lot of code, but it's the same logic repeated 4 times, one for each direction. Just try not to make a typo.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     repeat
@@ -100,7 +100,7 @@ All in all, the snake is looking pretty good... for a single dot. There's one mo
 
 We'll add code to prevent that.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     repeat
@@ -129,7 +129,7 @@ This code lets you go up/down if you're heading left/right, and vice versa, but 
 
 One final change. Since there is more room horizontally than vertically, we'll make life slightly easier by changing the starting direction to right. This will give the player more time to react before hitting a wall.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     snakex := 32

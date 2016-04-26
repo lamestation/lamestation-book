@@ -12,7 +12,7 @@ We want to move the pixel around on the screen, but in order to do that, we have
 
 To do that, we can use variables for its horizontal (`snakex`) and vertical (`snakey`) positions.
 
-[source]
+[source, language='obj']
 .Snake.spin
 ----
     ctrl : "LameControl"
@@ -27,7 +27,7 @@ PUB Main
 
 Now, remember our `gfx.Sprite` function from before? Change it to use the new variables for position instead of numbers.
 
-[source]
+[source, language='pub']
 ----
     ctrl.Start
 
@@ -71,7 +71,7 @@ else
 
 None of the functions will return anything until `ctrl.Update` is called, so make sure to call it first.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     snakex := 32
@@ -105,7 +105,7 @@ repeat
 
 To put your code inside a `repeat`, just put it after and indent it, and it'll loop forever! Don't just put the controls though. You need the drawing code too, like this.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     snakex := 32
@@ -133,7 +133,7 @@ image:noclear.png[]
 
 `gfx.Clear` to the rescue! This command clears the screen to black, and should be called any time you need to _reset_ the screen. Usually the best place for it is the beginning of the loop.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     snakex := 32
@@ -155,6 +155,7 @@ We'll use the `AND` keyword so that we can test two expressions at once. Then we
 
 We can make sure the snake stays inside the left and top edges of the screen by making sure its position is greater than or equal to zero.
 
+[source, language='pub']
 ----
         if ctrl.Left and snakex > 0
             snakex--
@@ -162,6 +163,7 @@ We can make sure the snake stays inside the left and top edges of the screen by 
 
 Testing the right and bottom edges is more complicated. Since a image's position is its top-left corner, we must subtract its size from the edge.
 
+[source, language='pub']
 ----
         if ctrl.Right and snakex < constant(128-2)
             snakex++
@@ -169,7 +171,7 @@ Testing the right and bottom edges is more complicated. Since a image's position
 
 Putting it all together.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     repeat

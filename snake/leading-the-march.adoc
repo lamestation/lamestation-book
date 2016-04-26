@@ -17,6 +17,7 @@ We'll want to define one, but first, let's add a constant for the maximum number
 
 First, decide how long the snake can be. We need to know how big to make the arrays. 256 seems pretty big, but on a 128x64 screen, there are *8192 pixels*!
 
+[source]
 ----
 CON
     MAX_LENGTH = 256
@@ -24,6 +25,7 @@ CON
 
 We need to turn our `snakex` and `snakey` variables into arrays.
 
+[source]
 ----
 VAR
     byte    snakex[MAX_LENGTH]
@@ -37,6 +39,8 @@ Replace `snakex` with `snakex[0]` and `snakey` with `snakey[0]`.
 [WARNING]
 ====
 Don't accidentally find/replace your array declaration:
+
+[source, language='var']
 ----
     byte    snakex[0][MAX_LENGTH]
     byte    snakey[0][MAX_LENGTH]
@@ -45,18 +49,21 @@ Don't accidentally find/replace your array declaration:
 
 Since the snake starts small and grows, we also need to keep track of how many snake dots there are on the screen at any time. So we'll create `snakecount`. Byte-sized is fine, since `MAX_LENGTH` is 256.
 
+[source, language='var']
 ----
     byte    snakecount
 ----
 
 Since we start with 1 pixel, we'll set `snakecount` to 1 at startup.
 
+[source, language='pub']
 ----
     snakecount := 1
 ----
 
 We're going to add a variable `i`. This one is just used for a `repeat` loop.
 
+[source, language='var']
 ----
     byte    i
 ----
@@ -65,6 +72,7 @@ We're going to add a variable `i`. This one is just used for a `repeat` loop.
 
 What we need to do is make each and every dot follow the one that came before it in a line. That's easy enough. The position of the next position should equal the position of the last.
 
+[source, language='pub']
 ----
 snakex[i] := snakex[i-1]
 ----
@@ -115,6 +123,7 @@ There is only one value that isn't set this way, and that's `snakex[0]`. That's 
 
 Here's the code that calculates the locations of the snake's tail. We should place this code after drawing the first tail sprite but before `lcd.Draw`.
 
+[source, language='pub']
 ----
         repeat i from snakecount to 1
             snakex[i] := snakex[i-1]
@@ -123,6 +132,7 @@ Here's the code that calculates the locations of the snake's tail. We should pla
 
 Don't forget, though. We also want to _see_ the tail, so make sure to include a call to `gfx.Sprite` to draw the tail at each position.
 
+[source, language='pub']
 ----
         repeat i from snakecount to 1
             snakex[i] := snakex[i-1]
@@ -138,6 +148,7 @@ Before we can see it in action, the tail has to get longer. Now, we could make t
 
 For now, let's just add a little snippet to increase the tail length one by one, which is close to how it'll work when the game is finished anyway.
 
+[source, language='pub']
 ----
         if ctrl.A
             if snakecount < constant(MAX_LENGTH-1)
@@ -146,6 +157,7 @@ For now, let's just add a little snippet to increase the tail length one by one,
 
 You can put it anywhere in the loop, but I choose to group it with all the other controls.
 
+[source, language='pub']
 ----
         ctrl.Update
 

@@ -18,6 +18,7 @@ For now, let's deal with the third problem, because it's the easiest. If each sn
 
 As it would happen, there isn't much to do to make this happen. First, we create a constant, just to make our lives easier.
 
+[source]
 ----
 CON
     SPEED = 2
@@ -38,6 +39,7 @@ x /= y    ===>    x := x / y
 
 Here's what your movement code should look like now.
 
+[source, language='pub']
 ----
         if snakedir == LEFT and snakex[0] > 0
             snakex[0] -= SPEED
@@ -61,8 +63,9 @@ You can try different values to see how they look; which one you use really depe
 
 I'm going to go with `HALFSPEED`. This command can be called multiple times, but it makes sense to call it at the beginning of your program.
 
+[source, language='pub']
 ----
-    PUB Main
+PUB Main
     lcd.Start(gfx.Start)
     lcd.SetFrameLimit (lcd#QUARTERSPEED)
 ----
