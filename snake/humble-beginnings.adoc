@@ -29,7 +29,7 @@ word    %%11
 ====
 Due to a temporary bug in LameGFX, you'll need to use this graphic for the dot.
 
-[source]
+[source, language='dat']
 ----
     word    0
     word    2, 2
@@ -42,18 +42,18 @@ This is because there's no such thing as a graphic 2 pixels wide on the LameStat
 
 Okay, let's add the graphics into our file from the last exercise. We're going to add a `DAT` block to put it in. Then give it a unique name so we can reference it, like `dot_gfx`.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     lcd.Start(gfx.Start)
     ctrl.Start
 
-&&&DAT
-&&&    dot_gfx
-&&&    word    0
-&&&    word    2, 2
-&&&    word    %%11
-&&&    word    %%11
++++DAT
++++    dot_gfx
++++    word    0
++++    word    2, 2
++++    word    %%11
++++    word    %%11
 ----
 
 ==== Use graphics to draw screen image
@@ -77,13 +77,13 @@ The screen is 128x64 pixels, so you have to draw the dot between (0,0) and (128,
 
 We're not using the frame parameter yet, so just set it to zero.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     lcd.Start(gfx.Start)
     ctrl.Start
     
-&&&    gfx.Sprite(@dot_gfx, 25, 25, 0)
++++    gfx.Sprite(@dot_gfx, 25, 25, 0)
 
 DAT
     dot_gfx
@@ -94,13 +94,13 @@ DAT
 
 If you try running it now, you still won't see anything. You need `lcd.Draw` to actually draw to the screen.
 
-[source]
+[source, language='pub']
 .Snake.spin
 ----
     ctrl.Start
     
     gfx.Sprite(@dot_gfx, 25, 25, 0)
-&&&    lcd.Draw
++++    lcd.Draw
 
 DAT
     dot_gfx
@@ -125,6 +125,7 @@ At this point, you should have a very exciting dot on the screen.
 
 === The Code
 
+[source]
 .Snake.spin
 ----
 CON

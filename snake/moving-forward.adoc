@@ -17,24 +17,22 @@ To do that, we can use variables for its horizontal (`snakex`) and vertical (`sn
 ----
     ctrl : "LameControl"
     
-&&&VAR
-&&&    byte    snakex
-&&&    byte    snakey
++++VAR
++++    byte    snakex
++++    byte    snakey
 
 PUB Main
     lcd.Start(gfx.Start)
 ----
 
-Now, remember our `gfx.Sprite` function from before?
+Now, remember our `gfx.Sprite` function from before? Change it to use the new variables for position instead of numbers.
 
+[source]
 ----
-    gfx.Sprite(@dot_gfx, 25, 25, 0)
-----
+    ctrl.Start
 
-Change it to use the new variables for position instead of numbers.
-
-----
-    gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+***    gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+    lcd.Draw
 ----
 
 Run it. The dot should now be in the top-left. This is because variables are set to zero when you first turn on the system.
@@ -50,8 +48,8 @@ PUB Main
     lcd.Start(gfx.Start)
     ctrl.Start
 
-&&&    snakex := 32
-&&&    snakey := 32
++++    snakex := 32
++++    snakey := 32
     
     gfx.Sprite(@dot_gfx, snakex, snakey, 0)
 ----
@@ -79,16 +77,16 @@ None of the functions will return anything until `ctrl.Update` is called, so mak
     snakex := 32
     snakey := 32
 
-&&&    ctrl.Update
-
-&&&    if ctrl.Left
-&&&        snakex--
-&&&    if ctrl.Right
-&&&        snakex++
-&&&    if ctrl.Up
-&&&        snakey--
-&&&    if ctrl.Down
-&&&        snakey++
++++    ctrl.Update
++++
++++    if ctrl.Left
++++        snakex--
++++    if ctrl.Right
++++        snakex++
++++    if ctrl.Up
++++        snakey--
++++    if ctrl.Down
++++        snakey++
         
     gfx.Sprite(@dot_gfx, snakex, snakey, 0)
     lcd.Draw
@@ -113,20 +111,20 @@ To put your code inside a `repeat`, just put it after and indent it, and it'll l
     snakex := 32
     snakey := 32
 
-&&&    repeat
-&&&        ctrl.Update
-
-&&&        if ctrl.Left
-&&&            snakex--
-&&&        if ctrl.Right
-&&&            snakex++
-&&&        if ctrl.Up
-&&&            snakey--
-&&&        if ctrl.Down
-&&&            snakey++
-
-&&&        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
-&&&        lcd.Draw
+***    repeat
+***        ctrl.Update
+***
+***        if ctrl.Left
+***            snakex--
+***        if ctrl.Right
+***            snakex++
+***        if ctrl.Up
+***            snakey--
+***        if ctrl.Down
+***            snakey++
+***
+***        gfx.Sprite(@dot_gfx, snakex, snakey, 0)
+***        lcd.Draw
 ----
 
 You'll notice right away something really wonky. The snake is leaving a giant trail of snake behind it, to the point that this seems more like a paint program.
@@ -142,7 +140,7 @@ image:noclear.png[]
     snakey := 32
 
     repeat
-&&&        gfx.Clear
++++        gfx.Clear
         ctrl.Update
 
         if ctrl.Left
@@ -177,14 +175,14 @@ Putting it all together.
     repeat
         ctrl.Update
 
-&&&        if ctrl.Left and snakex > 0
-&&&            snakex--
-&&&        if ctrl.Right and snakex < constant(128-2)
-&&&            snakex++
-&&&        if ctrl.Up and snakey > 0
-&&&            snakey--
-&&&        if ctrl.Down and snakey < constant(64-2)
-&&&            snakey++
+***        if ctrl.Left and snakex > 0
+            snakex--
+***        if ctrl.Right and snakex < constant(128-2)
+            snakex++
+***        if ctrl.Up and snakey > 0
+            snakey--
+***        if ctrl.Down and snakey < constant(64-2)
+            snakey++
 
         gfx.Sprite(@dot_gfx, snakex, snakey, 0)
         lcd.Draw
@@ -196,6 +194,7 @@ And now you have a spiffy pet dot with a fancy enclosed box to play in.
 
 === The Code
 
+[source]
 .Snake.spin
 ----
 CON

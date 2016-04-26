@@ -1,6 +1,6 @@
 {
     "plugins": [
         "-highlight",
-        "code-highlighter"
+        "spin-highlighter"
     ]
 }

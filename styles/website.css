@@ -2,6 +2,50 @@
 
 /* code blocks */
 
+.listingblock .spin-highlight-block {
+    background: #d0d0d0;
+    display: inline-block;
+    position: relative;
+    left: -16px;
+    width: calc(100% + 32px);
+    padding: 0 1em;
+}
+
+.listingblock .spin-highlight-block-con {
+    background: #f8f8f8;
+}
+.listingblock .spin-highlight-block-var {
+    background: #e6e7fd;
+}
+.listingblock .spin-highlight-block-obj {
+    background: #edf0ff;
+}
+.listingblock .spin-highlight-block-pub {
+    background: #dde3f3;
+}
+.listingblock .spin-highlight-block-pri {
+    background: #d6e5ee;
+}
+.listingblock .spin-highlight-block-dat {
+    background: #e6f5e9;
+}
+
+
+.listingblock .spin-highlight-line {
+    font-weight: 900;
+}
+.listingblock .spin-highlight-line-edit {
+    color: #808000;
+}
+.listingblock .spin-highlight-line-remove {
+    color: #8b0000;
+}
+.listingblock .spin-highlight-line-add {
+    color: #006400;
+}
+
+
+
 .code-line-highlight {
     font-weight: 900;
     background: #d0d0d0;
