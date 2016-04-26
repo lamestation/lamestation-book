@@ -4,14 +4,12 @@ So far, the snake is free to come and go as it pleases, criss-crossing over itse
 
 The change is simple enough. We want the snake to die if it crosses over itself. This can be accomplished by checking each pixel of the snake to see if it overlaps with the head.
 
-[source, language='pub']
 ----
             if snakex[i] == snakex[0] and snakey[i] == snakey[0]
 ----
 
 Then if true, we make sure to tie up all the loose ends, so that the snake starts over fresh.
 
-[source, language='pub']
 ----
             if snakex[i] == snakex[0] and snakey[i] == snakey[0]
                 snakecount := 1
@@ -22,7 +20,6 @@ Then if true, we make sure to tie up all the loose ends, so that the snake start
 
 We just need to add it into the loop we've already created that moves the entire snake every frame.
 
-[source, language='pub']
 ----
         repeat i from snakecount to 1
             if snakex[i] == snakex[0] and snakey[i] == snakey[0]

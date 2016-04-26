@@ -13,7 +13,6 @@ Let's look at what's inside:
 
 - The `CON` block tells the LameStation to run at full speed.
 +
-[source]
 ----
 CON
     _clkmode = xtal1 + pll16x
@@ -22,7 +21,6 @@ CON
 
 - The `OBJ` block adds three libraries needed for this project: LameGFX and LameLCD for graphics, and LameControl for user input.
 +
-[source]
 ----
 OBJ
     lcd  : "LameLCD"
@@ -32,7 +30,6 @@ OBJ
 
 - The `Main` function sets up libraries and provides a basic game skeleton.
 +
-[source]
 ----
 PUB Main
     lcd.Start(gfx.Start)
@@ -54,7 +51,6 @@ Save your file as `Snake.spin`, and be sure to save it in a place where you will
 
 === The Code
 
-[source]
 .Snake.spin
 ----
 CON
