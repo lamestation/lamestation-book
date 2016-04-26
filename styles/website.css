@@ -2,13 +2,34 @@
 
 /* code blocks */
 
+
+.spin-unselectable-text {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.listingblock .spin-unselectable-text .spin-highlight-line-edit {
+    background-color: #707000;
+}
+.listingblock .spin-unselectable-text .spin-highlight-line-remove {
+    background-color: #8b0000;
+}
+.listingblock .spin-unselectable-text .spin-highlight-line-add {
+    background-color: #006400;
+}
+
 .listingblock .spin-highlight-block {
     background: #d0d0d0;
     display: inline-block;
     position: relative;
     left: -16px;
     width: calc(100% + 32px);
-    padding: 0 1em;
+    padding: 0 0;
 }
 
 .listingblock .spin-highlight-block-con {
@@ -35,7 +56,7 @@
     font-weight: 900;
 }
 .listingblock .spin-highlight-line-edit {
-    color: #808000;
+    color: #707000;
 }
 .listingblock .spin-highlight-line-remove {
     color: #8b0000;
@@ -45,29 +66,11 @@
 }
 
 
-
-.code-line-highlight {
-    font-weight: 900;
-    background: #d0d0d0;
-    display: inline-block;
-    position: relative;
-    left: -16px;
-    width: calc(100% + 32px);
-    padding: 0 1em;
-}
-
-/*
-a.navigation.navigation-next {
-    right: 0px;
-}
-*/
-
 .listingblock .title {
     color: #999;
     padding: 2px 5px;
     font-style: italic;
 }
-
 
 .book .book-body .page-wrapper .page-inner section.normal code {
     font-size: 11pt;
@@ -76,6 +79,9 @@ a.navigation.navigation-next {
 
 .book .book-body .page-wrapper .page-inner section.normal pre {
     overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 1px solid #bbb;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal pre,
@@ -86,6 +92,14 @@ a.navigation.navigation-next {
     line-height: 1.4;
     font-size: 12pt;
     display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td pre {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 
@@ -133,11 +147,12 @@ kbd {
     margin: 0px;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td pre,
+/*.book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td pre,
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tbody tr td code {
     margin-top: 12px;
     margin-bottom: 12px;
 }
+*/
 
 .book .book-body .page-wrapper .page-inner section.normal .admonitionblock table tr {
     background: transparent;
