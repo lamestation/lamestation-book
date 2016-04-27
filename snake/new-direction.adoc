@@ -42,12 +42,14 @@ VAR
     byte    snakey
 
 +++    byte    snakedir
+
+PUB Main
+    lcd.Start(gfx.Start)
 ----
 
-Now here comes a big change. In the last exercise, we directly controlled the snake with LameControl.
+Now here comes a big change. In the last exercise, we directly controlled the snake with LameControl:
 
 [source, language='pub']
-.Snake.spin
 ----
         if ctrl.Left and snakex > 0
             snakex--
@@ -80,13 +82,13 @@ I know it looks like a lot of code, but it's the same logic repeated 4 times, on
 ***            snakedir := LEFT
 ***            
 ***        if snakedir == LEFT and snakex > 0
-***            snakex--
+            snakex--
 ***        if snakedir == RIGHT and snakex < constant(128-2)
-***            snakex++
+            snakex++
 ***        if snakedir == UP and snakey > 0
-***            snakey--
+            snakey--
 ***        if snakedir == DOWN and snakey < constant(64-2)
-***            snakey++
+            snakey++
             
         gfx.Sprite(@dot_gfx, snakex, snakey, 0)
         lcd.Draw
@@ -112,7 +114,7 @@ We'll add code to prevent that.
 ***                snakedir := UP
 ***            if ctrl.Down
 ***                snakedir := DOWN
-                
+***
 ***        elseif snakedir == DOWN or snakedir == UP
 ***            if ctrl.Left
 ***                snakedir := LEFT
@@ -121,6 +123,8 @@ We'll add code to prevent that.
         
         if snakedir == LEFT and snakex > 0
             snakex--
+        if snakedir == RIGHT and snakex < constant(128-2)
+            snakex++
 ----
 
 This code lets you go up/down if you're heading left/right, and vice versa, but you can't do U-turns. It's a small change, but this a big part of what makes Snake difficult.
@@ -139,6 +143,7 @@ One final change. Since there is more room horizontally than vertically, we'll m
     
     repeat
         gfx.Clear
+        ctrl.Update
 ----
 
 === The Code
