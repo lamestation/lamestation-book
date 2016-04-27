@@ -29,6 +29,8 @@ Now, remember our `gfx.Sprite` function from before? Change it to use the new va
 
 [source, language='pub']
 ----
+PUB Main
+    lcd.Start(gfx.Start)
     ctrl.Start
 
 ***    gfx.Sprite(@dot_gfx, snakex, snakey, 0)
@@ -169,11 +171,14 @@ Testing the right and bottom edges is more complicated. Since a image's position
             snakex++
 ----
 
-Putting it all together.
+Changing all four sides in the code.
 
 [source, language='pub']
 .Snake.spin
 ----
+    snakex := 32
+    snakey := 32
+
     repeat
         ctrl.Update
 
@@ -257,7 +262,11 @@ In this section, you learned how to:
 
 === Think about this!
 
-.
+When we were setting the boundaries of the screen, we used the code `constant(128-2)` and `constant(64-2)` for the right and bottom edges.
+
+. Why are we subtracting 2 both times, but we don't subtract anything from the top and left edges?
+
+. From looking at how its used, can you guess what the `constant` keyword does?
 
 === Feeling Adventurous?
 
