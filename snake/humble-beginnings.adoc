@@ -21,6 +21,7 @@ Okay, let's add the graphics into our file from the last exercise. We're going t
 [source, language='pub']
 .Snake.spin
 ----
+PUB Main
     lcd.Start(gfx.Start)
     ctrl.Start
 
@@ -74,6 +75,7 @@ We're not using the frame parameter yet, so just set it to zero.
 [source, language='pub']
 .Snake.spin
 ----
+PUB Main
     lcd.Start(gfx.Start)
     ctrl.Start
     
@@ -91,6 +93,8 @@ If you try running it now, you still won't see anything. You need `lcd.Draw` to 
 [source, language='pub']
 .Snake.spin
 ----
+PUB Main
+    lcd.Start(gfx.Start)
     ctrl.Start
     
     gfx.Sprite(@dot_gfx, 25, 25, 0)
