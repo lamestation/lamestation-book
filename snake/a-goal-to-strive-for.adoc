@@ -145,6 +145,7 @@ Both of those actions need to be combined into one. That is, when the snake take
 
 To do that, we will replace the `ctrl.A` and `ctrl.B` tests with a test that is only true when the snake's head and the food pellet are in the same place.
 
+[source, language='pub']
 ----
         if foodx == snakex[0] and foody == snakey[0]
 ----
