@@ -262,11 +262,11 @@ In this section, you learned how to:
 
 === Think about this!
 
-When we were setting the boundaries of the screen, we used the code `constant(128-2)` and `constant(64-2)` for the right and bottom edges.
+. When we were setting the boundaries of the screen, we used the code `constant(128-2)` and `constant(64-2)` for the right and bottom edges.
 
-. Why are we subtracting 2 both times, but we don't subtract anything from the top and left edges?
+.. Why are we subtracting 2 both times, but we don't subtract anything from the top and left edges?
 
-. From looking at how its used, can you guess what the `constant` keyword does?
+.. From looking at how its used, can you guess what the `constant` keyword does?
 
 === Feeling Adventurous?
 
