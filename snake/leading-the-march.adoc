@@ -92,6 +92,7 @@ PUB Main
 Since we start with 1 pixel, we'll set `snakecount` to 1 at startup.
 
 [source, language='pub']
+.Snake.spin
 ----
     snakey[0] := 32
     snakedir := 1
@@ -104,6 +105,7 @@ Since we start with 1 pixel, we'll set `snakecount` to 1 at startup.
 We're going to add a variable `i`. This one is just used for a `repeat` loop.
 
 [source, language='var']
+.Snake.spin
 ----
     byte    snakedir
     byte    snakecount
@@ -119,6 +121,7 @@ PUB Main
 What we need to do is make each and every dot follow the one that came before it in a line. That's easy enough. The position of the next position should equal the position of the last.
 
 [source, language='pub']
+.Snake.spin
 ----
 snakex[i] := snakex[i-1]
 ----
@@ -170,6 +173,7 @@ There is only one value that isn't set this way, and that's `snakex[0]`. That's 
 Here's the code that calculates the locations of the snake's tail. We should place this code after drawing the first snake sprite but before `lcd.Draw`.
 
 [source, language='pub']
+.Snake.spin
 ----
         if snakedir == DOWN and snakey[0] < constant(64-2)
             snakey[0]++
@@ -189,6 +193,7 @@ DAT
 Don't forget, though. We also want to _see_ the tail, so make sure to include a call to `gfx.Sprite` to draw the tail at each position.
 
 [source, language='pub']
+.Snake.spin
 ----
         gfx.Sprite(@dot_gfx, snakex[0], snakey[0], 0)        
 
@@ -209,6 +214,7 @@ Before we can see it in action, the tail has to get longer. Now, we could make t
 For now, let's just add a little snippet to increase the tail length one by one, which is close to how it'll work when the game is finished anyway. You can put it anywhere in the loop, but I choose to group it with all the other controls.
 
 [source, language='pub']
+.Snake.spin
 ----
     repeat
         gfx.Clear
