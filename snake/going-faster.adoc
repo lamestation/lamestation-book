@@ -16,6 +16,10 @@ There isn't much we can do about #1, other than write a whole new graphics libra
 
 For now, let's deal with the third problem, because it's the easiest. If each snake dot is 2x2 pixels, then why not make the snake move two pixels at a time? Otherwise, each image is pointless overlapping the last one which is unnecessary.
 
+=== Instructions
+
+==== Need for speed
+
 As it would happen, there isn't much to do to make this happen. First, we create a constant, just to make our lives easier.
 
 [source]
@@ -51,7 +55,11 @@ Here's what your movement code should look like now.
             snakey[0] += SPEED
 ----
 
-Ahh! Now it goes way, way fast at the beginning! I can hardly even see it. Now what we'll do is set the frame rate, intentionally limiting the speed of the game so that the speed is more consistent throughout the game.
+Ahh! Now it goes way, way fast at the beginning! I can hardly even see it. We can fix that, though.
+
+==== Wait for me!
+
+We can make the game more playable by setting the frame rate. That's when we intentionally limit the speed of the game so that it runs at a more consistent speed instead of as fast as it feels like at the moment (a nice thing to have!).
 
 LameLCD has a command just for this: `lcd.SetFrameLimit`. It comes in three speeds.
 
@@ -61,13 +69,14 @@ LameLCD has a command just for this: `lcd.SetFrameLimit`. It comes in three spee
 
 You can try different values to see how they look; which one you use really depends on your game.
 
-I'm going to go with `HALFSPEED`. This command can be called multiple times, but it makes sense to call it at the beginning of your program.
+I'm going to go with `HALFSPEED`. You can call it whenever you like to change the frame rate, but I like to set it once at the beginning to keep it simple.
 
 [source, language='pub']
 ----
 PUB Main
     lcd.Start(gfx.Start)
-    lcd.SetFrameLimit (lcd#QUARTERSPEED)
++++    lcd.SetFrameLimit (lcd#HALFSPEED)
+    ctrl.Start
 ----
 
 View the complete example at `/tutorials/Snake/GoingFaster.spin`.
