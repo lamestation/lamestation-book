@@ -182,7 +182,7 @@ DAT
     word    %%22222211
 ----
 
-View the complete example at `/tutorials/Snake/GoingFaster.spin`.
+View this example at `/tutorials/Snake/GoingFaster.spin`.
 
 === Think about this!
 
