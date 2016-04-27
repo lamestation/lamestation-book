@@ -232,6 +232,7 @@ Now your snake is bigger and stronger than ever before!
 === The Code
 
 [source]
+.Snake.spin
 ----
 CON
     _clkmode = xtal1 + pll16x
