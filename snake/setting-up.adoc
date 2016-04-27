@@ -1,15 +1,37 @@
 == Setting Up
 :experimental:
 
+=== Instructions
+
+==== Using Templates
+
 To begin this tutorial, we'll start with the LameStation Basic template. In PropellerIDE, you can create a new project from a template with kbd:[Ctrl+Shift+T].
 
 image:newfromtemplate.png[]
 
-This sets up some basic code to get a LameStation game running.
+Once created, save the template as `Snake.spin`, and make sure you save it somewhere you can find it again.
 
-image:template.png[]
+[source]
+----
+CON
+    _clkmode = xtal1 + pll16x
+    _xinfreq = 5_000_000
 
-Let's look at what's inside:
+OBJ
+    lcd  : "LameLCD"
+    gfx  : "LameGFX"
+    ctrl : "LameControl"
+
+PUB Main
+    lcd.Start(gfx.Start)
+    ctrl.Start
+    
+    ' add your code here
+----
+
+==== What's Inside?
+
+This template adds some basic code to get a LameStation game started. Let's look at what's inside:
 
 - The `CON` block tells the LameStation to run at full speed.
 +
@@ -45,10 +67,11 @@ PUB Main
 ====
 The first function in your file is where your code will start when run. It doesn't have to be called `Main`, but it does have to be first.
 ====
++
+[NOTE]
+`' add your code here` is a line comment and can be removed.
 
 You will find this code used a lot in almost every game, which is why we're using a template to create it.
-
-Save your file as `Snake.spin`, and be sure to save it in a place where you will remember it.
 
 *NEXT TIME: You will see the snake finally come to life... as a dot.*
 
