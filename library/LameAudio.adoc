@@ -2,6 +2,7 @@
 
 LameAudio is a 4-channel synthesizer for the LameStation.
 
+[source, language='obj']
 ----
 audio : "LameAudio"
 ----
@@ -48,6 +49,7 @@ Each channel has its own parameters that affect the sound it makes. `audio.SetPa
 
 This is what a patch looks like.
 
+[source]
 ----
 DAT
     patch
@@ -108,6 +110,7 @@ LameStation songs consist of two main sections: pattern and sequence data.
 
 A LameAudio sample is a 512-byte sequence of arbitrary data. It can be anything you want as long as its 512 bytes.
 
+[source]
 .Example pattern section
 ----
 DAT
@@ -122,6 +125,7 @@ Since it's possible to use any address in memory, the running system can also cr
 
 The address of sample data can be passed directly to `audio.SetSample`, unless stored in another object. If so, use this interface:
 
+[source]
 ----
 PUB Addr
     return @wav_data

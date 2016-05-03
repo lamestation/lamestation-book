@@ -4,6 +4,7 @@ image:Blit.png[]
 
 LameGFX is the LameStation graphics engine. It provides a drawing surface and basic drawing functions.
 
+[source, language='obj']
 ----
 gfx : "LameGFX"
 ----
@@ -34,8 +35,8 @@ Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
 
 Call `gfx.Start` to start LameGFX. It should only be started once at the beginning of your program, before all drawing operations, and should be connected to LameLCD right away.
 
+[source, language='pub']
 ----
-PUB
     lcd.Start(gfx.Start)
 ----
 
@@ -64,6 +65,7 @@ The second point must be to the right and down relative to the first, otherwise 
 
 You can draw to the LameGFX buffer directly. First, you must enable access. This is done by grabbing its address during setup.
 
+[source]
 ----
 VAR
     word    buffer
@@ -86,6 +88,8 @@ Each sprite has the same structure.
 - *frameboost* - The size of a frame in bytes, or `width * height / 4`.
 - *width*, *height* (`0-65535`) - The width and height of each frame in pixels.
 - *data...* - Image data.
+
+[source]
 ----
 DAT
 gfx_data
@@ -114,6 +118,7 @@ Sprites can contain multiple images, or frames, so that they can be animated by 
 
 The address of image data can be passed directly to `gfx.Sprite` and `gfx.Blit`, unless stored in another object. If so, use this interface:
 
+[source]
 ----
 PUB Addr
     return @gfx_data

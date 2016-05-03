@@ -8,6 +8,8 @@ Attempting to download an empty file to the LameStation will generate an error f
 - *The first PUB block in your program is the starting point for your program*
 - *I call my first function Main to prevent confusion; there is no other reason*
 ////
+
+[source, language='pub']
 .An empty file.
 ----
 
@@ -15,6 +17,7 @@ Attempting to download an empty file to the LameStation will generate an error f
 
 so here we see the bare minimum that constitutes a Spin program.
 
+[source, language='pub']
 .HelloNothing.spin
 ----
 PUB Main
@@ -25,6 +28,7 @@ Well, that was easy!
 
 This is called a `PUB` block, which is short for _public function_ . Functions are areas where you write code that can _do stuff_. If your code is a sentence, a function is the verb, the action. You can put as many `PUB` blocks as you want into a file, but when you run your code, the Propeller will start by running the first public function that appears in the file. From that function, you can call other functions.
 
+[source, language='pub']
 ----
 PUB Main
     Third
@@ -39,11 +43,17 @@ All Spin programs _must_ include a `PUB` block.
 
 Spin is *not* case-sensitive.
     
-    PUB Main
+[source, language='pub']
+----
+PUB Main
+----
 
 is the same as
     
-    pub main
+[source, language='pub']
+----
+pub main
+----
 
 Remember that!
 

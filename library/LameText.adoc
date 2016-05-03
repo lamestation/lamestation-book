@@ -2,6 +2,7 @@
 
 LameText provides text-drawing functionality for LameStation games.
 
+[source, language='obj']
 ----
 txt : "LameText"
 ----

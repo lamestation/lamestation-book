@@ -152,7 +152,7 @@ DAT
 
 View this example at `/tutorials/Snake/HumbleBeginnings.spin`.
 
-=== Recap
+=== Total Recap
 
 In this section, you learned how to:
 

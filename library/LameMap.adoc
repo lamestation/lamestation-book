@@ -4,6 +4,7 @@ image:ParallaxScrolling.png[]
 
 LameMap is a tile engine for LameGFX. It provides functions to display and interact with tile-based game maps.
 
+[source, language='obj']
 ----
 map : "LameMap"
 ----
@@ -36,6 +37,7 @@ image::drawmap.png[title='The red rectangle is the offset, while the blue rectan
 
 You can get the number of horizontal and vertical tiles in your map with `map.Width` and `map.Height`.
 
+[source, language='pub']
 ----
 mapsize := map.Width * map.Height
 ----
@@ -73,6 +75,8 @@ Map data is raw data describing what an area looks like and how the player can i
 
 - *width*, *height* (`0-65535`) - The width and height of the image in tiles.
 - *tile* - The array of tiles that make up this level, placed left-to-right, top-to-bottom.
+
+[source]
 ----
 DAT
 map_data
@@ -94,6 +98,7 @@ The collision bit stores whether a tile will register a collision when touched. 
 
 The address of the map data can be passed directly to `map.Load`, unless stored in another object. If so, the following function is used as an interface.
 
+[source]
 ----
 PUB Addr
     return @map_data

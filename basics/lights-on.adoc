@@ -9,9 +9,12 @@ All we have to do to turn on this light is toggle the microcontroller pin it is 
 
 So here's how you do it:
 
-     PUB Main
-        dira[24]~~
-        outa[24]~
+[source]
+----
+PUB Main
+   dira[24]~~
+   outa[24]~
+----
 
 The `~` and `~~` characters set the pin to high and low, respectively.
 
@@ -19,6 +22,7 @@ One thing you'll notice: if you run it as is, you'll never see the light come on
 
 Use the `REPEAT` command to keep the LameStation in an infinite loop.
 
+[source]
 .LightsOn.spin
 ----
 PUB Main

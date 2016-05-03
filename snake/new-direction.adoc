@@ -218,7 +218,7 @@ DAT
 
 View this example at `/tutorials/Snake/ANewDirection.spin`.
 
-=== Recap
+=== Total Recap
 
 In this section, you learned how to:
 

@@ -34,7 +34,7 @@ PUB Main
     lcd.Start(gfx.Start)
 ----
 
-Now, you can draw to your heart's content, but after drawing, you have to call link:../library/lcd.Draw.adoc[`lcd.Draw`] before you'll actually see anything.
+Now, you can draw to your heart's content, but after drawing, you have to call `lcd.Draw` before you'll actually see anything.
 
 ----
     lcd.Draw

@@ -2,6 +2,7 @@
 
 LameFunctions holds a few functions that don't really fit anywhere else.
 
+[source, language='obj']
 ----
 fn : "LameFunctions"
 ----

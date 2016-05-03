@@ -4,6 +4,7 @@ image:jukebox.png[]
 
 LameMusic is a sequencer for LameAudio that allows your games to play music.
 
+[source, language='obj']
 ----
 music : "LameMusic"
 ----
@@ -28,6 +29,7 @@ Call `music.Start` once at the beginning of your program to start the music engi
 
 To load a song, call `music.Load` using the `Addr` function of the song object as an argument.  Only one song can play at a time. Loading a new song will stop any currently playing one.
 
+[source, language='pub']
 ----
 music.Load(mycoolsong.Addr)
 ----
@@ -52,6 +54,7 @@ Patterns contain melodies, riffs, harmonies and any musical parts that fit in a 
 - *Stop note* (`$83`) - Stop playing note.
 - *Do nothing* (`$82`) - Do nothing (continue playing or not playing current note).
 
+[source]
 .Example pattern section
 ----
 DAT
@@ -73,6 +76,7 @@ The sequence defines how the patterns are arranged in time and across channels. 
 - *Tempo* (`$B0`, `0-255`) - Change the tempo of the song.
 - *Transpose* (`$C0`, `-128-127`) - Transpose the channel up or down number of notes.
 
+[source]
 .Example pattern section
 ----
 DAT

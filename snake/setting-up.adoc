@@ -96,7 +96,7 @@ PUB Main
 
 View this example at `/tutorials/Snake/SettingUp.spin`.
 
-=== Recap
+=== Total Recap
 
 In this section, you learned how to:
 

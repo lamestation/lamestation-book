@@ -55,7 +55,7 @@ example, we'll put pixels somewhere else on the screen and make them unboring!
 
 .Think It Over
 ****
-_Question 1: What will happen if you pass nothing into the link:../library/gfx.Sprite.adoc[`gfx.Sprite`] command? What will it do?_
+_Question 1: What will happen if you pass nothing into the `gfx.Sprite` command? What will it do?_
 
 ----    
 gfx.Sprite(0, 0, 0, 0)

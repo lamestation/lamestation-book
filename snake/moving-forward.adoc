@@ -250,7 +250,7 @@ DAT
 
 View this example at `/tutorials/Snake/MovingForward.spin`.
 
-=== Recap
+=== Total Recap
 
 In this section, you learned how to:
 

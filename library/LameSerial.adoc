@@ -2,6 +2,7 @@
 
 LameSerial allows you to write code to communicate with your computer.
 
+[source, language='obj']
 ----
 ser : "LameSerial"
 ----
