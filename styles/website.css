@@ -3,24 +3,30 @@
 /* code blocks */
 
 
-.spin-unselectable-text {
-    -webkit-user-select: none; /* Chrome/Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-
-    /* Rules below not implemented in browsers yet */
-    -o-user-select: none;
-    user-select: none;
+.listingblock .spin-highlight-line {
+    font-weight: 900;
+}
+.listingblock .spin-highlight-line-edit {
+    color: #707000;
+}
+.listingblock .spin-highlight-line-remove {
+    color: #8b0000;
+}
+.listingblock .spin-highlight-line-add {
+    color: #006400;
 }
 
-.listingblock .spin-unselectable-text .spin-highlight-line-edit {
-    background-color: #707000;
+.listingblock .spin-highlight-line-none::before {
+    content: " ";
 }
-.listingblock .spin-unselectable-text .spin-highlight-line-remove {
-    background-color: #8b0000;
+.listingblock .spin-highlight-line-edit::before {
+    content: "*";
 }
-.listingblock .spin-unselectable-text .spin-highlight-line-add {
-    background-color: #006400;
+.listingblock .spin-highlight-line-remove::before {
+    content: "-";
+}
+.listingblock .spin-highlight-line-add::before {
+    content: "+";
 }
 
 .listingblock .spin-highlight-block {
@@ -49,20 +55,6 @@
 }
 .listingblock .spin-highlight-block-dat {
     background: #e6f5e9;
-}
-
-
-.listingblock .spin-highlight-line {
-    font-weight: 900;
-}
-.listingblock .spin-highlight-line-edit {
-    color: #707000;
-}
-.listingblock .spin-highlight-line-remove {
-    color: #8b0000;
-}
-.listingblock .spin-highlight-line-add {
-    color: #006400;
 }
 
 
