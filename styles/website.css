@@ -2,6 +2,14 @@
 
 /* general */
 
+.book .book-summary ul.summary li a {
+    font-weight: bold;
+}
+
+.book .book-summary ul.summary ul.articles li a {
+    font-weight: normal;
+}
+
 .book .book-summary {
     background: #FFFFFF;
 }

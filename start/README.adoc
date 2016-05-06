@@ -24,6 +24,9 @@ link:https://github.com/lamestation/lamestation-sdk/releases/latest[`www.lamesta
 
 . Open PropellerIDE and go to "_Edit -> Preferences_".
 +
+[NOTE]
+On OS X, _Preferences_ falls under _PropellerIDE_, not _Edit_.
++
 image:edit_preferences.png[]
 
 . Click the _Languages_ tab, and under _Includes_ in the _Spin_ box, and click _Add Path_ to add the location of the unpacked SDK.
@@ -38,15 +41,18 @@ PropellerIDE should now be set up for use with the LameStation.
 
 == Testing
 
-We can verify that the LameStation is working by loading a game from the `games/` directory.
-
-They follow a simple naming convention. In a folder called `AwesomeGame/`, the main game file is named `AwesomeGame.spin`. We can run _piXel_ by opening `games/piXel/piXel.spin` and pressing kbd:[F10].
+We can verify that the LameStation is working by loading a game from the `games/` directory of the SDK. Let's start by opening `games/piXel/piXel.spin` and pressing kbd:[F10] to download.
 
 If it worked, you should see this screen.
 
 image:title.png[]
 
-If you don't, read on to 
+If you'd like to try a different game, they follow a simple naming convention: in a folder named `AwesomeGame/`, the game is named `AwesomeGame.spin`.
+
+image:naming.png[]
+
+[NOTE]
+You can only have one game loaded at a time.
 
 == Troubleshooting
 
