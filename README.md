@@ -9,9 +9,3 @@ The LameStation is powered by the Parallax Propeller, a microcontroller develope
 A microcontroller is a computer, like a laptop or desktop, but smaller and less powerful. It is their size that makes them useful; microcontrollers can go places regular computers just can't go, like in TVs, microwaves, phones, cars, and much more.
 
 Game consoles are insanely complicated. While nothing in life comes easy, that doesn't mean it has to be boring. I made the LameStation so that I could share in the epic educational experience that was developing the thing. Truly, making something yourself is one of the greatest joys in life, and I challenge you to create something all your own with the LameStation. :)
-
-## Assembly Instructions
-
-New versions of the LameStation come pre-assembled. If you have an early version that requires assembly, you can find the instructions here:
-
-- **[LameStation RC2 Assembly Instructions](https://lamestation.atlassian.net/wiki/display/LAME/Assembly+Instructions)**
