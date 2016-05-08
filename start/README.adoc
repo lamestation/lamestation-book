@@ -1,7 +1,7 @@
 = Getting Started
 :experimental:
 
-To work with the LameStation, we have the LameStation SDK. An SDK, or *software development kit*, is a set of tools that are designed to use with a certain hardware platform; in this case, the LameStation gaming handheld.
+To work with the LameStation, we have the LameStation SDK. An SDK, or *software development kit*, is a set of tools that are designed to use with a certain hardware platform--in this case, the LameStation gaming handheld.
 
 - Device-specific libraries
 - Programming tools
