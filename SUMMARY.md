@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
    * [How To Read This Book](reading-this-book.adoc)
-* [Getting Started](start/README.adoc)
 * [Graphics](graphics/README.adoc)
    * [Pixels](graphics/pixels.adoc)
    * [Lines](graphics/lines.adoc)
@@ -16,3 +15,4 @@
    * [Box Collision](collision/box.adoc)
    * [Map Collision](collision/map.adoc)
    * [Movement](collision/movement.adoc)
+
